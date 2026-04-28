@@ -510,6 +510,14 @@ window.PORTFOLIO_CONTENT = {
         title: "Coverage and public profiles.",
         items: [
           {
+            title: "Riverside County Fast Pitch regional recognition",
+            source: "Riverside County Office of Economic Development",
+            year: "2026",
+            href: "https://www.linkedin.com/posts/rivcoed_rivcoed-rivconow-rivcoinnovation-activity-7452781398563921920-VP1X?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADKWI-UBz3qmdXAAGqS9DmdZapMryZ9UFJ0",
+            description:
+              "LinkedIn post featuring GoGoDuck among regional Fast Pitch startups and noting second-place advancement to the county finale.",
+          },
+          {
             title: "AI face recognition technology for teaching support",
             source: "National Taiwan Normal University / CNA coverage",
             year: "2024",
@@ -1192,6 +1200,14 @@ window.PORTFOLIO_CONTENT = {
         eyebrow: "媒體與公開介紹",
         title: "媒體報導與公開介紹",
         items: [
+          {
+            title: "Riverside County Fast Pitch 區域賽紀錄",
+            source: "Riverside County Office of Economic Development",
+            year: "2026",
+            href: "https://www.linkedin.com/posts/rivcoed_rivcoed-rivconow-rivcoinnovation-activity-7452781398563921920-VP1X?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADKWI-UBz3qmdXAAGqS9DmdZapMryZ9UFJ0",
+            description:
+              "LinkedIn 貼文介紹 GoGoDuck，並記錄 Norco/Corona 區域 Fast Pitch 第二名與晉級縣級決賽。",
+          },
           {
             title: "人工智慧人臉辨識技術促進教學力",
             source: "國立臺灣師範大學 / 中央社訊息平台",

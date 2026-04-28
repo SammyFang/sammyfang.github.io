@@ -177,6 +177,7 @@ function linkKind(href = "") {
   const host = linkHost(href);
   if (/github\.com$/.test(host)) return "GitHub";
   if (/doi\.org$/.test(host)) return "DOI";
+  if (/linkedin\.com$/.test(host)) return "LinkedIn";
   if (/youtube\.com$|youtu\.be$/.test(host)) return "YouTube";
   if (/cna\.com\.tw$/.test(host)) return "CNA";
   if (/peopo\.org$/.test(host)) return "PeoPo";
