@@ -334,6 +334,16 @@ window.PORTFOLIO_CONTENT = {
             year: "2023",
             image: "./assets/research-intelligence.svg",
           },
+          {
+            title:
+              "An Intelligent Emotion Feedback Assistant: Using Teachers' Dynamic Expressions and Voices Enabled with Deep Learning for Emotion Analysis and Score Evaluation",
+            venue: "TANET 2023 Conference: Next-Generation AI and Digital Resilience",
+            year: "2023",
+            note: "Conference paper · Nov 2023",
+            image: "./assets/media-coverage.svg",
+            description:
+              "Conference paper on digital education, deep learning, computer vision, voiceprint analysis, affective computing, and AI-assisted feedback.",
+          },
         ],
         workingPapers: [
           "Dynamic Pricing and Markdown Optimization under Demand Uncertainty via Deep Learning and Quantum-Assisted Search",
@@ -446,7 +456,7 @@ window.PORTFOLIO_CONTENT = {
             title: "AI face recognition technology for teaching support",
             source: "National Taiwan Normal University / CNA coverage",
             year: "2024",
-            href: "https://rh.acad.ntnu.edu.tw/tw/news/content/48",
+            href: "https://www.cna.com.tw/postwrite/chi/327041",
             image: "./assets/media-coverage.svg",
             description:
               "Industry-academia project coverage related to AI emotion recognition for education and online services.",
@@ -455,7 +465,7 @@ window.PORTFOLIO_CONTENT = {
             title: "Graduate Student Ambassador Profile",
             source: "A. Gary Anderson Graduate School of Management",
             year: "2025",
-            href: "https://undergradbiz.ucr.edu/graduate/ambassadors",
+            href: "https://business.ucr.edu/graduate/ambassadors#yung-sian-fang-pmba-taiwan-yfa",
             image: "./assets/ucr-profile.jpg",
             imagePosition: "center 24%",
             description:
@@ -465,9 +475,28 @@ window.PORTFOLIO_CONTENT = {
             title: "UCR Graduate Research Symposium recognition",
             source: "University of California, Riverside",
             year: "2026",
+            href: "https://graduate.ucr.edu/gradsymposium#best-presentation-awards-2026",
             image: "./assets/research-battery.svg",
             description:
               "Poster presentation recognition for interdisciplinary work in quantum-assisted battery material screening.",
+          },
+          {
+            title: "Campus mental health leave discussion",
+            source: "PeoPo Citizen Journalism",
+            year: "2022",
+            href: "https://www.peopo.org/news/611696",
+            mediaLabel: "Campus Affairs",
+            description:
+              "Public report on mental health leave discussions across Taiwanese universities, including NDHU student advocacy context.",
+          },
+          {
+            title: "NDHU Student Association recognized at MOE showcase",
+            source: "National Dong Hwa University",
+            year: "2021",
+            href: "https://www.ndhu.edu.tw/p/404-1000-179497.php?Lang=zh-tw",
+            mediaLabel: "Student Leadership",
+            description:
+              "University news coverage of NDHU Student Association receiving an Excellent Award at the Ministry of Education student association showcase.",
           },
         ],
       },
@@ -933,6 +962,15 @@ window.PORTFOLIO_CONTENT = {
             year: "2023",
             image: "./assets/research-intelligence.svg",
           },
+          {
+            title: "運用教師動態表情與聲音結合深度學習進行情緒分析與分數評估之智慧回饋工具",
+            venue: "2023 TANET 臺灣網際網路研討會：次世代 AI 與數位韌性",
+            year: "2023",
+            note: "會議論文 · 2023.11",
+            image: "./assets/media-coverage.svg",
+            description:
+              "關鍵詞：數位教育、深度學習、人工智慧應用、電腦視覺、聲紋分析、情感運算。",
+          },
         ],
         workingPapers: [
           "需求不確定下的動態定價與降價最佳化：深度學習與量子輔助搜尋方法",
@@ -1045,7 +1083,7 @@ window.PORTFOLIO_CONTENT = {
             title: "人工智慧人臉辨識技術促進教學力",
             source: "國立臺灣師範大學 / 中央社訊息平台",
             year: "2024",
-            href: "https://rh.acad.ntnu.edu.tw/tw/news/content/48",
+            href: "https://www.cna.com.tw/postwrite/chi/327041",
             image: "./assets/media-coverage.svg",
             description:
               "與教育和線上服務情境人工智慧情緒辨識相關的產學合作報導。",
@@ -1054,7 +1092,7 @@ window.PORTFOLIO_CONTENT = {
             title: "研究生大使公開介紹",
             source: "加州大學河濱分校商學院",
             year: "2025",
-            href: "https://undergradbiz.ucr.edu/graduate/ambassadors",
+            href: "https://business.ucr.edu/graduate/ambassadors#yung-sian-fang-pmba-taiwan-yfa",
             image: "./assets/ucr-profile.jpg",
             imagePosition: "center 24%",
             description:
@@ -1064,9 +1102,28 @@ window.PORTFOLIO_CONTENT = {
             title: "加州大學河濱分校研究生研究論壇獲獎紀錄",
             source: "加州大學河濱分校",
             year: "2026",
+            href: "https://graduate.ucr.edu/gradsymposium#best-presentation-awards-2026",
             image: "./assets/research-battery.svg",
             description:
               "量子輔助電池材料篩選跨領域研究的海報發表獲獎紀錄。",
+          },
+          {
+            title: "大專院校推動心理健康假",
+            source: "PeoPo 公民新聞",
+            year: "2022",
+            href: "https://www.peopo.org/news/611696",
+            mediaLabel: "校園公共議題",
+            description:
+              "關於臺灣大專校院心理健康假推動的公共報導，包含東華學生倡議脈絡。",
+          },
+          {
+            title: "教育部大專校院學生會成果展，東華學生會榮獲優等獎",
+            source: "國立東華大學",
+            year: "2021",
+            href: "https://www.ndhu.edu.tw/p/404-1000-179497.php?Lang=zh-tw",
+            mediaLabel: "學生領導",
+            description:
+              "東華學生會於教育部大專校院學生會成果展獲優等獎的校方新聞報導。",
           },
         ],
       },
