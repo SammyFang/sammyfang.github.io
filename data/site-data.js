@@ -492,7 +492,7 @@ window.PORTFOLIO_CONTENT = {
         skillGroups: [
           {
             title: "Programming and data",
-            skills: ["Python", "SQL", "R", "JavaScript", "Shell", "Pandas", "NumPy"],
+            skills: ["Python", "SQL", "R", "JavaScript", "Shell Script", "Pandas", "NumPy"],
           },
           {
             title: "Business and operations",
