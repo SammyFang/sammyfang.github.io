@@ -416,6 +416,18 @@ window.PORTFOLIO_CONTENT = {
             topics: ["Project framing", "Technical execution", "Stakeholder communication"],
           },
           {
+            title: "Becoming the CEO of Your Life",
+            role: "Alumni Talk",
+            host: "Department of Computer Science and Information Engineering, National Dong Hwa University",
+            year: "2026",
+            image: "./assets/pdf-events/ndhu-csie-alumni-talk-2026.jpg",
+            imageFit: "contain",
+            imagePosition: "center center",
+            description:
+              "Alumni talk on moving from computer science training into research, industry practice, systems thinking, and business exploration.",
+            topics: ["Career exploration", "Research to industry", "Systems thinking"],
+          },
+          {
             title: "Excel for Data-Driven Supply Chain Decision-Making",
             role: "Workshop Leader",
             host: "Supply Chain Society at UC Riverside",
@@ -1085,6 +1097,18 @@ window.PORTFOLIO_CONTENT = {
             description:
               "技術專案定義、執行節奏、利害關係人溝通與結案整理。",
             topics: ["專案定義", "技術執行", "利害關係人溝通"],
+          },
+          {
+            title: "成為人生的 CEO",
+            role: "校友演講",
+            host: "國立東華大學資訊工程學系",
+            year: "2026",
+            image: "./assets/pdf-events/ndhu-csie-alumni-talk-2026.jpg",
+            imageFit: "contain",
+            imagePosition: "center center",
+            description:
+              "分享資工背景從研究、產業實務到商業與系統設計的職涯探索。",
+            topics: ["職涯探索", "研究到產業", "系統思考"],
           },
           {
             title: "用試算表做資料驅動的供應鏈決策",
