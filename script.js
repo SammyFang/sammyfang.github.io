@@ -364,9 +364,9 @@ function renderContactPanel(data) {
   const contactLabels =
     language === "zh"
       ? {
-          linkedin: { icon: "linkedin", label: "個人檔案" },
+          linkedin: { icon: "linkedin", label: "LinkedIn" },
           github: { icon: "github", label: "GitHub" },
-          orcid: { icon: "orcid", label: "研究者識別碼" },
+          orcid: { icon: "orcid", label: "ORCID" },
           scholar: { icon: "scholar", label: "Google Scholar" },
           instagram: { icon: "instagram", label: "Instagram" },
         }
