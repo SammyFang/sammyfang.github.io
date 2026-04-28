@@ -167,12 +167,23 @@ function linkKind(href = "") {
   return language === "zh" ? "網站連結" : "Website";
 }
 
+function linkDescriptor(href = "") {
+  const host = linkHost(href);
+  if (/github\.com$/.test(host)) return language === "zh" ? "程式碼與專案頁" : "Code and project page";
+  if (/doi\.org$/.test(host)) return language === "zh" ? "論文識別與出版紀錄" : "Publication record";
+  if (/youtube\.com$|youtu\.be$/.test(host)) return language === "zh" ? "音訊與影片清單" : "Audio and video playlist";
+  if (/cna\.com\.tw$|peopo\.org$|ndhu\.edu\.tw$/.test(host)) return language === "zh" ? "媒體或校方報導" : "Media or university coverage";
+  if (/ucr\.edu$/.test(host)) return language === "zh" ? "校方公開頁面" : "University profile";
+  return language === "zh" ? "外部網站" : "External website";
+}
+
 function faviconUrl(href = "") {
   return `https://www.google.com/s2/favicons?sz=96&domain_url=${encodeURIComponent(href)}`;
 }
 
 function linkPreviewThumb(item = {}, className = "visual-thumb") {
   const host = linkHost(item.href);
+  const previewTitle = item.previewTitle || host || linkKind(item.href);
   return `
     <div class="${className} link-preview-thumb">
       <div class="link-preview-top">
@@ -182,8 +193,8 @@ function linkPreviewThumb(item = {}, className = "visual-thumb") {
         <span>${escapeHtml(linkKind(item.href))}</span>
       </div>
       <div class="link-preview-main">
-        <strong>${escapeHtml(item.mediaTitle || item.title || host)}</strong>
-        ${host ? `<span>${escapeHtml(host)}</span>` : ""}
+        <strong>${escapeHtml(previewTitle)}</strong>
+        <span>${escapeHtml(linkDescriptor(item.href))}</span>
       </div>
     </div>
   `;
@@ -211,7 +222,7 @@ function mediaThumb(item = {}, index = 0, className = "visual-thumb", fallback =
   return `
     <div class="${className} media-fallback media-${theme}">
       <span>${escapeHtml(fallbackBadge(item, fallback))}</span>
-      <strong>${escapeHtml(item.mediaTitle || item.title || fallback)}</strong>
+      <strong>${escapeHtml(item.previewTitle || item.mediaTitle || fallback)}</strong>
     </div>
   `;
 }
