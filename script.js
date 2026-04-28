@@ -162,19 +162,18 @@ function linkKind(href = "") {
   if (/github\.com$/.test(host)) return "GitHub";
   if (/doi\.org$/.test(host)) return "DOI";
   if (/youtube\.com$|youtu\.be$/.test(host)) return "YouTube";
-  if (/cna\.com\.tw$|peopo\.org$|ndhu\.edu\.tw$/.test(host)) return language === "zh" ? "報導" : "Media";
-  if (/ucr\.edu$/.test(host)) return language === "zh" ? "公開頁面" : "Profile";
-  return language === "zh" ? "網站連結" : "Website";
+  if (/cna\.com\.tw$/.test(host)) return "CNA";
+  if (/peopo\.org$/.test(host)) return "PeoPo";
+  if (/ndhu\.edu\.tw$/.test(host)) return "NDHU";
+  if (/ucr\.edu$/.test(host)) return "UCR";
+  if (/lovable\.dev$/.test(host)) return "Lovable";
+  if (/duckcard\.app$/.test(host)) return "DuckCard";
+  return host || (language === "zh" ? "網站" : "Website");
 }
 
 function linkDescriptor(href = "") {
   const host = linkHost(href);
-  if (/github\.com$/.test(host)) return language === "zh" ? "程式碼與專案頁" : "Code and project page";
-  if (/doi\.org$/.test(host)) return language === "zh" ? "論文識別與出版紀錄" : "Publication record";
-  if (/youtube\.com$|youtu\.be$/.test(host)) return language === "zh" ? "音訊與影片清單" : "Audio and video playlist";
-  if (/cna\.com\.tw$|peopo\.org$|ndhu\.edu\.tw$/.test(host)) return language === "zh" ? "媒體或校方報導" : "Media or university coverage";
-  if (/ucr\.edu$/.test(host)) return language === "zh" ? "校方公開頁面" : "University profile";
-  return language === "zh" ? "外部網站" : "External website";
+  return host;
 }
 
 function faviconUrl(href = "") {
@@ -191,7 +190,7 @@ function linkPreviewThumb(item = {}, className = "visual-thumb") {
       </span>
       <div class="link-preview-main">
         <strong>${escapeHtml(previewTitle)}</strong>
-        <span>${escapeHtml(previewCaption)}</span>
+        ${previewCaption ? `<span>${escapeHtml(previewCaption)}</span>` : ""}
       </div>
     </div>
   `;
