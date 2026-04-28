@@ -291,6 +291,15 @@ window.PORTFOLIO_CONTENT = {
             actionLabel: "View GitHub",
           },
           {
+            title: "Heterogeneous Data-Aware Federated Learning for IDS",
+            type: "AIoT · Information security",
+            description:
+              "A privacy-preserving federated learning IDS framework using meta-sampling, dynamic clustering, and FedProx for class imbalance and non-IID data.",
+            tags: ["Python", "Federated Learning", "FedProx", "IDS"],
+            href: "https://github.com/SammyFang/AIoT-Federated-Learning-IDS",
+            actionLabel: "View GitHub",
+          },
+          {
             title: "Dcard Epidemic Keyword Crawler",
             type: "Public information · Data pipeline",
             description:
@@ -937,6 +946,15 @@ window.PORTFOLIO_CONTENT = {
               "以 Solidity 建立部署於以太坊的投票概念驗證，支援候選人管理、MetaMask 交易互動、Web3.js 串接與 Chart.js 即時計票視覺化。",
             tags: ["Solidity", "Ethereum", "Web3.js", "Chart.js"],
             href: "https://github.com/SammyFang/Ethereum-Voting-Smart-Contract",
+            actionLabel: "查看 GitHub",
+          },
+          {
+            title: "異質資料感知聯邦學習入侵偵測系統",
+            type: "AIoT · 資訊安全",
+            description:
+              "面向 AIoT 入侵偵測的隱私保護聯邦學習框架，結合 meta-sampling、動態分群與 FedProx，處理類別不平衡與 non-IID 資料分布。",
+            tags: ["Python", "聯邦學習", "FedProx", "入侵偵測"],
+            href: "https://github.com/SammyFang/AIoT-Federated-Learning-IDS",
             actionLabel: "查看 GitHub",
           },
           {
