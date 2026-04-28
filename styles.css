@@ -526,6 +526,13 @@ img {
   object-fit: cover;
 }
 
+.media-contain img {
+  object-fit: contain;
+  background:
+    linear-gradient(135deg, rgba(47, 95, 159, 0.1), rgba(242, 184, 75, 0.08)),
+    var(--soft);
+}
+
 .media-fallback {
   display: grid;
   align-content: end;

@@ -353,7 +353,11 @@ window.PORTFOLIO_CONTENT = {
             role: "Invited Talk",
             host: "Association for Information Systems at UC Riverside",
             year: "2026",
-            image: "./assets/talk-workshop.svg",
+            image: "./assets/pdf-events/intro-technical-project-management-flyer.jpg",
+            imageFit: "contain",
+            imagePosition: "center center",
+            description:
+              "Introductory session on technical project framing, execution rhythm, stakeholder communication, and project closeout.",
             topics: ["Project framing", "Technical execution", "Stakeholder communication"],
           },
           {
@@ -361,15 +365,31 @@ window.PORTFOLIO_CONTENT = {
             role: "Workshop Leader",
             host: "Supply Chain Society at UC Riverside",
             year: "2026",
-            image: "./assets/talk-workshop.svg",
+            image: "./assets/pdf-events/ucr-supply-chain-society-group.jpg",
+            description:
+              "Hands-on workshop on using spreadsheets to organize assumptions, compare scenarios, and support supply chain decisions.",
             topics: ["Excel", "Supply chain analytics", "Decision support"],
+          },
+          {
+            title: "Interview Practice Workshop",
+            role: "Workshop Leader",
+            host: "Supply Chain Society at UC Riverside",
+            year: "2026",
+            image: "./assets/pdf-events/ucr-interview-workshop-presentation.jpg",
+            imageFit: "contain",
+            imagePosition: "center 42%",
+            description:
+              "Practice-oriented workshop on interview preparation, response structure, and translating project experience into concise examples.",
+            topics: ["Interview practice", "Career communication", "Behavioral questions"],
           },
           {
             title: "Web Page Verification and Security Practices",
             role: "Invited Technical Lecture",
             host: "Google Developer Student Club, National Taiwan Normal University",
             year: "2024",
-            image: "./assets/talk-workshop.svg",
+            image: "./assets/pdf-events/gdsc-ntnu-security-workshop-group.jpg",
+            description:
+              "Technical session covering PKI, passwordless authentication, OTP/SSO, and security tool demonstrations.",
             topics: ["PKI", "FIDO", "OTP", "SSO", "Nessus/OpenVAS"],
           },
           {
@@ -377,7 +397,9 @@ window.PORTFOLIO_CONTENT = {
             role: "Workshop Speaker",
             host: "Google Developer Student Clubs",
             year: "2024",
-            image: "./assets/talk-workshop.svg",
+            image: "./assets/pdf-events/gdsc-ntnu-ml-cv-workshop-session.jpg",
+            description:
+              "Hands-on workshop using TensorFlow and MediaPipe for computer vision demos and classroom exercises.",
             topics: ["TensorFlow", "MediaPipe", "Computer vision", "Hands-on learning"],
           },
         ],
@@ -930,7 +952,11 @@ window.PORTFOLIO_CONTENT = {
             role: "邀請演講",
             host: "加州大學河濱分校資訊系統協會",
             year: "2026",
-            image: "./assets/talk-workshop.svg",
+            image: "./assets/pdf-events/intro-technical-project-management-flyer.jpg",
+            imageFit: "contain",
+            imagePosition: "center center",
+            description:
+              "以技術專案定義、執行節奏、利害關係人溝通與結案整理為主的入門分享。",
             topics: ["專案定義", "技術執行", "利害關係人溝通"],
           },
           {
@@ -938,15 +964,31 @@ window.PORTFOLIO_CONTENT = {
             role: "工作坊主講",
             host: "加州大學河濱分校供應鏈社群",
             year: "2026",
-            image: "./assets/talk-workshop.svg",
+            image: "./assets/pdf-events/ucr-supply-chain-society-group.jpg",
+            description:
+              "以試算表整理供應鏈假設、比較情境並支援營運決策的實作工作坊。",
             topics: ["試算表", "供應鏈分析", "決策支援"],
+          },
+          {
+            title: "面試實戰工作坊",
+            role: "工作坊主講",
+            host: "加州大學河濱分校供應鏈社群",
+            year: "2026",
+            image: "./assets/pdf-events/ucr-interview-workshop-presentation.jpg",
+            imageFit: "contain",
+            imagePosition: "center 42%",
+            description:
+              "聚焦面試準備、回答架構，以及如何把專案經驗整理成清楚具體案例的實作工作坊。",
+            topics: ["面試實戰", "職涯溝通", "行為題回答"],
           },
           {
             title: "網頁驗證與安全實務",
             role: "邀請技術講座",
             host: "國立臺灣師範大學 Google 學生開發者社群",
             year: "2024",
-            image: "./assets/talk-workshop.svg",
+            image: "./assets/pdf-events/gdsc-ntnu-security-workshop-group.jpg",
+            description:
+              "介紹公開金鑰基礎建設、免密碼驗證、一次性密碼、單一登入與資安工具實作。",
             topics: ["公開金鑰基礎建設", "免密碼驗證", "一次性密碼", "單一登入", "Nessus/OpenVAS"],
           },
           {
@@ -954,7 +996,9 @@ window.PORTFOLIO_CONTENT = {
             role: "工作坊主講",
             host: "Google 學生開發者社群",
             year: "2024",
-            image: "./assets/talk-workshop.svg",
+            image: "./assets/pdf-events/gdsc-ntnu-ml-cv-workshop-session.jpg",
+            description:
+              "使用 TensorFlow 與 MediaPipe 進行電腦視覺示範與課堂實作的工作坊。",
             topics: ["機器學習", "姿態辨識", "電腦視覺", "實作學習"],
           },
         ],

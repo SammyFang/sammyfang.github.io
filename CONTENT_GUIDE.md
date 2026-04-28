@@ -104,6 +104,12 @@ image: "./assets/my-event-photo.jpg",
 imagePosition: "center 24%",
 ```
 
+如果是海報、傳單或直式照片，不希望被裁切，可以加：
+
+```js
+imageFit: "contain",
+```
+
 如果某個項目暫時沒有媒體檔案，不要硬塞不相關圖片。直接不填 `image`，並可加上：
 
 ```js

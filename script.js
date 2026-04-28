@@ -143,10 +143,11 @@ function mediaThumb(item = {}, index = 0, className = "visual-thumb", fallback =
   const imageStyle = item.imagePosition
     ? ` style="object-position: ${escapeHtml(item.imagePosition)};"`
     : "";
+  const fitClass = item.imageFit === "contain" ? " media-contain" : "";
 
   if (item.image) {
     return `
-      <figure class="${className}">
+      <figure class="${className}${fitClass}">
         <img src="${escapeHtml(item.image)}" alt=""${imageStyle} loading="lazy" />
       </figure>
     `;
