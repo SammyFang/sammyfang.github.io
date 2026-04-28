@@ -410,7 +410,8 @@ window.PORTFOLIO_CONTENT = {
             role: "Workshop Speaker",
             host: "Google Developer Student Clubs",
             year: "2024",
-            image: "./assets/pdf-events/gdsc-ntnu-ml-cv-workshop-demo.jpg",
+            mediaLabel: "Workshop record",
+            mediaTitle: "Machine Learning and Computer Vision",
             description:
               "TensorFlow and MediaPipe workshop for computer vision demos and classroom exercises.",
             topics: ["TensorFlow", "MediaPipe", "Computer vision", "Hands-on learning"],
@@ -1040,7 +1041,8 @@ window.PORTFOLIO_CONTENT = {
             role: "工作坊主講",
             host: "Google 學生開發者社群",
             year: "2024",
-            image: "./assets/pdf-events/gdsc-ntnu-ml-cv-workshop-demo.jpg",
+            mediaLabel: "工作坊紀錄",
+            mediaTitle: "機器學習與電腦視覺",
             description:
               "TensorFlow 與 MediaPipe 電腦視覺示範與課堂實作。",
             topics: ["機器學習", "姿態辨識", "電腦視覺", "實作學習"],
