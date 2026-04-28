@@ -282,6 +282,15 @@ window.PORTFOLIO_CONTENT = {
             image: "./assets/research-pipeline.svg",
           },
           {
+            title: "LSTM Stock Prediction for 0050 and TWII",
+            type: "Machine learning · Financial time series",
+            description:
+              "Python and Keras LSTM models for Taiwan 50 ETF and Taiwan Weighted Index closing-price prediction using historical CSV data and MinMax scaling.",
+            tags: ["Python", "Keras", "LSTM", "Time Series"],
+            href: "https://github.com/SammyFang/ANN_Pratice_stockprediction-0050-Market-",
+            actionLabel: "View GitHub",
+          },
+          {
             title: "Ethereum-Based Smart Contract Voting System",
             type: "Blockchain · Voting system",
             description:
@@ -938,6 +947,15 @@ window.PORTFOLIO_CONTENT = {
             href: "https://github.com/SammyFang/stock-analysis-app",
             actionLabel: "查看 GitHub",
             image: "./assets/research-pipeline.svg",
+          },
+          {
+            title: "0050 與加權指數 LSTM 股價預測",
+            type: "機器學習 · 金融時間序列",
+            description:
+              "以 Python 與 Keras 建立 LSTM 模型，使用歷史 CSV 資料與 MinMaxScaler 前處理，預測元大台灣 50 ETF 與台灣加權股價指數收盤價。",
+            tags: ["Python", "Keras", "LSTM", "時間序列"],
+            href: "https://github.com/SammyFang/ANN_Pratice_stockprediction-0050-Market-",
+            actionLabel: "查看 GitHub",
           },
           {
             title: "以太坊智慧合約投票系統",
