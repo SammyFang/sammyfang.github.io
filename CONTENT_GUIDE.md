@@ -47,6 +47,20 @@
 
 刪除卡片：刪除完整一筆 `{ ... }`，包含後面的逗號。中英文兩邊都要刪，否則切換語言時會不一致。
 
+## 技術名稱寫法
+
+經歷、作品、學歷與技能欄位要寫具體技術名稱，不要只寫「程式腳本」、「多種程式語言」、「資料查詢」、「工具開發」這類籠統說法。
+
+建議寫法：
+
+```js
+tools: ["Python", "Shell Script", "Perl", "SAP", "Nessus", "OpenVAS"]
+tags: ["TensorFlow", "OpenCV", "Docker"]
+description: "以 Python、SQL 與 LINE Notify 建立資料擷取與通知流程。"
+```
+
+如果是中文頁，句子用中文寫；技術、產品或標準名稱保留正式名稱，例如 Python、SQL、SAP、Qiskit、AES-GCM。
+
 ## 圖片與媒體
 
 所有可被網站顯示的圖片放在：

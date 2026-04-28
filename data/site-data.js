@@ -42,7 +42,7 @@ window.PORTFOLIO_CONTENT = {
         requestResume: "View resume PDF",
         details: "Details",
         selected: "Selected",
-        tools: "Tools",
+        tools: "Technologies",
         highlights: "Highlights",
         organization: "Organization",
         period: "Period",
@@ -79,7 +79,7 @@ window.PORTFOLIO_CONTENT = {
           {
             title: "Systems and automation",
             description:
-              "Python, SQL, SAP, QA automation, data pipelines, and repeatable tooling for operational workflows.",
+              "Python, SQL, Shell Script, Perl, SAP/ERP workflows, QA automation, data pipelines, and repeatable tooling for operational workflows.",
           },
           {
             title: "AI and analytics",
@@ -118,8 +118,8 @@ window.PORTFOLIO_CONTENT = {
             title: "Supply Chain Kernel",
             type: "Supply chain · Simulation",
             description:
-              "A decision-focused simulation project exploring how inventory risk analysis can scale through GPU-oriented execution.",
-            tags: ["Supply Chain", "Simulation", "Triton"],
+              "A decision-focused simulation project exploring how inventory risk analysis can scale through Triton/CUDA-oriented execution.",
+            tags: ["Triton", "CUDA", "Monte Carlo"],
             href: "https://github.com/SammyFang/scm-kernel",
             image: "./assets/research-battery.svg",
           },
@@ -156,7 +156,7 @@ window.PORTFOLIO_CONTENT = {
               "Aligned procurement timing with NPI testing and manufacturing readiness.",
               "Translated business requirements into actionable sourcing strategies and tactical purchasing plans.",
             ],
-            tools: ["SAP", "ERP", "Supply Chain Management", "Business Analysis", "Project Management"],
+            tools: ["SAP", "ERP", "Predictive Analytics", "Inventory Planning", "Project Management"],
           },
           {
             title: "Software Engineer (Systems)",
@@ -168,14 +168,14 @@ window.PORTFOLIO_CONTENT = {
             summary:
               "Built automation for firmware recipe management, QA workflows, cross-system data retrieval, and version tracking.",
             highlights: [
-              "Developed Python, Shell, and Perl tools that replaced repetitive manual review with repeatable automated workflows.",
+              "Developed Python, Shell Script, and Perl automation that replaced repetitive manual review with repeatable workflows.",
               "Improved collaboration between ODM, OEM, and QA teams through structured data handling and real-time distribution.",
             ],
             details: [
               "Implemented visual comparison and diagnostic analysis for firmware and manufacturing data.",
-              "Built pull-and-push scripts and automated crawlers for QA users and cross-functional stakeholders.",
+              "Built Python/Shell/Perl pull-and-push scripts, automated crawlers, and CSV-style data handling for QA users and cross-functional stakeholders.",
             ],
-            tools: ["Python", "Shell", "Perl", "QA Automation", "Data Pipelines"],
+            tools: ["Python", "Shell Script", "Perl", "QA Automation", "Data Pipelines"],
           },
           {
             title: "Research Assistant",
@@ -193,7 +193,7 @@ window.PORTFOLIO_CONTENT = {
             details: [
               "Supported budgeting, expense auditing, web maintenance, and server operations for the research project.",
             ],
-            tools: ["Deep Learning", "Data Analysis", "Project Management", "Financial Reporting"],
+            tools: ["Python", "TensorFlow", "OpenCV", "LSTM/CNN", "Docker", "Statistical Analysis"],
           },
           {
             title: "DevOps Engineer",
@@ -211,7 +211,7 @@ window.PORTFOLIO_CONTENT = {
             details: [
               "Collaborated with vendors to integrate HR attendance data through APIs.",
             ],
-            tools: ["Python", "C#", "SQL", "Information Security", "Data Visualization"],
+            tools: ["Python", "C#", "SQL", "Nessus", "OpenVAS", "Snort"],
           },
           {
             title: "R&D Engineer (HSM)",
@@ -229,7 +229,7 @@ window.PORTFOLIO_CONTENT = {
             details: [
               "Supported product validation, performance testing, and secure key-management documentation.",
             ],
-            tools: ["Cryptography", "Python", "Java", "C", "Quality Assurance"],
+            tools: ["C", "Java", "Python", "HSM", "Cryptography", "Quality Assurance"],
           },
         ],
       },
@@ -251,8 +251,8 @@ window.PORTFOLIO_CONTENT = {
             title: "Intelligent Version Tracking and Data Automation",
             type: "Automation · HPE",
             description:
-              "Python-based workflow for version tracking, cross-system extraction, visualization, and QA communication.",
-            tags: ["Python", "Automation", "QA"],
+              "Python, Shell Script, and Perl workflow for version tracking, cross-system extraction, visualization, and QA communication.",
+            tags: ["Python", "Shell Script", "Perl"],
             image: "./assets/research-pipeline.svg",
           },
           {
@@ -269,7 +269,7 @@ window.PORTFOLIO_CONTENT = {
             type: "Research tool · Finance analytics",
             description:
               "A reproducible web pipeline for standardized event-window return analysis and research-ready visualization.",
-            tags: ["Research", "Analytics", "Visualization"],
+            tags: ["Python", "Pandas", "Plotly"],
             image: "./assets/research-pipeline.svg",
           },
           {
@@ -277,7 +277,7 @@ window.PORTFOLIO_CONTENT = {
             type: "Public information · Data pipeline",
             description:
               "A Python crawler that monitored COVID-related campus posts and delivered real-time LINE notifications.",
-            tags: ["Python", "Web Crawling", "SQL"],
+            tags: ["Python", "SQL", "LINE Notify"],
             href: "https://github.com/SammyFang/Dcard-Epidemic-Keyword-Crawler-Tool",
             image: "./assets/media-coverage.svg",
           },
@@ -367,7 +367,7 @@ window.PORTFOLIO_CONTENT = {
             host: "Google Developer Student Club, National Taiwan Normal University",
             year: "2024",
             image: "./assets/talk-workshop.svg",
-            topics: ["PKI", "FIDO", "OTP", "SSO", "Security tools"],
+            topics: ["PKI", "FIDO", "OTP", "SSO", "Nessus/OpenVAS"],
           },
           {
             title: "Machine Learning and Computer Vision with TensorFlow and MediaPipe",
@@ -460,14 +460,14 @@ window.PORTFOLIO_CONTENT = {
             school: "National Dong Hwa University",
             period: "Sep 2022 - Jun 2024",
             description:
-              "Thesis on quantum logic-enhanced biometric passkey authentication for secure encryption and key generation.",
+              "Thesis on quantum logic-enhanced biometric passkey authentication using Qiskit, PyCryptodome, AES-GCM/RSA-OAEP, and NIST SP 800-22 entropy testing.",
           },
           {
             degree: "BS, Computer Science and Information Engineering",
             school: "National Dong Hwa University",
             period: "Sep 2018 - Jun 2022",
             description:
-              "Capstone on autonomous delivery and cloud-based data integration systems.",
+              "Capstone on autonomous delivery and cloud-based data integration using Arduino, RFID, ESP32-CAM, NEO-7M GPS, PHP, and SQL.",
           },
         ],
         awards: [
@@ -553,7 +553,7 @@ window.PORTFOLIO_CONTENT = {
         requestResume: "查看履歷檔案",
         details: "展開細節",
         selected: "精選",
-        tools: "工具",
+        tools: "技術與工具",
         highlights: "重點",
         organization: "單位",
         period: "期間",
@@ -590,7 +590,7 @@ window.PORTFOLIO_CONTENT = {
           {
             title: "系統與自動化",
             description:
-              "程式腳本、資料查詢、企業資源規劃系統、品質驗證自動化、資料管線，以及可重複使用的營運工具。",
+              "Python、SQL、Shell Script、Perl、SAP/ERP 流程、品質驗證自動化、資料管線，以及可重複使用的營運工具。",
           },
           {
             title: "人工智慧與分析",
@@ -629,8 +629,8 @@ window.PORTFOLIO_CONTENT = {
             title: "供應鏈模擬核心",
             type: "供應鏈 · 模擬",
             description:
-              "以決策導向模擬探索庫存風險分析如何透過圖形處理器執行方式擴展。",
-            tags: ["供應鏈", "模擬", "平行運算"],
+              "以 Triton 與 CUDA 執行模型重新實作庫存風險蒙地卡羅模擬，探索圖形處理器平行化後的決策分析效率。",
+            tags: ["Triton", "CUDA", "蒙地卡羅模擬"],
             href: "https://github.com/SammyFang/scm-kernel",
             image: "./assets/research-battery.svg",
           },
@@ -667,7 +667,7 @@ window.PORTFOLIO_CONTENT = {
               "將採購節奏與新產品導入測試、製造準備度對齊。",
               "把業務需求轉成可執行的採購策略與短期採購計畫。",
             ],
-            tools: ["企業資源規劃系統", "供應鏈管理", "商業分析", "專案管理"],
+            tools: ["SAP", "ERP", "預測分析", "庫存規劃", "專案管理"],
           },
           {
             title: "系統軟體工程師",
@@ -679,14 +679,14 @@ window.PORTFOLIO_CONTENT = {
             summary:
               "建立韌體配方管理、品質驗證流程、跨系統資料擷取與版本追蹤自動化。",
             highlights: [
-              "以程式腳本建立工具，將重複性人工審查轉成可重複的自動化流程。",
+              "以 Python、Shell Script 與 Perl 建立自動化流程，將重複性人工審查轉成可重複執行的作業。",
               "透過結構化資料處理與即時資料分發，改善代工夥伴與品質驗證團隊協作。",
             ],
             details: [
               "導入視覺化比對與診斷分析，支援韌體與製造資料檢查。",
-              "建立資料拉取、推送腳本與自動化爬取工具，支援品質驗證使用者與跨職能團隊。",
+              "建立 Python/Shell/Perl 資料拉取、推送、自動化爬取與 CSV 類資料處理流程，支援品質驗證使用者與跨職能團隊。",
             ],
-            tools: ["程式自動化", "指令腳本", "資料處理", "品質驗證自動化", "資料管線"],
+            tools: ["Python", "Shell Script", "Perl", "品質驗證自動化", "資料管線"],
           },
           {
             title: "研究助理",
@@ -704,7 +704,7 @@ window.PORTFOLIO_CONTENT = {
             details: [
               "支援研究專案預算、費用審核、網站維護與伺服器營運。",
             ],
-            tools: ["深度學習", "資料分析", "專案管理", "財務報告"],
+            tools: ["Python", "TensorFlow", "OpenCV", "LSTM/CNN", "Docker", "統計分析"],
           },
           {
             title: "系統維運工程師",
@@ -716,13 +716,13 @@ window.PORTFOLIO_CONTENT = {
             summary:
               "支援醫療影像、資料視覺化、資安檢測、網路維運與介面整合。",
             highlights: [
-              "以程式語言與資料查詢建立醫療資料流程與可讀報表。",
-              "維護伺服器與網路設備，並使用資安掃描與入侵偵測工具進行實驗。",
+              "以 Python、C# 與 SQL 建立醫療資料流程、資料視覺化與可讀報表。",
+              "維護伺服器與網路設備，並使用 Nessus、OpenVAS 與 Snort 進行資安掃描與入侵偵測實驗。",
             ],
             details: [
               "與廠商協作整合人資出勤介面，改善資料一致性。",
             ],
-            tools: ["程式開發", "資料查詢", "資訊安全", "資料視覺化"],
+            tools: ["Python", "C#", "SQL", "Nessus", "OpenVAS", "Snort"],
           },
           {
             title: "硬體安全模組研發工程師",
@@ -734,13 +734,13 @@ window.PORTFOLIO_CONTENT = {
             summary:
               "為硬體安全模組與銀行資安作業建立加解密工具、測試文件、操作手冊與研究報告。",
             highlights: [
-              "使用多種程式語言設計硬體安全模組整合用的獨立加解密工具。",
+              "使用 C、Java 與 Python 設計硬體安全模組整合用的獨立加解密工具。",
               "產出測試報告、操作手冊與疑難排解指南，支援系統導入與知識移轉。",
             ],
             details: [
               "支援產品驗證、效能測試與安全金鑰管理文件。",
             ],
-            tools: ["密碼學", "程式工具開發", "安全模組整合", "品質驗證"],
+            tools: ["C", "Java", "Python", "硬體安全模組", "密碼學", "品質驗證"],
           },
         ],
       },
@@ -762,16 +762,16 @@ window.PORTFOLIO_CONTENT = {
             title: "智慧版本追蹤與資料自動化",
             type: "自動化 · 慧與科技",
             description:
-              "以程式腳本建立版本追蹤、跨系統資料擷取、視覺化與品質驗證溝通流程。",
-            tags: ["程式腳本", "自動化", "品質驗證"],
+              "以 Python、Shell Script 與 Perl 建立版本追蹤、跨系統資料擷取、視覺化與品質驗證溝通流程。",
+            tags: ["Python", "Shell Script", "Perl"],
             image: "./assets/research-pipeline.svg",
           },
           {
             title: "情緒分析專家系統",
             type: "人工智慧 · 情緒分析",
             description:
-              "結合語音與影像分析的多模態情緒辨識系統，並使用容器化方式部署。",
-            tags: ["深度學習", "電腦視覺", "容器化部署"],
+              "以 TensorFlow、OpenCV、LSTM/CNN 與 Docker 建立語音與影像分析的多模態情緒辨識系統。",
+            tags: ["TensorFlow", "OpenCV", "Docker"],
             href: "https://github.com/SammyFang/Multimodal-Emotion-Analysis-AI-EMO-Expert-system-",
             image: "./assets/media-coverage.svg",
           },
@@ -779,16 +779,16 @@ window.PORTFOLIO_CONTENT = {
             title: "事件窗口股價報酬分析流程",
             type: "研究工具 · 財務分析",
             description:
-              "可重複執行的事件窗口報酬分析網站流程，支援研究與課堂使用。",
-            tags: ["研究", "分析", "視覺化"],
+              "以 Python、Pandas 與 Plotly 建立可重複執行的事件窗口報酬分析網站流程，支援研究與課堂使用。",
+            tags: ["Python", "Pandas", "Plotly"],
             image: "./assets/research-pipeline.svg",
           },
           {
             title: "Dcard 疫情關鍵字爬蟲",
             type: "公共資訊 · 資料流程",
             description:
-              "爬蟲程式監測校園新冠疫情相關貼文，並透過即時通訊通知推送資訊。",
-            tags: ["爬蟲程式", "即時通知", "資料管理"],
+              "以 Python、SQL 與 LINE Notify 監測校園新冠疫情相關貼文，並透過即時通訊通知推送資訊。",
+            tags: ["Python", "SQL", "LINE Notify"],
             href: "https://github.com/SammyFang/Dcard-Epidemic-Keyword-Crawler-Tool",
             image: "./assets/media-coverage.svg",
           },
@@ -796,8 +796,8 @@ window.PORTFOLIO_CONTENT = {
             title: "即時車流計數辨識",
             type: "電腦視覺 · 校園營運",
             description:
-              "以影像處理工具模擬機車流量辨識與停車資訊探索的電腦視覺專案。",
-            tags: ["電腦視覺", "影像處理", "程式實作"],
+              "以 Python 與 OpenCV 模擬機車流量辨識與停車資訊探索的電腦視覺專案。",
+            tags: ["Python", "OpenCV", "影像辨識"],
             href: "https://github.com/SammyFang/Real-Time-Vehicle-Counting-Recognition",
             image: "./assets/research-intelligence.svg",
           },
@@ -878,7 +878,7 @@ window.PORTFOLIO_CONTENT = {
             host: "國立臺灣師範大學 Google 學生開發者社群",
             year: "2024",
             image: "./assets/talk-workshop.svg",
-            topics: ["公開金鑰基礎建設", "免密碼驗證", "一次性密碼", "單一登入", "資安工具"],
+            topics: ["公開金鑰基礎建設", "免密碼驗證", "一次性密碼", "單一登入", "Nessus/OpenVAS"],
           },
           {
             title: "機器學習與電腦視覺實作入門",
@@ -971,14 +971,14 @@ window.PORTFOLIO_CONTENT = {
             school: "國立東華大學",
             period: "2022.09 - 2024.06",
             description:
-              "論文主題為結合量子邏輯的生物特徵通行密鑰，用於安全加密與金鑰生成。",
+              "論文主題為結合量子邏輯的生物特徵通行密鑰，使用 Qiskit、PyCryptodome、AES-GCM/RSA-OAEP 與 NIST SP 800-22 進行金鑰生成與安全性檢測。",
           },
           {
             degree: "資訊工程學士",
             school: "國立東華大學",
             period: "2018.09 - 2022.06",
             description:
-              "畢業專題：自主配送與雲端資料整合系統。",
+              "畢業專題：自主配送與雲端資料整合系統，使用 Arduino、RFID、ESP32-CAM、NEO-7M GPS、PHP 與 SQL。",
           },
         ],
         awards: [
@@ -1003,15 +1003,15 @@ window.PORTFOLIO_CONTENT = {
         skillGroups: [
           {
             title: "程式與資料",
-            skills: ["程式腳本", "資料查詢", "統計分析", "網頁程式", "指令腳本", "資料處理", "數值運算"],
+            skills: ["Python", "SQL", "R", "JavaScript", "Shell Script", "Pandas", "NumPy"],
           },
           {
             title: "商業與營運",
-            skills: ["供應鏈分析", "採購", "專案管理", "企業資源規劃系統", "商業智慧", "試算表分析"],
+            skills: ["SAP", "ERP", "Power BI", "Excel", "供應鏈分析", "採購", "專案管理"],
           },
           {
             title: "人工智慧與系統",
-            skills: ["深度學習", "機器學習", "電腦視覺", "容器化部署", "量子運算", "網頁後端", "資料系統"],
+            skills: ["TensorFlow", "PyTorch", "OpenCV", "Docker", "Qiskit", "Flask", "Django"],
           },
         ],
       },
