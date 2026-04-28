@@ -282,6 +282,15 @@ window.PORTFOLIO_CONTENT = {
             image: "./assets/research-pipeline.svg",
           },
           {
+            title: "Ethereum-Based Smart Contract Voting System",
+            type: "Blockchain · Voting system",
+            description:
+              "A Solidity voting PoC on Ethereum with candidate management, MetaMask interaction, Web3.js integration, and Chart.js vote visualization.",
+            tags: ["Solidity", "Ethereum", "Web3.js", "Chart.js"],
+            href: "https://github.com/SammyFang/Ethereum-Voting-Smart-Contract",
+            actionLabel: "View GitHub",
+          },
+          {
             title: "Dcard Epidemic Keyword Crawler",
             type: "Public information · Data pipeline",
             description:
@@ -920,6 +929,15 @@ window.PORTFOLIO_CONTENT = {
             href: "https://github.com/SammyFang/stock-analysis-app",
             actionLabel: "查看 GitHub",
             image: "./assets/research-pipeline.svg",
+          },
+          {
+            title: "以太坊智慧合約投票系統",
+            type: "區塊鏈 · 投票系統",
+            description:
+              "以 Solidity 建立部署於以太坊的投票概念驗證，支援候選人管理、MetaMask 交易互動、Web3.js 串接與 Chart.js 即時計票視覺化。",
+            tags: ["Solidity", "Ethereum", "Web3.js", "Chart.js"],
+            href: "https://github.com/SammyFang/Ethereum-Voting-Smart-Contract",
+            actionLabel: "查看 GitHub",
           },
           {
             title: "Dcard 疫情關鍵字爬蟲",
