@@ -58,7 +58,6 @@ function label(key) {
     zh: {
       heroCta: "關於",
       contact: "聯絡",
-      openTo: "專業範圍",
       resume: "關於",
       resumeByRequest: "查看履歷檔案",
       experience: "經歷",
@@ -79,7 +78,6 @@ function label(key) {
     en: {
       heroCta: "About",
       contact: "Contact",
-      openTo: "Focus areas",
       resume: "About",
       resumeByRequest: "View resume PDF",
       experience: "Experience",
@@ -224,7 +222,7 @@ function renderContactPanel(data) {
     language === "zh"
       ? {
           linkedin: { icon: "linkedin", label: "個人檔案" },
-          github: { icon: "github", label: "程式作品" },
+          github: { icon: "github", label: "GitHub" },
           orcid: { icon: "orcid", label: "研究者識別碼" },
           scholar: { icon: "scholar", label: "Google Scholar" },
           instagram: { icon: "instagram", label: "Instagram" },
@@ -246,10 +244,6 @@ function renderContactPanel(data) {
       <a href="${escapeHtml(content.profile.instagram)}"${linkAttrs(content.profile.instagram)}>${rowIcon(contactLabels.instagram.icon)}<span>${escapeHtml(contactLabels.instagram.label)}</span></a>
       <a href="${escapeHtml(content.profile.orcid)}"${linkAttrs(content.profile.orcid)}>${rowIcon(contactLabels.orcid.icon)}<span>${escapeHtml(contactLabels.orcid.label)}</span></a>
       <a href="${escapeHtml(content.profile.scholar)}"${linkAttrs(content.profile.scholar)}>${rowIcon(contactLabels.scholar.icon)}<span>${escapeHtml(contactLabels.scholar.label)}</span></a>
-      <div class="contact-note">
-        <strong>${escapeHtml(label("openTo"))}</strong>
-        <p>${escapeHtml(data.contact.body)}</p>
-      </div>
       ${renderPodcastNote(data)}
     </aside>
   `;
@@ -342,7 +336,19 @@ function renderResume(data) {
                     (item) => `
                       <article class="resume-entry">
                         ${rowIcon("✓")}
-                        <div><h3>${escapeHtml(item)}</h3></div>
+                        <div>
+                          <h3>${escapeHtml(typeof item === "string" ? item : item.title)}</h3>
+                          ${
+                            typeof item === "string" || !item.issuer
+                              ? ""
+                              : `<p>${escapeHtml(item.issuer)}</p>`
+                          }
+                          ${
+                            typeof item === "string" || !item.detail
+                              ? ""
+                              : `<p>${escapeHtml(item.detail)}</p>`
+                          }
+                        </div>
                       </article>
                     `,
                   )

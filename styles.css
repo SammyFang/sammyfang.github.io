@@ -670,22 +670,6 @@ img {
   font-size: 1rem;
 }
 
-.contact-note {
-  margin-top: 14px;
-  padding: 18px;
-  border-left: 4px solid var(--gold);
-  background: var(--green-soft);
-}
-
-.contact-note strong {
-  color: var(--green-dark);
-}
-
-.contact-note p {
-  margin: 6px 0 0;
-  color: var(--muted);
-}
-
 .podcast-note {
   display: grid;
   grid-template-columns: 40px minmax(0, 1fr);

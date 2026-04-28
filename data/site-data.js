@@ -479,11 +479,36 @@ window.PORTFOLIO_CONTENT = {
           "NDHU Graduate Student Scholarship",
         ],
         certifications: [
-          "Google Project Management Professional Certificate",
-          "IBM Enterprise Design Thinking Practitioner",
-          "NASA Open Science 101 Certification",
-          "CITI Program Certification",
-          "Gemini Certified Educator",
+          {
+            title: "Google Project Management Professional Certificate",
+            issuer: "Google / Coursera",
+            detail:
+              "Project lifecycle, stakeholder communication, risk escalation, execution tracking, and project closeout reporting.",
+          },
+          {
+            title: "IBM Enterprise Design Thinking Practitioner",
+            issuer: "IBM",
+            detail:
+              "Human-centered problem framing, collaborative ideation, user outcomes, and enterprise design thinking practices.",
+          },
+          {
+            title: "NASA Open Science 101 Certification",
+            issuer: "NASA Transform to Open Science",
+            detail:
+              "Open science principles, reproducibility, data/software sharing, and transparent research workflows.",
+          },
+          {
+            title: "CITI Program Certification",
+            issuer: "CITI Program",
+            detail:
+              "Research ethics, responsible conduct of research, compliance awareness, and human-subjects research fundamentals.",
+          },
+          {
+            title: "Gemini Certified Educator",
+            issuer: "Google for Education",
+            detail:
+              "Gemini-assisted education workflows, instructional productivity, and responsible AI use in learning contexts.",
+          },
         ],
         memberships: [
           "ASCM - Association for Supply Chain Management",
@@ -523,7 +548,7 @@ window.PORTFOLIO_CONTENT = {
         body:
           "Short conversations and audio notes on projects, technology, operations, and learning. Updated occasionally as a secondary public archive.",
         action: "Open YouTube Podcast",
-        href: "https://www.youtube.com/podcasts",
+        href: "https://www.youtube.com/playlist?list=PLNswms_yQ-p63RVQNAMARXMlto585-YJl",
       },
     },
     zh: {
@@ -990,11 +1015,36 @@ window.PORTFOLIO_CONTENT = {
           "國立東華大學研究生獎學金",
         ],
         certifications: [
-          "Google 專案管理專業證書",
-          "IBM 企業設計思考實踐者",
-          "美國太空總署開放科學基礎認證",
-          "研究倫理與合規訓練認證",
-          "Gemini 認證教育者",
+          {
+            title: "Google 專案管理專業證書",
+            issuer: "Google / Coursera",
+            detail:
+              "涵蓋專案生命週期、利害關係人溝通、風險升級、執行追蹤與專案結案報告。",
+          },
+          {
+            title: "IBM 企業設計思考實踐者",
+            issuer: "IBM",
+            detail:
+              "涵蓋以使用者為中心的問題定義、協作發想、使用者成果與企業設計思考實務。",
+          },
+          {
+            title: "NASA Open Science 101 認證",
+            issuer: "NASA Transform to Open Science",
+            detail:
+              "涵蓋開放科學原則、研究可重現性、資料與軟體共享，以及透明研究流程。",
+          },
+          {
+            title: "CITI Program 研究倫理與合規訓練",
+            issuer: "CITI Program",
+            detail:
+              "涵蓋研究倫理、負責任研究行為、合規意識與人體研究基礎。",
+          },
+          {
+            title: "Gemini 認證教育者",
+            issuer: "Google for Education",
+            detail:
+              "涵蓋 Gemini 輔助教育流程、教學產能提升，以及學習情境中的負責任人工智慧使用。",
+          },
         ],
         memberships: [
           "供應鏈管理專業協會會員",
@@ -1034,7 +1084,7 @@ window.PORTFOLIO_CONTENT = {
         body:
           "整理專案、技術、營運與學習相關的短音訊與對談。作為補充紀錄，不搶首頁、作品與研究內容。",
         action: "前往 YouTube Podcast",
-        href: "https://www.youtube.com/podcasts",
+        href: "https://www.youtube.com/playlist?list=PLNswms_yQ-p63RVQNAMARXMlto585-YJl",
       },
     },
   },

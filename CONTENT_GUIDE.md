@@ -29,14 +29,13 @@
 | 工作經歷 | `experience.items` |
 | 學歷 | `education.schools` |
 | 獎項 | `education.awards` |
-| 證照 | `education.certifications` |
+| 證照 | `education.certifications`，使用 `title`、`issuer`、`detail` |
 | 作品集精選 | `featured.items` |
 | 一般專案 | `projects.items` |
 | 研究發表 | `research.publications` |
 | 進行中研究 | `research.workingPapers` |
 | 邀請演講 / 工作坊 | `speaking.items` |
 | 媒體報導 / 公開介紹 | `media.items` |
-| 聯絡區專業範圍 | `contact.body`、`contact.topics` |
 | 音訊節目 / podcast | `podcast` |
 
 ## 新增、修改、刪除文字
@@ -60,6 +59,16 @@ description: "以 Python、SQL 與 LINE Notify 建立資料擷取與通知流程
 ```
 
 如果是中文頁，句子用中文寫；技術、產品或標準名稱保留正式名稱，例如 Python、SQL、SAP、Qiskit、AES-GCM。
+
+證照建議保留具體結構，不要只放一行名稱：
+
+```js
+{
+  title: "Google 專案管理專業證書",
+  issuer: "Google / Coursera",
+  detail: "涵蓋專案生命週期、利害關係人溝通、風險升級與結案報告。"
+}
+```
 
 ## 圖片與媒體
 
