@@ -74,22 +74,22 @@ window.PORTFOLIO_CONTENT = {
           {
             title: "Strategy and operations",
             description:
-              "Sourcing strategy, stakeholder communication, inventory planning, procurement execution, and decision-ready reporting.",
+              "Sourcing strategy, inventory planning, procurement execution, and decision-ready reporting.",
           },
           {
             title: "Systems and automation",
             description:
-              "Python, SQL, Shell Script, Perl, SAP/ERP workflows, QA automation, data pipelines, and repeatable tooling for operational workflows.",
+              "Python, SQL, Shell Script, Perl, SAP/ERP workflows, QA automation, and reusable data tooling.",
           },
           {
             title: "AI and analytics",
             description:
-              "Applied AI, event-study pipelines, supply chain simulation, multimodal emotion analysis, and research translation.",
+              "Applied AI, event-study pipelines, supply chain simulation, and multimodal emotion analysis.",
           },
           {
             title: "Community leadership",
             description:
-              "GDG organizer, UCR student leadership, I-Corps customer discovery, and workshops for practical technical learning.",
+              "GDG organizer, UCR student leadership, I-Corps customer discovery, and technical workshops.",
           },
         ],
       },
@@ -101,7 +101,7 @@ window.PORTFOLIO_CONTENT = {
             title: "SurplusLink",
             type: "AI product · Social impact",
             description:
-              "An AI-powered resource coordination concept that reframes the problem as coordination failure rather than simple supply shortage.",
+              "AI-powered resource coordination concept focused on matching fragmented supply and demand.",
             tags: ["AI Product", "Product Strategy", "Social Impact"],
             image: "./assets/research-intelligence.svg",
           },
@@ -109,7 +109,7 @@ window.PORTFOLIO_CONTENT = {
             title: "HireDuck",
             type: "Career AI · Product",
             description:
-              "A unified AI job-search workspace for tailored resumes, job matching, ATS insights, version tracking, and application strategy.",
+              "AI job-search workspace for tailored resumes, job matching, version tracking, and application strategy.",
             tags: ["Career Tools", "Workflow Design", "AI Product"],
             href: "https://duckcard.app/HireDuck",
             image: "./assets/research-pipeline.svg",
@@ -118,7 +118,7 @@ window.PORTFOLIO_CONTENT = {
             title: "Supply Chain Kernel",
             type: "Supply chain · Simulation",
             description:
-              "A decision-focused simulation project exploring how inventory risk analysis can scale through Triton/CUDA-oriented execution.",
+              "Inventory risk simulation project using Triton/CUDA-oriented execution for faster scenario analysis.",
             tags: ["Triton", "CUDA", "Monte Carlo"],
             href: "https://github.com/SammyFang/scm-kernel",
             image: "./assets/research-battery.svg",
@@ -127,7 +127,7 @@ window.PORTFOLIO_CONTENT = {
             title: "DuckCard",
             type: "Contact intelligence · NSF I-Corps",
             description:
-              "An AI-assisted multilingual business card intelligence concept validated through customer discovery and market framing.",
+              "Multilingual contact intelligence concept shaped through customer discovery and market framing.",
             tags: ["Customer Discovery", "Data Modeling", "AI"],
             image: "./assets/research-intelligence.svg",
           },
@@ -237,13 +237,13 @@ window.PORTFOLIO_CONTENT = {
         eyebrow: "Projects",
         title: "A curated project library, not a wall of text.",
         note:
-          "Older side projects are kept concise so the site stays readable while preserving room for future case studies.",
+          "Selected projects are kept concise, with room for future case studies.",
         items: [
           {
             title: "Manufacturing Supply Chain Optimization",
             type: "Operations · HPE",
             description:
-              "Managed suppliers, manufacturers, commodity managers, ERP setup, demand forecasting, pricing, logistics, and customs clearance.",
+              "Coordinated suppliers, manufacturers, ERP setup, demand forecasting, pricing, logistics, and customs clearance.",
             tags: ["Procurement", "Operations", "ERP"],
             mediaLabel: "Operations",
           },
@@ -268,7 +268,7 @@ window.PORTFOLIO_CONTENT = {
             title: "Event Window Stock Return Pipeline",
             type: "Research tool · Finance analytics",
             description:
-              "A reproducible web pipeline for standardized event-window return analysis and research-ready visualization.",
+              "Python, Pandas, and Plotly web pipeline for event-window return analysis and visualization.",
             tags: ["Python", "Pandas", "Plotly"],
             image: "./assets/research-pipeline.svg",
           },
@@ -342,7 +342,7 @@ window.PORTFOLIO_CONTENT = {
             note: "Conference paper · Nov 2023",
             image: "./assets/media-coverage.svg",
             description:
-              "Conference paper on digital education, deep learning, computer vision, voiceprint analysis, affective computing, and AI-assisted feedback.",
+              "Digital education, deep learning, computer vision, voiceprint analysis, and affective computing.",
           },
         ],
         workingPapers: [
@@ -356,7 +356,7 @@ window.PORTFOLIO_CONTENT = {
         eyebrow: "Speaking and workshops",
         title: "Prepared for talks, workshops, and community programs.",
         intro:
-          "This section is intentionally reserved for invited talks, student workshops, conference sessions, media features, and future event recaps.",
+          "Invited talks, workshops, conference sessions, and selected public programs.",
         items: [
           {
             title: "Introduction to Technical Project Management",
@@ -367,7 +367,7 @@ window.PORTFOLIO_CONTENT = {
             imageFit: "contain",
             imagePosition: "center center",
             description:
-              "Introductory session on technical project framing, execution rhythm, stakeholder communication, and project closeout.",
+              "Technical project framing, execution rhythm, stakeholder communication, and closeout.",
             topics: ["Project framing", "Technical execution", "Stakeholder communication"],
           },
           {
@@ -389,7 +389,7 @@ window.PORTFOLIO_CONTENT = {
             imageFit: "contain",
             imagePosition: "center 42%",
             description:
-              "Practice-oriented workshop on interview preparation, response structure, and translating project experience into concise examples.",
+              "Interview preparation, response structure, and concise project-experience examples.",
             topics: ["Interview practice", "Career communication", "Behavioral questions"],
           },
           {
@@ -409,7 +409,7 @@ window.PORTFOLIO_CONTENT = {
             year: "2024",
             image: "./assets/pdf-events/gdsc-ntnu-ml-cv-workshop-session.jpg",
             description:
-              "Hands-on workshop using TensorFlow and MediaPipe for computer vision demos and classroom exercises.",
+              "TensorFlow and MediaPipe workshop for computer vision demos and classroom exercises.",
             topics: ["TensorFlow", "MediaPipe", "Computer vision", "Hands-on learning"],
           },
         ],
@@ -450,7 +450,7 @@ window.PORTFOLIO_CONTENT = {
       },
       media: {
         eyebrow: "Media and features",
-        title: "A dedicated place for coverage and public profiles.",
+        title: "Coverage and public profiles.",
         items: [
           {
             title: "AI face recognition technology for teaching support",
@@ -459,7 +459,7 @@ window.PORTFOLIO_CONTENT = {
             href: "https://www.cna.com.tw/postwrite/chi/327041",
             image: "./assets/media-coverage.svg",
             description:
-              "Industry-academia project coverage related to AI emotion recognition for education and online services.",
+              "Industry-academia coverage of AI emotion recognition in education.",
           },
           {
             title: "Graduate Student Ambassador Profile",
@@ -469,7 +469,7 @@ window.PORTFOLIO_CONTENT = {
             image: "./assets/ucr-profile.jpg",
             imagePosition: "center 24%",
             description:
-              "Public profile highlighting business analytics, supply chain management, technical background, and student engagement.",
+              "Public profile on business analytics, supply chain management, and student engagement.",
           },
           {
             title: "UCR Graduate Research Symposium recognition",
@@ -478,7 +478,7 @@ window.PORTFOLIO_CONTENT = {
             href: "https://graduate.ucr.edu/gradsymposium#best-presentation-awards-2026",
             image: "./assets/research-battery.svg",
             description:
-              "Poster presentation recognition for interdisciplinary work in quantum-assisted battery material screening.",
+              "Recognition for quantum-assisted battery material screening research.",
           },
           {
             title: "Campus mental health leave discussion",
@@ -487,7 +487,7 @@ window.PORTFOLIO_CONTENT = {
             href: "https://www.peopo.org/news/611696",
             mediaLabel: "Campus Affairs",
             description:
-              "Public report on mental health leave discussions across Taiwanese universities, including NDHU student advocacy context.",
+              "Public report on mental health leave discussions and NDHU student advocacy.",
           },
           {
             title: "NDHU Student Association recognized at MOE showcase",
@@ -496,7 +496,7 @@ window.PORTFOLIO_CONTENT = {
             href: "https://www.ndhu.edu.tw/p/404-1000-179497.php?Lang=zh-tw",
             mediaLabel: "Student Leadership",
             description:
-              "University news coverage of NDHU Student Association receiving an Excellent Award at the Ministry of Education student association showcase.",
+              "University coverage of NDHU Student Association recognition at the MOE showcase.",
           },
         ],
       },
@@ -532,42 +532,42 @@ window.PORTFOLIO_CONTENT = {
             issuer: "A. Gary Anderson Graduate School of Management, UC Riverside",
             year: "2025",
             detail:
-              "Merit-based admission scholarship for the Professional MBA program, tied to academic standing and satisfactory progress.",
+              "Merit-based admission scholarship for the Professional MBA program.",
           },
           {
             title: "1st Place Poster Presentation",
             issuer: "UC Riverside Graduate Research Symposium",
             year: "2026",
             detail:
-              "Awarded for quantum-assisted candidate selection for high-energy lithium battery materials using the Materials Project database.",
+              "Awarded for quantum-assisted high-energy lithium battery material screening.",
           },
           {
             title: "1st Place, Benefit to Community Award",
             issuer: "USC AI Buildathon",
             year: "2026",
             detail:
-              "Recognized for SurplusLink, an AI-powered resource coordination concept focused on community impact.",
+              "Recognized for SurplusLink, an AI-powered resource coordination concept.",
           },
           {
             title: "2nd Place",
             issuer: "Western County of Riverside Regional Fast Pitch Competition",
             year: "2026",
             detail:
-              "Pitch competition recognition for concise venture framing, problem clarity, and market-oriented communication.",
+              "Pitch recognition for venture framing, problem clarity, and market communication.",
           },
           {
             title: "Academic Excellence Award",
             issuer: "National Dong Hwa University",
             year: "Academic Year 111, Fall Semester",
             detail:
-              "Semester-based academic award in the master's program of Computer Science and Information Engineering.",
+              "Semester-based academic award in the MS program of Computer Science and Information Engineering.",
           },
           {
             title: "Graduate Student Scholarship",
             issuer: "National Dong Hwa University",
             year: "2022 - 2023",
             detail:
-              "Department scholarship recognizing graduate admission and academic performance.",
+              "Department scholarship for graduate admission and academic performance.",
           },
         ],
         certifications: [
@@ -575,31 +575,31 @@ window.PORTFOLIO_CONTENT = {
             title: "Google Project Management Professional Certificate",
             issuer: "Google / Coursera",
             detail:
-              "Project lifecycle, stakeholder communication, risk escalation, execution tracking, and project closeout reporting.",
+              "Project lifecycle, stakeholder communication, risk escalation, and closeout reporting.",
           },
           {
             title: "IBM Enterprise Design Thinking Practitioner",
             issuer: "IBM",
             detail:
-              "Human-centered problem framing, collaborative ideation, user outcomes, and enterprise design thinking practices.",
+              "Human-centered problem framing, collaborative ideation, and enterprise design thinking.",
           },
           {
             title: "NASA Open Science 101 Certification",
             issuer: "NASA Transform to Open Science",
             detail:
-              "Open science principles, reproducibility, data/software sharing, and transparent research workflows.",
+              "Open science principles, reproducibility, and data/software sharing.",
           },
           {
             title: "CITI Program Certification",
             issuer: "CITI Program",
             detail:
-              "Research ethics, responsible conduct of research, compliance awareness, and human-subjects research fundamentals.",
+              "Research ethics, responsible conduct, compliance, and human-subjects fundamentals.",
           },
           {
             title: "Gemini Certified Educator",
             issuer: "Google for Education",
             detail:
-              "Gemini-assisted education workflows, instructional productivity, and responsible AI use in learning contexts.",
+              "Gemini-assisted education workflows and responsible AI use in learning contexts.",
           },
         ],
         memberships: [
@@ -623,9 +623,9 @@ window.PORTFOLIO_CONTENT = {
       },
       contact: {
         eyebrow: "Contact",
-        title: "Professional scope and contact.",
+        title: "Contact.",
         body:
-          "Strategy planning, business analysis, supply chain analytics, AI product work, research collaboration, invited talks, workshops, and media inquiries.",
+          "For research collaboration, workshops, talks, product work, and media inquiries.",
         topics: [
           "Strategy and business analysis",
           "Supply chain analytics and procurement operations",
@@ -702,22 +702,22 @@ window.PORTFOLIO_CONTENT = {
           {
             title: "策略與營運",
             description:
-              "策略採購、利害關係人溝通、庫存規劃、採購執行，以及能支援決策的清楚報告。",
+              "策略採購、庫存規劃、採購執行與決策報告。",
           },
           {
             title: "系統與自動化",
             description:
-              "Python、SQL、Shell Script、Perl、SAP/ERP 流程、品質驗證自動化、資料管線，以及可重複使用的營運工具。",
+              "Python、SQL、Shell Script、Perl、SAP/ERP 流程、品質驗證自動化與資料工具。",
           },
           {
             title: "人工智慧與分析",
             description:
-              "應用人工智慧、事件研究流程、供應鏈模擬、多模態情緒分析與研究成果轉譯。",
+              "應用人工智慧、事件研究流程、供應鏈模擬與多模態情緒分析。",
           },
           {
             title: "社群與領導",
             description:
-              "開發者社群組織、加州大學河濱分校學生領導、客戶探索，以及實作導向工作坊。",
+              "開發者社群、學生領導、客戶探索與實作工作坊。",
           },
         ],
       },
@@ -729,7 +729,7 @@ window.PORTFOLIO_CONTENT = {
             title: "SurplusLink",
             type: "人工智慧產品 · 社會影響",
             description:
-              "人工智慧資源協調系統概念，將問題定義為協調失靈，而不是單純供給不足。",
+              "人工智慧資源協調系統，聚焦分散供需的媒合問題。",
             tags: ["人工智慧產品", "產品策略", "社會影響"],
             image: "./assets/research-intelligence.svg",
           },
@@ -737,7 +737,7 @@ window.PORTFOLIO_CONTENT = {
             title: "HireDuck",
             type: "職涯人工智慧 · 產品",
             description:
-              "整合履歷客製化、職缺配對、履歷系統分析、版本管理與申請策略的人工智慧職涯申請工具。",
+              "整合履歷客製化、職缺配對、版本管理與申請策略的職涯工具。",
             tags: ["職涯工具", "流程設計", "人工智慧產品"],
             href: "https://duckcard.app/HireDuck",
             image: "./assets/research-pipeline.svg",
@@ -746,7 +746,7 @@ window.PORTFOLIO_CONTENT = {
             title: "供應鏈模擬核心",
             type: "供應鏈 · 模擬",
             description:
-              "以 Triton 與 CUDA 執行模型重新實作庫存風險蒙地卡羅模擬，探索圖形處理器平行化後的決策分析效率。",
+              "以 Triton/CUDA 執行模型加速庫存風險情境分析。",
             tags: ["Triton", "CUDA", "蒙地卡羅模擬"],
             href: "https://github.com/SammyFang/scm-kernel",
             image: "./assets/research-battery.svg",
@@ -755,7 +755,7 @@ window.PORTFOLIO_CONTENT = {
             title: "DuckCard",
             type: "名片智慧化 · 客戶探索",
             description:
-              "人工智慧輔助的多語名片資訊整理系統，透過客戶探索驗證產品定位與市場需求。",
+              "多語名片資訊整理系統，透過客戶探索驗證產品定位。",
             tags: ["客戶探索", "資料建模", "人工智慧"],
             image: "./assets/research-intelligence.svg",
           },
@@ -865,13 +865,13 @@ window.PORTFOLIO_CONTENT = {
         eyebrow: "專案",
         title: "整理後的專案庫，而不是文字牆。",
         note:
-          "早期個人專案保留成短摘要，讓網站保持清楚，同時預留之後補充案例研究的空間。",
+          "精選專案保留短摘要，之後可再補充案例研究。",
         items: [
           {
             title: "製造供應鏈優化",
             type: "營運 · 慧與科技",
             description:
-              "整合供應商、製造商、品類管理、企業資源規劃系統設定、需求預測、定價、物流與清關流程。",
+              "協調供應商、製造商、企業資源規劃系統設定、需求預測、定價、物流與清關。",
             tags: ["採購", "營運", "企業資源規劃"],
             mediaLabel: "營運專案",
           },
@@ -896,7 +896,7 @@ window.PORTFOLIO_CONTENT = {
             title: "事件窗口股價報酬分析流程",
             type: "研究工具 · 財務分析",
             description:
-              "以 Python、Pandas 與 Plotly 建立可重複執行的事件窗口報酬分析網站流程，支援研究與課堂使用。",
+              "以 Python、Pandas 與 Plotly 建立事件窗口報酬分析與視覺化流程。",
             tags: ["Python", "Pandas", "Plotly"],
             image: "./assets/research-pipeline.svg",
           },
@@ -969,7 +969,7 @@ window.PORTFOLIO_CONTENT = {
             note: "會議論文 · 2023.11",
             image: "./assets/media-coverage.svg",
             description:
-              "關鍵詞：數位教育、深度學習、人工智慧應用、電腦視覺、聲紋分析、情感運算。",
+              "數位教育、深度學習、電腦視覺、聲紋分析與情感運算。",
           },
         ],
         workingPapers: [
@@ -983,7 +983,7 @@ window.PORTFOLIO_CONTENT = {
         eyebrow: "演講與工作坊",
         title: "邀請演講、工作坊與社群活動紀錄。",
         intro:
-          "這個區塊保留給邀請演講、學生工作坊、研討會場次、媒體報導與未來活動紀錄。",
+          "邀請演講、工作坊、研討會場次與公開活動紀錄。",
         items: [
           {
             title: "技術專案管理入門",
@@ -994,7 +994,7 @@ window.PORTFOLIO_CONTENT = {
             imageFit: "contain",
             imagePosition: "center center",
             description:
-              "以技術專案定義、執行節奏、利害關係人溝通與結案整理為主的入門分享。",
+              "技術專案定義、執行節奏、利害關係人溝通與結案整理。",
             topics: ["專案定義", "技術執行", "利害關係人溝通"],
           },
           {
@@ -1016,7 +1016,7 @@ window.PORTFOLIO_CONTENT = {
             imageFit: "contain",
             imagePosition: "center 42%",
             description:
-              "聚焦面試準備、回答架構，以及如何把專案經驗整理成清楚具體案例的實作工作坊。",
+              "面試準備、回答架構與專案經驗表達練習。",
             topics: ["面試實戰", "職涯溝通", "行為題回答"],
           },
           {
@@ -1036,7 +1036,7 @@ window.PORTFOLIO_CONTENT = {
             year: "2024",
             image: "./assets/pdf-events/gdsc-ntnu-ml-cv-workshop-session.jpg",
             description:
-              "使用 TensorFlow 與 MediaPipe 進行電腦視覺示範與課堂實作的工作坊。",
+              "TensorFlow 與 MediaPipe 電腦視覺示範與課堂實作。",
             topics: ["機器學習", "姿態辨識", "電腦視覺", "實作學習"],
           },
         ],
@@ -1077,7 +1077,7 @@ window.PORTFOLIO_CONTENT = {
       },
       media: {
         eyebrow: "媒體與公開介紹",
-        title: "媒體報導與公開介紹。",
+        title: "媒體報導與公開介紹",
         items: [
           {
             title: "人工智慧人臉辨識技術促進教學力",
@@ -1086,7 +1086,7 @@ window.PORTFOLIO_CONTENT = {
             href: "https://www.cna.com.tw/postwrite/chi/327041",
             image: "./assets/media-coverage.svg",
             description:
-              "與教育和線上服務情境人工智慧情緒辨識相關的產學合作報導。",
+              "人工智慧情緒辨識產學合作報導。",
           },
           {
             title: "研究生大使公開介紹",
@@ -1096,7 +1096,7 @@ window.PORTFOLIO_CONTENT = {
             image: "./assets/ucr-profile.jpg",
             imagePosition: "center 24%",
             description:
-              "介紹商業分析、供應鏈管理、技術背景與學生參與經驗的公開介紹。",
+              "商業分析、供應鏈管理與學生參與公開介紹。",
           },
           {
             title: "加州大學河濱分校研究生研究論壇獲獎紀錄",
@@ -1105,7 +1105,7 @@ window.PORTFOLIO_CONTENT = {
             href: "https://graduate.ucr.edu/gradsymposium#best-presentation-awards-2026",
             image: "./assets/research-battery.svg",
             description:
-              "量子輔助電池材料篩選跨領域研究的海報發表獲獎紀錄。",
+              "量子輔助電池材料篩選研究獲獎紀錄。",
           },
           {
             title: "大專院校推動心理健康假",
@@ -1114,7 +1114,7 @@ window.PORTFOLIO_CONTENT = {
             href: "https://www.peopo.org/news/611696",
             mediaLabel: "校園公共議題",
             description:
-              "關於臺灣大專校院心理健康假推動的公共報導，包含東華學生倡議脈絡。",
+              "臺灣大專校院心理健康假與東華學生倡議相關報導。",
           },
           {
             title: "教育部大專校院學生會成果展，東華學生會榮獲優等獎",
@@ -1123,7 +1123,7 @@ window.PORTFOLIO_CONTENT = {
             href: "https://www.ndhu.edu.tw/p/404-1000-179497.php?Lang=zh-tw",
             mediaLabel: "學生領導",
             description:
-              "東華學生會於教育部大專校院學生會成果展獲優等獎的校方新聞報導。",
+              "東華學生會於教育部成果展獲優等獎的校方報導。",
           },
         ],
       },
@@ -1159,28 +1159,28 @@ window.PORTFOLIO_CONTENT = {
             issuer: "加州大學河濱分校商學院",
             year: "2025",
             detail:
-              "Professional MBA 入學獎學金，依入學表現授予，後續以學業進度與良好學籍維持資格。",
+              "專業企業管理碩士入學獎學金，依入學表現授予。",
           },
           {
             title: "海報發表第一名",
             issuer: "加州大學河濱分校研究生研究論壇",
             year: "2026",
             detail:
-              "以「量子輔助高能量鋰電池材料候選篩選」跨領域研究獲獎。",
+              "以量子輔助高能量鋰電池材料篩選研究獲獎。",
           },
           {
-            title: "Benefit to Community Award 第一名",
-            issuer: "南加州大學 AI Buildathon",
+            title: "社群貢獻獎第一名",
+            issuer: "南加州大學人工智慧創作馬拉松",
             year: "2026",
             detail:
-              "以 SurplusLink 人工智慧資源協調系統獲獎，重點為社群影響與資源媒合。",
+              "以 SurplusLink 人工智慧資源協調系統獲獎。",
           },
           {
             title: "第二名",
-            issuer: "Western County of Riverside Regional Fast Pitch Competition",
+            issuer: "河濱西郡區域快速提案競賽",
             year: "2026",
             detail:
-              "快速提案競賽獎項，重點在問題定義、商業溝通與市場導向表達。",
+              "快速提案競賽獎項，重點在問題定義與商業表達。",
           },
           {
             title: "書卷獎",
@@ -1194,7 +1194,7 @@ window.PORTFOLIO_CONTENT = {
             issuer: "國立東華大學資訊工程學系",
             year: "2022 - 2023",
             detail:
-              "依研究所入學與學業表現授予之系所獎學金。",
+              "依研究所入學與學業表現授予。",
           },
         ],
         certifications: [
@@ -1202,31 +1202,31 @@ window.PORTFOLIO_CONTENT = {
             title: "Google 專案管理專業證書",
             issuer: "Google / Coursera",
             detail:
-              "涵蓋專案生命週期、利害關係人溝通、風險升級、執行追蹤與專案結案報告。",
+              "專案生命週期、利害關係人溝通、風險升級與結案報告。",
           },
           {
             title: "IBM 企業設計思考實踐者",
             issuer: "IBM",
             detail:
-              "涵蓋以使用者為中心的問題定義、協作發想、使用者成果與企業設計思考實務。",
+              "使用者導向問題定義、協作發想與企業設計思考實務。",
           },
           {
             title: "NASA Open Science 101 認證",
             issuer: "NASA Transform to Open Science",
             detail:
-              "涵蓋開放科學原則、研究可重現性、資料與軟體共享，以及透明研究流程。",
+              "開放科學、可重現研究、資料與軟體共享。",
           },
           {
             title: "CITI Program 研究倫理與合規訓練",
             issuer: "CITI Program",
             detail:
-              "涵蓋研究倫理、負責任研究行為、合規意識與人體研究基礎。",
+              "研究倫理、合規意識與負責任研究行為。",
           },
           {
             title: "Gemini 認證教育者",
             issuer: "Google for Education",
             detail:
-              "涵蓋 Gemini 輔助教育流程、教學產能提升，以及學習情境中的負責任人工智慧使用。",
+              "Gemini 輔助教學流程與負責任人工智慧使用。",
           },
         ],
         memberships: [
@@ -1250,9 +1250,9 @@ window.PORTFOLIO_CONTENT = {
       },
       contact: {
         eyebrow: "聯絡",
-        title: "聯絡資訊與專業範圍。",
+        title: "聯絡資訊。",
         body:
-          "主題包含策略規劃、商業分析、供應鏈分析、人工智慧產品、研究合作、邀請演講、工作坊與媒體採訪。",
+          "可聯繫研究合作、工作坊、演講、產品專案與媒體採訪。",
         topics: [
           "策略與商業分析",
           "供應鏈分析與採購營運",
@@ -1266,7 +1266,7 @@ window.PORTFOLIO_CONTENT = {
         status: "不定期更新",
         body:
           "整理專案、技術、營運與學習相關的短音訊與對談。作為補充紀錄，不搶首頁、作品與研究內容。",
-        action: "前往 YouTube Podcast",
+        action: "前往 YouTube 音訊節目",
         href: "https://www.youtube.com/playlist?list=PLNswms_yQ-p63RVQNAMARXMlto585-YJl",
       },
     },

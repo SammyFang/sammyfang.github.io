@@ -141,7 +141,7 @@ href: "mailto:yfang097@ucr.edu",
 href: "",
 ```
 
-沒有 `href` 的作品、研究、邀訪或媒體卡片會自動顯示「站內摘要 / On-page summary」，不用另外寫假連結。
+沒有 `href` 的作品、研究、邀訪或媒體卡片不會顯示按鈕；不用放假連結。
 
 About 區塊的履歷 PDF 按鈕使用：
 

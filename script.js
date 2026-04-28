@@ -70,10 +70,9 @@ function label(key) {
       publication: "發表與簡報",
       workingPaper: "進行中研究",
       pressSpeaking: "邀訪 / 工作坊",
-      invitedTalks: "邀請演講與工作坊",
+      invitedTalks: "活動紀錄",
       mediaFeatures: "媒體報導",
       openLink: "查看連結",
-      onPageSummary: "站內摘要",
       rights: "保留所有權利。",
     },
     en: {
@@ -91,10 +90,9 @@ function label(key) {
       publication: "Publication & Presentation",
       workingPaper: "Working Paper",
       pressSpeaking: "Speaking / Workshops",
-      invitedTalks: "Invited Talks & Workshops",
+      invitedTalks: "Event Records",
       mediaFeatures: "Media Features",
       openLink: "Open link",
-      onPageSummary: "On-page summary",
       rights: "All Rights Reserved.",
     },
   };
@@ -167,7 +165,7 @@ function itemAction(item = {}) {
     return `<a href="${escapeHtml(item.href)}"${linkAttrs(item.href)}>${escapeHtml(item.actionLabel || label("openLink"))}</a>`;
   }
 
-  return `<span class="card-status">${escapeHtml(label("onPageSummary"))}</span>`;
+  return "";
 }
 
 function iconSvg(name) {

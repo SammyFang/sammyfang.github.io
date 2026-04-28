@@ -654,7 +654,6 @@ img {
   font-weight: 900;
 }
 
-.card-status,
 .entry-action {
   display: inline-flex;
   width: fit-content;
@@ -666,10 +665,6 @@ img {
   color: var(--muted);
   font-size: 0.78rem;
   font-weight: 850;
-}
-
-.visual-body .card-status {
-  margin-top: 2px;
 }
 
 .visual-card-compact .visual-body {
@@ -904,8 +899,7 @@ img {
   color: var(--muted);
 }
 
-.portfolio-card a,
-.portfolio-card > div:last-child > .card-status {
+.portfolio-card a {
   display: inline-flex;
   margin-top: 16px;
 }
@@ -913,10 +907,6 @@ img {
 .portfolio-card a {
   color: var(--blue);
   font-weight: 900;
-}
-
-.portfolio-card > div:last-child > .card-status {
-  color: var(--muted);
 }
 
 .portfolio-thumb {
@@ -1110,6 +1100,11 @@ img {
   .section-title h2,
   .block-heading {
     font-size: clamp(1.55rem, 7vw, 1.9rem);
+  }
+
+  .block-heading {
+    margin: 34px 0 16px;
+    font-size: clamp(1.28rem, 5.6vw, 1.52rem);
   }
 
   .about-summary {
