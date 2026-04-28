@@ -507,8 +507,6 @@ window.PORTFOLIO_CONTENT = {
             source: "A. Gary Anderson Graduate School of Management",
             year: "2025",
             href: "https://business.ucr.edu/graduate/ambassadors#yung-sian-fang-pmba-taiwan-yfa",
-            image: "./assets/ucr-profile.jpg",
-            imagePosition: "center 24%",
             description:
               "Public profile on business analytics, supply chain management, and student engagement.",
           },
@@ -1175,8 +1173,6 @@ window.PORTFOLIO_CONTENT = {
             source: "加州大學河濱分校商學院",
             year: "2025",
             href: "https://business.ucr.edu/graduate/ambassadors#yung-sian-fang-pmba-taiwan-yfa",
-            image: "./assets/ucr-profile.jpg",
-            imagePosition: "center 24%",
             description:
               "商業分析、供應鏈管理與學生參與公開介紹。",
           },
