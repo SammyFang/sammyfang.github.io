@@ -2,14 +2,14 @@
 
 這個版本的版面不用動。日後只改兩個地方：
 
-- 文字、連結、圖片路徑：`data/site-data.js`
-- 圖片與媒體檔案：`assets/`
+- 文字、連結、圖片路徑：`docs/data/site-data.js`
+- 圖片與媒體檔案：`docs/assets/`
 
-不要為了改文字去動 `index.html`、`script.js`、`styles.css`。那三個檔案分別負責載入、渲染、排版。
+不要為了改文字去動 `docs/index.html`、`docs/script.js`、`docs/styles.css`。那三個檔案分別負責載入、渲染、排版。
 
 ## 內容修改位置
 
-`data/site-data.js` 裡分成三層：
+`docs/data/site-data.js` 裡分成三層：
 
 - `profile`：全站共用資料，例如姓名、信箱、LinkedIn、GitHub、ORCID、首頁照片。
 - `locales.en`：英文版內容。
@@ -86,12 +86,12 @@ description: "以 Python、SQL 與 LINE Notify 建立資料擷取與通知流程
 所有可被網站顯示的圖片放在：
 
 ```text
-assets/
+docs/assets/
 ```
 
 使用方式：
 
-1. 把圖片放進 `assets/`。
+1. 把圖片放進 `docs/assets/`。
 2. 在內容項目中把 `image` 改成相對路徑，例如：
 
 ```js
@@ -155,32 +155,33 @@ About 區塊的履歷 PDF 按鈕使用：
 resumePdf: "./assets/sammy-fang-resume.pdf",
 ```
 
-若要換履歷檔，先把新的 PDF 放進 `assets/`，再更新 `profile.resumePdf`。
+若要換履歷檔，先把新的 PDF 放進 `docs/assets/`，再更新 `profile.resumePdf`。
 
 ## Podcast 放法
 
-Podcast 現在放在聯絡區下方，定位是補充紀錄，不會搶首頁與作品集。設計上已使用 YouTube Podcast 樣式的小卡片。
+Podcast 現在放在聯絡區下方，定位為個人品牌頻道入口。卡片會顯示頻道封面、簡短定位與 YouTube 連結。
 
 修改位置：
 
 ```js
 podcast: {
-  title: "YouTube Podcast",
-  status: "不定期更新",
-  body: "...",
+  title: "鴨子碎碎念",
+  status: "Podcast Channel",
+  body: "以短談與觀點整理記錄 AI、產品、供應鏈、研究與留學觀察。",
   action: "前往 YouTube Podcast",
-  href: "https://www.youtube.com/podcasts",
+  href: "https://www.youtube.com/playlist?list=...",
+  image: "./assets/podcast-quak-quak.jpg",
 }
 ```
 
-正式上線後，把 `href` 改成你的 YouTube Podcast、playlist 或 channel 連結即可。
+若要更換封面，把圖片放到 `docs/assets/`，再更新 `image`。
 
 ## 修改後檢查
 
 修改內容後先開：
 
 ```text
-index.html
+docs/index.html
 ```
 
 再檢查：

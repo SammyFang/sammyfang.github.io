@@ -674,12 +674,13 @@ window.PORTFOLIO_CONTENT = {
         ],
       },
       podcast: {
-        title: "YouTube Podcast",
-        status: "Occasional updates",
+        title: "Quak Quak Podcast",
+        status: "Podcast Channel",
         body:
-          "Short conversations and audio notes on projects, technology, operations, and learning. Updated occasionally as a secondary public archive.",
+          "Short-form reflections on AI, product work, supply chain, research, and graduate life.",
         action: "Open YouTube Podcast",
         href: "https://www.youtube.com/playlist?list=PLNswms_yQ-p63RVQNAMARXMlto585-YJl",
+        image: "./assets/podcast-quak-quak.jpg",
       },
     },
     zh: {
@@ -1340,12 +1341,13 @@ window.PORTFOLIO_CONTENT = {
         ],
       },
       podcast: {
-        title: "YouTube Podcast",
-        status: "不定期更新",
+        title: "鴨子碎碎念",
+        status: "Podcast Channel",
         body:
-          "整理專案、技術、營運與學習相關的短音訊與對談。作為補充紀錄，不搶首頁、作品與研究內容。",
-        action: "前往 YouTube 音訊節目",
+          "以短談與觀點整理記錄 AI、產品、供應鏈、研究與留學觀察。",
+        action: "前往 YouTube Podcast",
         href: "https://www.youtube.com/playlist?list=PLNswms_yQ-p63RVQNAMARXMlto585-YJl",
+        image: "./assets/podcast-quak-quak.jpg",
       },
     },
   },

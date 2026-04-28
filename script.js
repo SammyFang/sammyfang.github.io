@@ -394,9 +394,13 @@ function renderContactPanel(data) {
 
 function renderPodcastNote(data) {
   if (!data.podcast?.title) return "";
+  const hasCover = Boolean(data.podcast.image);
+  const media = hasCover
+    ? `<span class="podcast-cover"><img src="${escapeHtml(data.podcast.image)}" alt="${escapeHtml(data.podcast.title)}" loading="lazy" /></span>`
+    : `<span class="podcast-mark">${iconSvg("youtube")}</span>`;
 
   const inner = `
-    <span class="podcast-mark">${iconSvg("youtube")}</span>
+    ${media}
     <span class="podcast-content">
       <span class="podcast-head">
         <strong>${escapeHtml(data.podcast.title)}</strong>
@@ -408,8 +412,8 @@ function renderPodcastNote(data) {
   `;
 
   return data.podcast.href
-    ? `<a class="podcast-note" href="${escapeHtml(data.podcast.href)}"${linkAttrs(data.podcast.href)}>${inner}</a>`
-    : `<div class="podcast-note">${inner}</div>`;
+    ? `<a class="podcast-note${hasCover ? " podcast-note-with-cover" : ""}" href="${escapeHtml(data.podcast.href)}"${linkAttrs(data.podcast.href)}>${inner}</a>`
+    : `<div class="podcast-note${hasCover ? " podcast-note-with-cover" : ""}">${inner}</div>`;
 }
 
 function renderCredentialCard(item, type = "cert") {
