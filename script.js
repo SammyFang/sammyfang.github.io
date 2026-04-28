@@ -82,8 +82,8 @@ function label(key) {
       resumeByRequest: "View resume PDF",
       experience: "Experience",
       education: "Education",
-      certification: "License & Certification",
-      award: "Award",
+      certification: "Credentials",
+      award: "Awards",
       portfolio: "Portfolio",
       portfolioNote: "Selected work and project archive",
       research: "Research",
@@ -416,6 +416,30 @@ function renderPodcastNote(data) {
     : `<div class="podcast-note">${inner}</div>`;
 }
 
+function renderCredentialCard(item, type = "cert") {
+  const isString = typeof item === "string";
+  const title = isString ? item : item.title;
+  const issuer = isString ? "" : item.issuer;
+  const detail = isString ? "" : item.detail;
+  const year = isString ? "" : item.year;
+  const href = isString ? "" : item.href;
+  const marker = type === "award" ? (language === "zh" ? "獎項" : "Award") : (language === "zh" ? "證照" : "Credential");
+
+  return `
+    <article class="credential-card credential-${type}">
+      <div class="credential-head">
+        <span class="credential-mark" aria-hidden="true">${type === "award" ? "★" : "✓"}</span>
+        <span class="credential-type">${escapeHtml(marker)}</span>
+        ${year ? `<span class="credential-year">${escapeHtml(year)}</span>` : ""}
+      </div>
+      <h3>${escapeHtml(title)}</h3>
+      ${issuer ? `<p class="credential-issuer">${escapeHtml(issuer)}</p>` : ""}
+      ${detail ? `<p class="credential-detail">${escapeHtml(detail)}</p>` : ""}
+      ${href ? `<a class="entry-action" href="${escapeHtml(href)}"${linkAttrs(href)}>${escapeHtml(item.actionLabel || label("openLink"))}</a>` : ""}
+    </article>
+  `;
+}
+
 function renderResume(data) {
   return `
     <section class="plain-section" id="resume">
@@ -475,68 +499,16 @@ function renderResume(data) {
           </div>
 
           <div class="resume-columns">
-            <div>
+            <div class="credential-section">
               ${sectionTitle("", label("certification"))}
-              <div class="simple-list compact">
-                ${data.education.certifications
-                  .map(
-                    (item) => `
-                      <article class="resume-entry">
-                        ${rowIcon("✓")}
-                        <div>
-                          <h3>${escapeHtml(typeof item === "string" ? item : item.title)}</h3>
-                          ${
-                            typeof item === "string" || !item.issuer
-                              ? ""
-                              : `<p>${escapeHtml(item.issuer)}</p>`
-                          }
-                          ${
-                            typeof item === "string" || !item.detail
-                              ? ""
-                              : `<p>${escapeHtml(item.detail)}</p>`
-                          }
-                        </div>
-                      </article>
-                    `,
-                  )
-                  .join("")}
+              <div class="credential-grid">
+                ${data.education.certifications.map((item) => renderCredentialCard(item, "cert")).join("")}
               </div>
             </div>
-            <div>
+            <div class="credential-section">
               ${sectionTitle("", label("award"))}
-              <div class="simple-list compact">
-                ${data.education.awards
-                  .map(
-                    (item) => `
-                      <article class="resume-entry">
-                        ${rowIcon("★")}
-                        <div>
-                          <h3>${escapeHtml(typeof item === "string" ? item : item.title)}</h3>
-                          ${
-                            typeof item === "string" || !item.issuer
-                              ? ""
-                              : `<p>${escapeHtml(item.issuer)}</p>`
-                          }
-                          ${
-                            typeof item === "string" || !item.year
-                              ? ""
-                              : `<p>${escapeHtml(item.year)}</p>`
-                          }
-                          ${
-                            typeof item === "string" || !item.detail
-                              ? ""
-                              : `<p>${escapeHtml(item.detail)}</p>`
-                          }
-                          ${
-                            typeof item !== "string" && item.href
-                              ? `<a class="entry-action" href="${escapeHtml(item.href)}"${linkAttrs(item.href)}>${escapeHtml(item.actionLabel || label("openLink"))}</a>`
-                              : ""
-                          }
-                        </div>
-                      </article>
-                    `,
-                  )
-                  .join("")}
+              <div class="credential-grid">
+                ${data.education.awards.map((item) => renderCredentialCard(item, "award")).join("")}
               </div>
             </div>
           </div>
