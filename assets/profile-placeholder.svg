@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" role="img" aria-labelledby="title desc">
+  <title id="title">Profile portrait placeholder</title>
+  <desc id="desc">A clean abstract portrait placeholder for replacing with a personal photo.</desc>
+  <rect width="720" height="720" fill="#e9f0ec"/>
+  <path d="M0 512h720v208H0z" fill="#177a74"/>
+  <path d="M460 226c0 65-43 116-100 116s-100-51-100-116 43-113 100-113 100 48 100 113z" fill="#12151c"/>
+  <path d="M188 616c18-104 85-172 172-172s154 68 172 172H188z" fill="#12151c"/>
+  <path d="M92 95h168v28H92zM92 145h115v18H92zM492 539h118v22H492zM492 579h82v18h-82z" fill="#d65b4a"/>
+  <path d="M549 127l61 35v70l-61 35-61-35v-70z" fill="#3367d6"/>
+  <path d="M544 169h12v58h-12zM520 193h60v12h-60z" fill="#fff"/>
+</svg>

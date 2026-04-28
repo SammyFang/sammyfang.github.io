@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-label="Research pipeline visual">
+  <rect width="720" height="420" fill="#f3f6fa"/>
+  <rect x="72" y="70" width="576" height="280" rx="28" fill="#ffffff"/>
+  <path d="M120 132h134M120 180h88M120 228h156" stroke="#2f5f9f" stroke-width="14" stroke-linecap="round"/>
+  <path d="M330 122h210M330 172h144M330 222h248" stroke="#2f7775" stroke-width="14" stroke-linecap="round" opacity=".78"/>
+  <path d="M120 292c60-50 116-52 170 0s108 50 166 0 102-52 144-8" fill="none" stroke="#f2b84b" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="608" cy="92" r="42" fill="#14213d"/>
+  <path d="M590 92h36M608 74v36" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+</svg>

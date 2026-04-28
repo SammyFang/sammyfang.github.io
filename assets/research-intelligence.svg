@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-label="Contact intelligence visual">
+  <rect width="720" height="420" fill="#eaf2f8"/>
+  <rect x="74" y="70" width="260" height="160" rx="22" fill="#ffffff"/>
+  <rect x="386" y="70" width="260" height="160" rx="22" fill="#ffffff"/>
+  <rect x="74" y="268" width="572" height="72" rx="22" fill="#14213d"/>
+  <path d="M116 118h148M116 158h92M116 196h130M428 118h150M428 158h82M428 196h120" stroke="#2f5f9f" stroke-width="12" stroke-linecap="round"/>
+  <path d="M300 150h84M360 120l30 30-30 30" fill="none" stroke="#f2b84b" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="158" cy="304" r="16" fill="#2f7775"/>
+  <circle cx="226" cy="304" r="16" fill="#5e8bd5"/>
+  <path d="M282 304h252" stroke="#edf5f7" stroke-width="12" stroke-linecap="round"/>
+</svg>

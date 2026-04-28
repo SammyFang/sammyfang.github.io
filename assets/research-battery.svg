@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-label="Battery materials research visual">
+  <rect width="720" height="420" fill="#eaf2f8"/>
+  <path d="M0 310h720v110H0z" fill="#163456"/>
+  <circle cx="160" cy="120" r="74" fill="#f2b84b" opacity=".86"/>
+  <circle cx="540" cy="105" r="96" fill="#2f7775" opacity=".18"/>
+  <g fill="none" stroke="#2f5f9f" stroke-width="10" stroke-linecap="round">
+    <path d="M226 196h214"/>
+    <path d="M270 158h126"/>
+    <path d="M468 176h34v40h-34z"/>
+  </g>
+  <g fill="#14213d">
+    <rect x="210" y="138" width="250" height="98" rx="18"/>
+    <rect x="235" y="164" width="160" height="18" rx="9" fill="#edf5f7"/>
+    <rect x="235" y="196" width="104" height="14" rx="7" fill="#edf5f7"/>
+  </g>
+  <path d="M92 330h536" stroke="#5e8bd5" stroke-width="6" stroke-linecap="round" opacity=".45"/>
+</svg>
