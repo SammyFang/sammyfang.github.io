@@ -103,6 +103,10 @@ window.PORTFOLIO_CONTENT = {
             description:
               "AI-powered resource coordination concept focused on matching fragmented supply and demand.",
             tags: ["AI Product", "Product Strategy", "Social Impact"],
+            href: "https://lovable.dev/projects/3f59c854-2145-4da4-9d57-3e8e92f01e20",
+            actionLabel: "Open prototype",
+            previewTitle: "Prototype section",
+            previewCaption: "Lovable prototype",
             image: "./assets/research-intelligence.svg",
           },
           {
@@ -735,6 +739,10 @@ window.PORTFOLIO_CONTENT = {
             description:
               "人工智慧資源協調系統，聚焦分散供需的媒合問題。",
             tags: ["人工智慧產品", "產品策略", "社會影響"],
+            href: "https://lovable.dev/projects/3f59c854-2145-4da4-9d57-3e8e92f01e20",
+            actionLabel: "查看原型",
+            previewTitle: "原型頁面",
+            previewCaption: "Lovable 原型",
             image: "./assets/research-intelligence.svg",
           },
           {
