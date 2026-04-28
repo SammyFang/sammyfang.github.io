@@ -18,7 +18,7 @@ window.PORTFOLIO_CONTENT = {
     en: {
       meta: {
         lang: "en",
-        title: "Yung-Sian (Sammy) Fang | Strategy, Supply Chain, AI",
+        title: "Sammy",
         description:
           "Personal website for Yung-Sian (Sammy) Fang, connecting strategy, supply chain analytics, AI systems, research, and technical community leadership.",
       },
@@ -649,7 +649,7 @@ window.PORTFOLIO_CONTENT = {
     zh: {
       meta: {
         lang: "zh-Hant",
-        title: "方雍憲 | 策略、供應鏈、人工智慧",
+        title: "Sammy",
         description:
           "方雍憲的個人專業網站，整理策略規劃、供應鏈分析、人工智慧系統、研究成果與技術社群領導經驗。",
       },
