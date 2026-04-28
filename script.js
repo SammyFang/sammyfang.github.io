@@ -525,7 +525,7 @@ function renderPortfolio(data) {
         ${items
           .map((item, index) => {
             const inner = `
-                ${mediaThumb(item, index, "portfolio-thumb", label("portfolio"))}
+                ${mediaThumb(item, index, "portfolio-thumb", item.previewTitle || item.mediaTitle || item.title || label("portfolio"))}
                 <div>
                   <p>${escapeHtml(item.type)}</p>
                   <h3>${escapeHtml(item.title)}</h3>

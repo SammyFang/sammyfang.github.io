@@ -595,6 +595,10 @@ img {
   line-height: 1.2;
 }
 
+.portfolio-thumb.media-fallback strong {
+  display: none;
+}
+
 .link-preview-thumb {
   display: flex;
   align-items: center;
