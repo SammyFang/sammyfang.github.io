@@ -250,7 +250,8 @@ window.PORTFOLIO_CONTENT = {
             description:
               "Coordinated suppliers, manufacturers, ERP setup, demand forecasting, pricing, logistics, and customs clearance.",
             tags: ["Procurement", "Operations", "ERP"],
-            mediaLabel: "Operations",
+            image: "./assets/projects/manufacturing-supply-chain-optimization.jpg",
+            imagePosition: "center 48%",
           },
           {
             title: "Intelligent Version Tracking and Data Automation",
@@ -258,7 +259,8 @@ window.PORTFOLIO_CONTENT = {
             description:
               "Python, Shell Script, and Perl workflow for version tracking, cross-system extraction, visualization, and QA communication.",
             tags: ["Python", "Shell Script", "Perl"],
-            image: "./assets/research-pipeline.svg",
+            image: "./assets/projects/intelligent-version-tracking.jpg",
+            imagePosition: "center 46%",
           },
           {
             title: "AI-EMO Expert System",
@@ -886,7 +888,8 @@ window.PORTFOLIO_CONTENT = {
             description:
               "協調供應商、製造商、企業資源規劃系統設定、需求預測、定價、物流與清關。",
             tags: ["採購", "營運", "企業資源規劃"],
-            mediaLabel: "營運專案",
+            image: "./assets/projects/manufacturing-supply-chain-optimization.jpg",
+            imagePosition: "center 48%",
           },
           {
             title: "智慧版本追蹤與資料自動化",
@@ -894,7 +897,8 @@ window.PORTFOLIO_CONTENT = {
             description:
               "以 Python、Shell Script 與 Perl 建立版本追蹤、跨系統資料擷取、視覺化與品質驗證溝通流程。",
             tags: ["Python", "Shell Script", "Perl"],
-            image: "./assets/research-pipeline.svg",
+            image: "./assets/projects/intelligent-version-tracking.jpg",
+            imagePosition: "center 46%",
           },
           {
             title: "情緒分析專家系統",
