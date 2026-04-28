@@ -28,7 +28,7 @@
 | 關於摘要 | `about.paragraphs` |
 | 工作經歷 | `experience.items` |
 | 學歷 | `education.schools` |
-| 獎項 | `education.awards` |
+| 獎項 | `education.awards`，使用 `title`、`issuer`、`year`、`detail` |
 | 證照 | `education.certifications`，使用 `title`、`issuer`、`detail` |
 | 作品集精選 | `featured.items` |
 | 一般專案 | `projects.items` |
@@ -70,6 +70,17 @@ description: "以 Python、SQL 與 LINE Notify 建立資料擷取與通知流程
 }
 ```
 
+獎項也建議保留具體結構：
+
+```js
+{
+  title: "書卷獎",
+  issuer: "國立東華大學",
+  year: "111 學年度第 1 學期",
+  detail: "資訊工程學系碩士班學期制學業表現獎項。"
+}
+```
+
 ## 圖片與媒體
 
 所有可被網站顯示的圖片放在：
@@ -93,6 +104,14 @@ image: "./assets/my-event-photo.jpg",
 imagePosition: "center 24%",
 ```
 
+如果某個項目暫時沒有媒體檔案，不要硬塞不相關圖片。直接不填 `image`，並可加上：
+
+```js
+mediaLabel: "營運專案",
+```
+
+頁面會自動產生一致的類別視覺，不會出現空白卡片。
+
 建議圖片比例：
 
 - 首頁頭像：直式，約 4:5。
@@ -115,6 +134,8 @@ href: "mailto:yfang097@ucr.edu",
 ```js
 href: "",
 ```
+
+沒有 `href` 的作品、研究、邀訪或媒體卡片會自動顯示「站內摘要 / On-page summary」，不用另外寫假連結。
 
 About 區塊的履歷 PDF 按鈕使用：
 

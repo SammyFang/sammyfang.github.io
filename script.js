@@ -73,6 +73,7 @@ function label(key) {
       invitedTalks: "邀請演講與工作坊",
       mediaFeatures: "媒體報導",
       openLink: "查看連結",
+      onPageSummary: "站內摘要",
       rights: "保留所有權利。",
     },
     en: {
@@ -93,6 +94,7 @@ function label(key) {
       invitedTalks: "Invited Talks & Workshops",
       mediaFeatures: "Media Features",
       openLink: "Open link",
+      onPageSummary: "On-page summary",
       rights: "All Rights Reserved.",
     },
   };
@@ -102,6 +104,69 @@ function label(key) {
 
 function rowIcon(label) {
   return `<span class="row-icon" aria-hidden="true">${iconSvg(label) || escapeHtml(label)}</span>`;
+}
+
+function fallbackTheme(item = {}, index = 0) {
+  const text = [
+    item.visual,
+    item.mediaLabel,
+    item.category,
+    item.type,
+    item.role,
+    item.source,
+    item.title,
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+
+  if (/battery|quantum|鋰|電池|量子/.test(text)) return "battery";
+  if (/ai|artificial|emotion|intelligence|人工智慧|情緒|智慧/.test(text)) return "ai";
+  if (/workshop|talk|speaking|講|工作坊/.test(text)) return "talk";
+  if (/media|press|coverage|profile|媒體|報導|介紹/.test(text)) return "media";
+  if (/award|scholarship|pitch|獎|獎學金|競賽/.test(text)) return "award";
+  if (/supply|procurement|operations|chain|供應鏈|採購|營運/.test(text)) return "ops";
+  return ["data", "ai", "ops", "research"][index % 4];
+}
+
+function fallbackBadge(item = {}, fallback = "Record") {
+  return (
+    item.mediaLabel ||
+    item.category ||
+    item.role ||
+    (item.type ? item.type.split("·")[0].trim() : "") ||
+    fallback
+  );
+}
+
+function mediaThumb(item = {}, index = 0, className = "visual-thumb", fallback = "Record") {
+  const imageStyle = item.imagePosition
+    ? ` style="object-position: ${escapeHtml(item.imagePosition)};"`
+    : "";
+
+  if (item.image) {
+    return `
+      <figure class="${className}">
+        <img src="${escapeHtml(item.image)}" alt=""${imageStyle} loading="lazy" />
+      </figure>
+    `;
+  }
+
+  const theme = fallbackTheme(item, index);
+  return `
+    <div class="${className} media-fallback media-${theme}">
+      <span>${escapeHtml(fallbackBadge(item, fallback))}</span>
+      <strong>${escapeHtml(item.mediaTitle || item.title || fallback)}</strong>
+    </div>
+  `;
+}
+
+function itemAction(item = {}) {
+  if (item.href) {
+    return `<a href="${escapeHtml(item.href)}"${linkAttrs(item.href)}>${escapeHtml(item.actionLabel || label("openLink"))}</a>`;
+  }
+
+  return `<span class="card-status">${escapeHtml(label("onPageSummary"))}</span>`;
 }
 
 function iconSvg(name) {
@@ -363,7 +428,29 @@ function renderResume(data) {
                     (item) => `
                       <article class="resume-entry">
                         ${rowIcon("★")}
-                        <div><h3>${escapeHtml(item)}</h3></div>
+                        <div>
+                          <h3>${escapeHtml(typeof item === "string" ? item : item.title)}</h3>
+                          ${
+                            typeof item === "string" || !item.issuer
+                              ? ""
+                              : `<p>${escapeHtml(item.issuer)}</p>`
+                          }
+                          ${
+                            typeof item === "string" || !item.year
+                              ? ""
+                              : `<p>${escapeHtml(item.year)}</p>`
+                          }
+                          ${
+                            typeof item === "string" || !item.detail
+                              ? ""
+                              : `<p>${escapeHtml(item.detail)}</p>`
+                          }
+                          ${
+                            typeof item !== "string" && item.href
+                              ? `<a class="entry-action" href="${escapeHtml(item.href)}"${linkAttrs(item.href)}>${escapeHtml(item.actionLabel || label("openLink"))}</a>`
+                              : ""
+                          }
+                        </div>
                       </article>
                     `,
                   )
@@ -388,21 +475,13 @@ function renderPortfolio(data) {
           .map(
             (item, index) => `
               <article class="portfolio-card">
-                ${
-                  item.image
-                    ? `<figure class="portfolio-thumb"><img src="${escapeHtml(item.image)}" alt="" loading="lazy" /></figure>`
-                    : `<div class="portfolio-thumb thumb-${(index % 4) + 1}"></div>`
-                }
+                ${mediaThumb(item, index, "portfolio-thumb", label("portfolio"))}
                 <div>
                   <p>${escapeHtml(item.type)}</p>
                   <h3>${escapeHtml(item.title)}</h3>
                   <span>${escapeHtml(item.description)}</span>
                   <div class="inline-tags">${chips(item.tags)}</div>
-                  ${
-                    item.href
-                      ? `<a href="${escapeHtml(item.href)}"${linkAttrs(item.href)}>${escapeHtml(label("openLink"))}</a>`
-                      : ""
-                  }
+                  ${itemAction(item)}
                 </div>
               </article>
             `,
@@ -414,27 +493,19 @@ function renderPortfolio(data) {
 }
 
 function visualCard(item, metaParts = [], options = {}) {
-  const image = item.image || "./assets/profile-placeholder.svg";
-  const imageStyle = item.imagePosition
-    ? ` style="object-position: ${escapeHtml(item.imagePosition)};"`
-    : "";
   const meta = metaParts.filter(Boolean).map((part) => escapeHtml(part)).join(" · ");
   const note = options.showNote && item.note ? item.note : "";
+  const index = options.index || 0;
 
   return `
     <article class="visual-card${options.compact ? " visual-card-compact" : ""}">
-      <figure class="visual-thumb">
-        <img src="${escapeHtml(image)}" alt=""${imageStyle} loading="lazy" />
-      </figure>
+      ${mediaThumb(item, index, "visual-thumb", label("publication"))}
       <div class="visual-body">
         ${meta ? `<p class="visual-meta">${meta}</p>` : ""}
         <h3>${escapeHtml(item.title)}</h3>
         ${note ? `<span class="visual-note">${escapeHtml(note)}</span>` : ""}
-        ${
-          item.href
-            ? `<a href="${escapeHtml(item.href)}"${linkAttrs(item.href)}>${escapeHtml(label("openLink"))}</a>`
-            : ""
-        }
+        ${item.description ? `<p class="visual-description">${escapeHtml(item.description)}</p>` : ""}
+        ${itemAction(item)}
       </div>
     </article>
   `;
@@ -448,7 +519,7 @@ function renderResearch(data) {
         <h3 class="block-heading">${escapeHtml(label("publication"))}</h3>
         <div class="visual-grid">
           ${data.research.publications
-            .map((item) => visualCard(item, [item.venue, item.year], { showNote: true }))
+            .map((item, index) => visualCard(item, [item.venue, item.year], { showNote: true, index }))
             .join("")}
         </div>
         <details class="compact-disclosure">
@@ -479,14 +550,14 @@ function renderPress(data) {
         <h3 class="block-heading">${escapeHtml(label("invitedTalks"))}</h3>
         <div class="visual-grid">
           ${data.speaking.items
-            .map((item) => visualCard(item, [item.role, item.host, item.year]))
+            .map((item, index) => visualCard(item, [item.role, item.host, item.year], { index }))
             .join("")}
         </div>
         <div class="anchor-block" id="media">
           <h3 class="block-heading">${escapeHtml(label("mediaFeatures"))}</h3>
           <div class="visual-grid media-grid">
             ${data.media.items
-              .map((item) => visualCard(item, [item.source, item.year], { compact: true }))
+              .map((item, index) => visualCard(item, [item.source, item.year], { compact: true, index }))
               .join("")}
           </div>
         </div>

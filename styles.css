@@ -511,6 +511,7 @@ img {
 }
 
 .visual-thumb {
+  display: block;
   aspect-ratio: 16 / 9;
   margin: 0;
   overflow: hidden;
@@ -523,6 +524,78 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.media-fallback {
+  display: grid;
+  align-content: end;
+  gap: 9px;
+  padding: 18px;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 76%, transparent);
+  background:
+    linear-gradient(135deg, rgba(47, 95, 159, 0.2), transparent 58%),
+    var(--green-soft);
+}
+
+.media-fallback span {
+  width: fit-content;
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--blue);
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
+.media-fallback strong {
+  max-width: 18rem;
+  color: var(--ink);
+  font-size: clamp(1rem, 1.8vw, 1.35rem);
+  line-height: 1.2;
+}
+
+.media-ai {
+  background:
+    radial-gradient(circle at 76% 28%, rgba(242, 184, 75, 0.42) 0 14%, transparent 15%),
+    linear-gradient(135deg, rgba(47, 95, 159, 0.2), rgba(47, 119, 117, 0.16)),
+    var(--soft);
+}
+
+.media-battery {
+  background:
+    linear-gradient(0deg, rgba(20, 33, 61, 0.9) 0 28%, transparent 29%),
+    radial-gradient(circle at 22% 24%, rgba(242, 184, 75, 0.74) 0 15%, transparent 16%),
+    var(--soft);
+}
+
+.media-talk {
+  background:
+    linear-gradient(135deg, rgba(201, 86, 69, 0.2), transparent),
+    linear-gradient(90deg, transparent 35%, rgba(255, 255, 255, 0.78) 35% 48%, transparent 48%),
+    var(--green-soft);
+}
+
+.media-media {
+  background:
+    linear-gradient(180deg, var(--navy) 0 30%, transparent 31%),
+    linear-gradient(135deg, rgba(47, 95, 159, 0.18), rgba(242, 184, 75, 0.12)),
+    var(--paper);
+}
+
+.media-award {
+  background:
+    radial-gradient(circle at 75% 25%, rgba(242, 184, 75, 0.66) 0 16%, transparent 17%),
+    linear-gradient(135deg, rgba(47, 95, 159, 0.16), rgba(201, 86, 69, 0.14)),
+    var(--soft);
+}
+
+.media-ops,
+.media-data,
+.media-research {
+  background:
+    linear-gradient(135deg, rgba(47, 95, 159, 0.2), transparent),
+    linear-gradient(90deg, transparent 44%, rgba(255, 255, 255, 0.8) 44% 56%, transparent 56%),
+    var(--green-soft);
 }
 
 .visual-body {
@@ -560,11 +633,36 @@ img {
   line-height: 1.35;
 }
 
+.visual-description {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
 .visual-body a {
   width: fit-content;
   color: var(--blue);
   font-size: 0.88rem;
   font-weight: 900;
+}
+
+.card-status,
+.entry-action {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  min-height: 28px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--line) 42%, transparent);
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.visual-body .card-status {
+  margin-top: 2px;
 }
 
 .visual-card-compact .visual-body {
@@ -603,6 +701,12 @@ img {
   margin: 10px 0 0;
   padding-left: 18px;
   color: var(--muted);
+}
+
+.resume-entry .entry-action {
+  margin-top: 8px;
+  background: var(--green-soft);
+  color: var(--blue);
 }
 
 .row-icon {
@@ -793,14 +897,23 @@ img {
   color: var(--muted);
 }
 
-.portfolio-card a {
+.portfolio-card a,
+.portfolio-card > div:last-child > .card-status {
   display: inline-flex;
   margin-top: 16px;
+}
+
+.portfolio-card a {
   color: var(--blue);
   font-weight: 900;
 }
 
+.portfolio-card > div:last-child > .card-status {
+  color: var(--muted);
+}
+
 .portfolio-thumb {
+  display: block;
   aspect-ratio: 16 / 9;
   margin: 0;
   min-height: 180px;
@@ -815,27 +928,6 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.thumb-2 {
-  background:
-    linear-gradient(135deg, rgba(255, 201, 40, 0.28), transparent),
-    linear-gradient(0deg, transparent 42%, rgba(255, 255, 255, 0.85) 42% 52%, transparent 52%),
-    var(--green-soft);
-}
-
-.thumb-3 {
-  background:
-    radial-gradient(circle at 72% 32%, rgba(47, 119, 117, 0.34) 0 18%, transparent 19%),
-    linear-gradient(135deg, rgba(47, 95, 159, 0.2), transparent),
-    var(--green-soft);
-}
-
-.thumb-4 {
-  background:
-    linear-gradient(135deg, rgba(201, 86, 69, 0.24), transparent),
-    linear-gradient(45deg, transparent 44%, rgba(255, 255, 255, 0.78) 44% 54%, transparent 54%),
-    var(--green-soft);
 }
 
 .site-footer {

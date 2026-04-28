@@ -245,7 +245,7 @@ window.PORTFOLIO_CONTENT = {
             description:
               "Managed suppliers, manufacturers, commodity managers, ERP setup, demand forecasting, pricing, logistics, and customs clearance.",
             tags: ["Procurement", "Operations", "ERP"],
-            image: "./assets/research-pipeline.svg",
+            mediaLabel: "Operations",
           },
           {
             title: "Intelligent Version Tracking and Data Automation",
@@ -309,6 +309,7 @@ window.PORTFOLIO_CONTENT = {
             venue: "Open Research and Creative Activities Forum",
             year: "2026",
             note: "DOI: 10.5070/J9.63078",
+            href: "https://doi.org/10.5070/J9.63078",
             image: "./assets/research-pipeline.svg",
           },
           {
@@ -316,6 +317,7 @@ window.PORTFOLIO_CONTENT = {
             venue: "Open Research and Creative Activities Forum",
             year: "2026",
             note: "DOI: 10.5070/J9.63090",
+            href: "https://doi.org/10.5070/J9.63090",
             image: "./assets/research-intelligence.svg",
           },
           {
@@ -323,6 +325,7 @@ window.PORTFOLIO_CONTENT = {
             venue: "International Conference on Computers in Education",
             year: "2024",
             note: "DOI: 10.58459/icce.2024.4863",
+            href: "https://doi.org/10.58459/icce.2024.4863",
             image: "./assets/research-pipeline.svg",
           },
           {
@@ -421,6 +424,7 @@ window.PORTFOLIO_CONTENT = {
             title: "AI face recognition technology for teaching support",
             source: "National Taiwan Normal University / CNA coverage",
             year: "2024",
+            href: "https://rh.acad.ntnu.edu.tw/tw/news/content/48",
             image: "./assets/media-coverage.svg",
             description:
               "Industry-academia project coverage related to AI emotion recognition for education and online services.",
@@ -429,6 +433,7 @@ window.PORTFOLIO_CONTENT = {
             title: "Graduate Student Ambassador Profile",
             source: "A. Gary Anderson Graduate School of Management",
             year: "2025",
+            href: "https://undergradbiz.ucr.edu/graduate/ambassadors",
             image: "./assets/ucr-profile.jpg",
             imagePosition: "center 24%",
             description:
@@ -471,12 +476,48 @@ window.PORTFOLIO_CONTENT = {
           },
         ],
         awards: [
-          "AGSM Professional MBA Merit Scholarship",
-          "UCR Graduate Research Symposium 2026 - 1st Place Poster Presentation",
-          "USC AI Buildathon 2026 - 1st Place, Benefit to Community Award",
-          "Western County of Riverside Regional Fast Pitch Competition 2026 - 2nd Place",
-          "NDHU Academic Excellence Award",
-          "NDHU Graduate Student Scholarship",
+          {
+            title: "AGSM Professional MBA Merit Scholarship",
+            issuer: "A. Gary Anderson Graduate School of Management, UC Riverside",
+            year: "2025",
+            detail:
+              "Merit-based admission scholarship for the Professional MBA program, tied to academic standing and satisfactory progress.",
+          },
+          {
+            title: "1st Place Poster Presentation",
+            issuer: "UC Riverside Graduate Research Symposium",
+            year: "2026",
+            detail:
+              "Awarded for quantum-assisted candidate selection for high-energy lithium battery materials using the Materials Project database.",
+          },
+          {
+            title: "1st Place, Benefit to Community Award",
+            issuer: "USC AI Buildathon",
+            year: "2026",
+            detail:
+              "Recognized for SurplusLink, an AI-powered resource coordination concept focused on community impact.",
+          },
+          {
+            title: "2nd Place",
+            issuer: "Western County of Riverside Regional Fast Pitch Competition",
+            year: "2026",
+            detail:
+              "Pitch competition recognition for concise venture framing, problem clarity, and market-oriented communication.",
+          },
+          {
+            title: "Academic Excellence Award",
+            issuer: "National Dong Hwa University",
+            year: "Academic Year 111, Fall Semester",
+            detail:
+              "Semester-based academic award in the master's program of Computer Science and Information Engineering.",
+          },
+          {
+            title: "Graduate Student Scholarship",
+            issuer: "National Dong Hwa University",
+            year: "2022 - 2023",
+            detail:
+              "Department scholarship recognizing graduate admission and academic performance.",
+          },
         ],
         certifications: [
           {
@@ -781,7 +822,7 @@ window.PORTFOLIO_CONTENT = {
             description:
               "整合供應商、製造商、品類管理、企業資源規劃系統設定、需求預測、定價、物流與清關流程。",
             tags: ["採購", "營運", "企業資源規劃"],
-            image: "./assets/research-pipeline.svg",
+            mediaLabel: "營運專案",
           },
           {
             title: "智慧版本追蹤與資料自動化",
@@ -845,6 +886,7 @@ window.PORTFOLIO_CONTENT = {
             venue: "開放研究與創作活動論壇",
             year: "2026",
             note: "數位物件識別碼：10.5070/J9.63078",
+            href: "https://doi.org/10.5070/J9.63078",
             image: "./assets/research-pipeline.svg",
           },
           {
@@ -852,6 +894,7 @@ window.PORTFOLIO_CONTENT = {
             venue: "開放研究與創作活動論壇",
             year: "2026",
             note: "數位物件識別碼：10.5070/J9.63090",
+            href: "https://doi.org/10.5070/J9.63090",
             image: "./assets/research-intelligence.svg",
           },
           {
@@ -859,6 +902,7 @@ window.PORTFOLIO_CONTENT = {
             venue: "國際電腦教育研討會",
             year: "2024",
             note: "數位物件識別碼：10.58459/icce.2024.4863",
+            href: "https://doi.org/10.58459/icce.2024.4863",
             image: "./assets/research-pipeline.svg",
           },
           {
@@ -957,6 +1001,7 @@ window.PORTFOLIO_CONTENT = {
             title: "人工智慧人臉辨識技術促進教學力",
             source: "國立臺灣師範大學 / 中央社訊息平台",
             year: "2024",
+            href: "https://rh.acad.ntnu.edu.tw/tw/news/content/48",
             image: "./assets/media-coverage.svg",
             description:
               "與教育和線上服務情境人工智慧情緒辨識相關的產學合作報導。",
@@ -965,6 +1010,7 @@ window.PORTFOLIO_CONTENT = {
             title: "研究生大使公開介紹",
             source: "加州大學河濱分校商學院",
             year: "2025",
+            href: "https://undergradbiz.ucr.edu/graduate/ambassadors",
             image: "./assets/ucr-profile.jpg",
             imagePosition: "center 24%",
             description:
@@ -1007,12 +1053,48 @@ window.PORTFOLIO_CONTENT = {
           },
         ],
         awards: [
-          "加州大學河濱分校商學院企業管理碩士入學優秀獎學金",
-          "加州大學河濱分校研究生研究論壇 2026 - 海報發表第一名",
-          "南加州大學人工智慧創作馬拉松 2026 - 公益影響獎第一名",
-          "西河濱郡區域快速提案競賽 2026 - 第二名",
-          "國立東華大學 111 學年度第 1 學期書卷獎",
-          "國立東華大學研究生獎學金",
+          {
+            title: "企業管理碩士入學優秀獎學金",
+            issuer: "加州大學河濱分校商學院",
+            year: "2025",
+            detail:
+              "Professional MBA 入學獎學金，依入學表現授予，後續以學業進度與良好學籍維持資格。",
+          },
+          {
+            title: "海報發表第一名",
+            issuer: "加州大學河濱分校研究生研究論壇",
+            year: "2026",
+            detail:
+              "以「量子輔助高能量鋰電池材料候選篩選」跨領域研究獲獎。",
+          },
+          {
+            title: "Benefit to Community Award 第一名",
+            issuer: "南加州大學 AI Buildathon",
+            year: "2026",
+            detail:
+              "以 SurplusLink 人工智慧資源協調系統獲獎，重點為社群影響與資源媒合。",
+          },
+          {
+            title: "第二名",
+            issuer: "Western County of Riverside Regional Fast Pitch Competition",
+            year: "2026",
+            detail:
+              "快速提案競賽獎項，重點在問題定義、商業溝通與市場導向表達。",
+          },
+          {
+            title: "書卷獎",
+            issuer: "國立東華大學",
+            year: "111 學年度第 1 學期",
+            detail:
+              "資訊工程學系碩士班學期制學業表現獎項。",
+          },
+          {
+            title: "研究生獎學金",
+            issuer: "國立東華大學資訊工程學系",
+            year: "2022 - 2023",
+            detail:
+              "依研究所入學與學業表現授予之系所獎學金。",
+          },
         ],
         certifications: [
           {
