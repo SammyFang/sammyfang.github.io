@@ -535,11 +535,13 @@ img {
 
 .media-fallback {
   display: grid;
-  align-content: end;
+  align-content: center;
+  justify-items: start;
   gap: 9px;
   padding: 18px;
   border-bottom: 1px solid color-mix(in srgb, var(--line) 76%, transparent);
   background:
+    radial-gradient(circle at 82% 22%, rgba(242, 184, 75, 0.22) 0 14%, transparent 15%),
     linear-gradient(135deg, rgba(47, 95, 159, 0.2), transparent 58%),
     var(--green-soft);
 }
@@ -559,6 +561,73 @@ img {
   color: var(--ink);
   font-size: clamp(1rem, 1.8vw, 1.35rem);
   line-height: 1.2;
+}
+
+.link-preview-thumb {
+  display: grid;
+  align-content: space-between;
+  gap: 20px;
+  padding: 18px;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 76%, transparent);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78) 0 20%, transparent 21%),
+    linear-gradient(135deg, rgba(47, 95, 159, 0.18), rgba(242, 184, 75, 0.08)),
+    var(--soft);
+}
+
+.link-preview-top,
+.link-preview-main {
+  min-width: 0;
+}
+
+.link-preview-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--blue);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.link-preview-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: 0 8px 18px rgba(20, 33, 61, 0.08);
+}
+
+.link-preview-icon img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.link-preview-main {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.link-preview-main strong {
+  color: var(--ink);
+  font-size: clamp(1rem, 1.7vw, 1.22rem);
+  line-height: 1.25;
+}
+
+.link-preview-main span {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 850;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .media-ai {

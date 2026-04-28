@@ -137,18 +137,74 @@ function fallbackBadge(item = {}, fallback = "Record") {
   );
 }
 
+const GENERIC_MEDIA_IMAGES = new Set([
+  "./assets/research-pipeline.svg",
+  "./assets/research-battery.svg",
+  "./assets/research-intelligence.svg",
+  "./assets/media-coverage.svg",
+]);
+
+function isGenericImage(image = "") {
+  return GENERIC_MEDIA_IMAGES.has(image);
+}
+
+function linkHost(href = "") {
+  try {
+    const url = new URL(href, window.location.href);
+    return url.hostname.replace(/^www\./, "");
+  } catch {
+    return "";
+  }
+}
+
+function linkKind(href = "") {
+  const host = linkHost(href);
+  if (/github\.com$/.test(host)) return "GitHub";
+  if (/doi\.org$/.test(host)) return "DOI";
+  if (/youtube\.com$|youtu\.be$/.test(host)) return "YouTube";
+  if (/cna\.com\.tw$|peopo\.org$|ndhu\.edu\.tw$/.test(host)) return language === "zh" ? "報導" : "Media";
+  if (/ucr\.edu$/.test(host)) return language === "zh" ? "公開頁面" : "Profile";
+  return language === "zh" ? "網站連結" : "Website";
+}
+
+function faviconUrl(href = "") {
+  return `https://www.google.com/s2/favicons?sz=96&domain_url=${encodeURIComponent(href)}`;
+}
+
+function linkPreviewThumb(item = {}, className = "visual-thumb") {
+  const host = linkHost(item.href);
+  return `
+    <div class="${className} link-preview-thumb">
+      <div class="link-preview-top">
+        <span class="link-preview-icon">
+          <img src="${faviconUrl(item.href)}" alt="" loading="lazy" />
+        </span>
+        <span>${escapeHtml(linkKind(item.href))}</span>
+      </div>
+      <div class="link-preview-main">
+        <strong>${escapeHtml(item.mediaTitle || item.title || host)}</strong>
+        ${host ? `<span>${escapeHtml(host)}</span>` : ""}
+      </div>
+    </div>
+  `;
+}
+
 function mediaThumb(item = {}, index = 0, className = "visual-thumb", fallback = "Record") {
   const imageStyle = item.imagePosition
     ? ` style="object-position: ${escapeHtml(item.imagePosition)};"`
     : "";
   const fitClass = item.imageFit === "contain" ? " media-contain" : "";
 
-  if (item.image) {
+  if (item.image && !isGenericImage(item.image)) {
     return `
       <figure class="${className}${fitClass}">
         <img src="${escapeHtml(item.image)}" alt=""${imageStyle} loading="lazy" />
       </figure>
     `;
+  }
+
+  if (item.href) {
+    return linkPreviewThumb(item, className);
   }
 
   const theme = fallbackTheme(item, index);
