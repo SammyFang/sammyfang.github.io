@@ -129,6 +129,7 @@ window.PORTFOLIO_CONTENT = {
             description:
               "Multilingual contact intelligence concept shaped through customer discovery and market framing.",
             tags: ["Customer Discovery", "Data Modeling", "AI"],
+            href: "https://duckcard.app/",
             image: "./assets/research-intelligence.svg",
           },
         ],
@@ -378,7 +379,8 @@ window.PORTFOLIO_CONTENT = {
             role: "Workshop Leader",
             host: "Supply Chain Society at UC Riverside",
             year: "2026",
-            image: "./assets/pdf-events/ucr-supply-chain-society-group.jpg",
+            image: "./assets/pdf-events/ucr-interview-workshop-presentation.jpg",
+            imagePosition: "center 54%",
             description:
               "Hands-on workshop on using spreadsheets to organize assumptions, compare scenarios, and support supply chain decisions.",
             topics: ["Excel", "Supply chain analytics", "Decision support"],
@@ -388,9 +390,7 @@ window.PORTFOLIO_CONTENT = {
             role: "Workshop Leader",
             host: "Supply Chain Society at UC Riverside",
             year: "2026",
-            image: "./assets/pdf-events/ucr-interview-workshop-presentation.jpg",
-            imageFit: "contain",
-            imagePosition: "center 42%",
+            image: "./assets/pdf-events/gdsc-ntnu-security-workshop-session.jpg",
             description:
               "Interview preparation, response structure, and concise project-experience examples.",
             topics: ["Interview practice", "Career communication", "Behavioral questions"],
@@ -400,7 +400,7 @@ window.PORTFOLIO_CONTENT = {
             role: "Invited Technical Lecture",
             host: "Google Developer Student Club, National Taiwan Normal University",
             year: "2024",
-            image: "./assets/pdf-events/gdsc-ntnu-security-workshop-group.jpg",
+            image: "./assets/pdf-events/gdsc-ntnu-ml-cv-workshop-group.jpg",
             description:
               "Technical session covering PKI, passwordless authentication, OTP/SSO, and security tool demonstrations.",
             topics: ["PKI", "FIDO", "OTP", "SSO", "Nessus/OpenVAS"],
@@ -410,7 +410,7 @@ window.PORTFOLIO_CONTENT = {
             role: "Workshop Speaker",
             host: "Google Developer Student Clubs",
             year: "2024",
-            image: "./assets/pdf-events/gdsc-ntnu-ml-cv-workshop-session.jpg",
+            image: "./assets/pdf-events/gdsc-ntnu-ml-cv-workshop-demo.jpg",
             description:
               "TensorFlow and MediaPipe workshop for computer vision demos and classroom exercises.",
             topics: ["TensorFlow", "MediaPipe", "Computer vision", "Hands-on learning"],
@@ -760,6 +760,7 @@ window.PORTFOLIO_CONTENT = {
             description:
               "多語名片資訊整理系統，透過客戶探索驗證產品定位。",
             tags: ["客戶探索", "資料建模", "人工智慧"],
+            href: "https://duckcard.app/",
             image: "./assets/research-intelligence.svg",
           },
         ],
@@ -1008,7 +1009,8 @@ window.PORTFOLIO_CONTENT = {
             role: "工作坊主講",
             host: "加州大學河濱分校供應鏈社群",
             year: "2026",
-            image: "./assets/pdf-events/ucr-supply-chain-society-group.jpg",
+            image: "./assets/pdf-events/ucr-interview-workshop-presentation.jpg",
+            imagePosition: "center 54%",
             description:
               "以試算表整理供應鏈假設、比較情境並支援營運決策的實作工作坊。",
             topics: ["試算表", "供應鏈分析", "決策支援"],
@@ -1018,9 +1020,7 @@ window.PORTFOLIO_CONTENT = {
             role: "工作坊主講",
             host: "加州大學河濱分校供應鏈社群",
             year: "2026",
-            image: "./assets/pdf-events/ucr-interview-workshop-presentation.jpg",
-            imageFit: "contain",
-            imagePosition: "center 42%",
+            image: "./assets/pdf-events/gdsc-ntnu-security-workshop-session.jpg",
             description:
               "面試準備、回答架構與專案經驗表達練習。",
             topics: ["面試實戰", "職涯溝通", "行為題回答"],
@@ -1030,7 +1030,7 @@ window.PORTFOLIO_CONTENT = {
             role: "邀請技術講座",
             host: "國立臺灣師範大學 Google 學生開發者社群",
             year: "2024",
-            image: "./assets/pdf-events/gdsc-ntnu-security-workshop-group.jpg",
+            image: "./assets/pdf-events/gdsc-ntnu-ml-cv-workshop-group.jpg",
             description:
               "介紹公開金鑰基礎建設、免密碼驗證、一次性密碼、單一登入與資安工具實作。",
             topics: ["公開金鑰基礎建設", "免密碼驗證", "一次性密碼", "單一登入", "Nessus/OpenVAS"],
@@ -1040,7 +1040,7 @@ window.PORTFOLIO_CONTENT = {
             role: "工作坊主講",
             host: "Google 學生開發者社群",
             year: "2024",
-            image: "./assets/pdf-events/gdsc-ntnu-ml-cv-workshop-session.jpg",
+            image: "./assets/pdf-events/gdsc-ntnu-ml-cv-workshop-demo.jpg",
             description:
               "TensorFlow 與 MediaPipe 電腦視覺示範與課堂實作。",
             topics: ["機器學習", "姿態辨識", "電腦視覺", "實作學習"],
