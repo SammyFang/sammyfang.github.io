@@ -47,6 +47,10 @@ section {
   scroll-margin-top: 118px;
 }
 
+.anchor-block {
+  scroll-margin-top: 118px;
+}
+
 body {
   margin: 0;
   background: var(--paper);
@@ -918,6 +922,10 @@ img {
 
 @media (max-width: 640px) {
   section {
+    scroll-margin-top: 132px;
+  }
+
+  .anchor-block {
     scroll-margin-top: 132px;
   }
 

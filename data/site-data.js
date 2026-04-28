@@ -30,6 +30,7 @@ window.PORTFOLIO_CONTENT = {
         portfolio: "Work",
         research: "Research",
         press: "Talks",
+        media: "Media",
         contact: "Contact",
       },
       ui: {
@@ -540,6 +541,7 @@ window.PORTFOLIO_CONTENT = {
         portfolio: "作品",
         research: "研究",
         press: "邀訪/工作坊",
+        media: "媒體報導",
         contact: "聯絡",
       },
       ui: {

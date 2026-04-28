@@ -476,11 +476,13 @@ function renderPress(data) {
             .map((item) => visualCard(item, [item.role, item.host, item.year]))
             .join("")}
         </div>
-        <h3 class="block-heading">${escapeHtml(label("mediaFeatures"))}</h3>
-        <div class="visual-grid media-grid">
-          ${data.media.items
-            .map((item) => visualCard(item, [item.source, item.year], { compact: true }))
-            .join("")}
+        <div class="anchor-block" id="media">
+          <h3 class="block-heading">${escapeHtml(label("mediaFeatures"))}</h3>
+          <div class="visual-grid media-grid">
+            ${data.media.items
+              .map((item) => visualCard(item, [item.source, item.year], { compact: true }))
+              .join("")}
+          </div>
         </div>
       </div>
     </section>
