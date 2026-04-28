@@ -277,6 +277,8 @@ window.PORTFOLIO_CONTENT = {
             description:
               "Python, Pandas, and Plotly web pipeline for event-window return analysis and visualization.",
             tags: ["Python", "Pandas", "Plotly"],
+            href: "https://github.com/SammyFang/stock-analysis-app",
+            actionLabel: "View GitHub",
             image: "./assets/research-pipeline.svg",
           },
           {
@@ -915,6 +917,8 @@ window.PORTFOLIO_CONTENT = {
             description:
               "以 Python、Pandas 與 Plotly 建立事件窗口報酬分析與視覺化流程。",
             tags: ["Python", "Pandas", "Plotly"],
+            href: "https://github.com/SammyFang/stock-analysis-app",
+            actionLabel: "查看 GitHub",
             image: "./assets/research-pipeline.svg",
           },
           {
