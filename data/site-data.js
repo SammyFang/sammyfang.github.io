@@ -710,12 +710,12 @@ window.PORTFOLIO_CONTENT = {
     zh: {
       meta: {
         lang: "zh-Hant",
-        title: "Sammy",
+        title: "方方/Sammy",
         description:
-          "方雍憲的個人專業網站，整理策略規劃、供應鏈分析、人工智慧系統、研究成果與技術社群領導經驗。",
+          "方方/Sammy 的個人專業網站，整理策略規劃、供應鏈分析、人工智慧系統、研究成果與技術社群領導經驗。",
       },
-      brand: { lead: "方雍憲", accent: "" },
-      displayName: "方雍憲",
+      brand: { lead: "方方/", accent: "Sammy" },
+      displayName: "方方/Sammy",
       nav: {
         home: "首頁",
         resume: "關於",
