@@ -338,6 +338,8 @@ window.PORTFOLIO_CONTENT = {
             venue: "University of California, Riverside Graduate Research Symposium",
             year: "2026",
             note: "1st Place Poster Presentation",
+            href: "https://graduate.ucr.edu/gradsymposium#best-presentation-awards-2026",
+            actionLabel: "View award page",
             image: "./assets/research-battery.svg",
           },
           {
@@ -1005,6 +1007,8 @@ window.PORTFOLIO_CONTENT = {
             venue: "加州大學河濱分校研究生研究論壇",
             year: "2026",
             note: "海報發表第一名",
+            href: "https://graduate.ucr.edu/gradsymposium#best-presentation-awards-2026",
+            actionLabel: "查看獲獎頁面",
             image: "./assets/research-battery.svg",
           },
           {
