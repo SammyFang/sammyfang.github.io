@@ -516,7 +516,7 @@ window.PORTFOLIO_CONTENT = {
             school: "National Dong Hwa University",
             period: "Sep 2022 - Jun 2024",
             description:
-              "Thesis on quantum logic-enhanced biometric passkey authentication using Qiskit, PyCryptodome, AES-GCM/RSA-OAEP, and NIST SP 800-22 entropy testing.",
+              "Master's thesis: Quantum Logic-Enhanced Biometric Passkey Authentication for Secure Encryption and Key Generation. Implemented key generation and security evaluation with Qiskit, PyCryptodome, AES-GCM/RSA-OAEP, and NIST SP 800-22.",
           },
           {
             degree: "BS, Computer Science and Information Engineering",
@@ -1143,7 +1143,7 @@ window.PORTFOLIO_CONTENT = {
             school: "國立東華大學",
             period: "2022.09 - 2024.06",
             description:
-              "論文主題為結合量子邏輯的生物特徵通行密鑰，使用 Qiskit、PyCryptodome、AES-GCM/RSA-OAEP 與 NIST SP 800-22 進行金鑰生成與安全性檢測。",
+              "碩士論文題名：《結合量子邏輯強化的生物特徵通行密鑰認證：安全加密與金鑰生成》。使用 Qiskit、PyCryptodome、AES-GCM/RSA-OAEP 與 NIST SP 800-22 進行金鑰生成與安全性檢測。",
           },
           {
             degree: "資訊工程學士",

@@ -216,12 +216,28 @@ function mediaThumb(item = {}, index = 0, className = "visual-thumb", fallback =
   `;
 }
 
-function itemAction(item = {}) {
-  if (item.href) {
-    return `<a href="${escapeHtml(item.href)}"${linkAttrs(item.href)}>${escapeHtml(item.actionLabel || label("openLink"))}</a>`;
+function cardOpenLabel(item = {}) {
+  return item.actionLabel || label("openLink");
+}
+
+function cardOpenCue(item = {}) {
+  if (!item.href) return "";
+  return `<span class="card-open" aria-hidden="true">${escapeHtml(cardOpenLabel(item))}</span>`;
+}
+
+function cardShell(item = {}, className = "", inner = "") {
+  if (!item.href) {
+    return `<article class="${className}">${inner}</article>`;
   }
 
-  return "";
+  const title = item.title || cardOpenLabel(item);
+  return `
+    <a class="${className} card-link" href="${escapeHtml(item.href)}"${linkAttrs(item.href)} aria-label="${escapeHtml(
+      `${title} - ${cardOpenLabel(item)}`,
+    )}">
+      ${inner}
+    </a>
+  `;
 }
 
 function iconSvg(name) {
@@ -527,20 +543,19 @@ function renderPortfolio(data) {
       ${sectionTitle("", label("portfolio"), label("portfolioNote"))}
       <div class="portfolio-grid">
         ${items
-          .map(
-            (item, index) => `
-              <article class="portfolio-card">
+          .map((item, index) => {
+            const inner = `
                 ${mediaThumb(item, index, "portfolio-thumb", label("portfolio"))}
                 <div>
                   <p>${escapeHtml(item.type)}</p>
                   <h3>${escapeHtml(item.title)}</h3>
-                  <span>${escapeHtml(item.description)}</span>
+                  <span class="portfolio-description">${escapeHtml(item.description)}</span>
                   <div class="inline-tags">${chips(item.tags)}</div>
-                  ${itemAction(item)}
+                  ${cardOpenCue(item)}
                 </div>
-              </article>
-            `,
-          )
+              `;
+            return cardShell(item, "portfolio-card", inner);
+          })
           .join("")}
       </div>
     </section>
@@ -552,18 +567,18 @@ function visualCard(item, metaParts = [], options = {}) {
   const note = options.showNote && item.note ? item.note : "";
   const index = options.index || 0;
 
-  return `
-    <article class="visual-card${options.compact ? " visual-card-compact" : ""}">
+  const inner = `
       ${mediaThumb(item, index, "visual-thumb", label("publication"))}
       <div class="visual-body">
         ${meta ? `<p class="visual-meta">${meta}</p>` : ""}
         <h3>${escapeHtml(item.title)}</h3>
         ${note ? `<span class="visual-note">${escapeHtml(note)}</span>` : ""}
         ${item.description ? `<p class="visual-description">${escapeHtml(item.description)}</p>` : ""}
-        ${itemAction(item)}
+        ${cardOpenCue(item)}
       </div>
-    </article>
   `;
+
+  return cardShell(item, `visual-card${options.compact ? " visual-card-compact" : ""}`, inner);
 }
 
 function renderResearch(data) {
