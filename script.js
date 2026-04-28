@@ -351,7 +351,6 @@ function renderHero(data) {
           <h1>${escapeHtml(displayName)}</h1>
           <p>${escapeHtml(data.hero.lede)}</p>
           <div class="hero-tags">${heroTags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
-          <a class="hero-button" href="#resume">${escapeHtml(label("heroCta"))}</a>
         </div>
         <figure class="hero-photo">
           <img src="${escapeHtml(content.profile.image)}" alt="${escapeHtml(displayName)}" />

@@ -287,23 +287,6 @@ img {
   white-space: nowrap;
 }
 
-.hero-button {
-  display: inline-flex;
-  justify-content: center;
-  min-width: 158px;
-  margin-top: 34px;
-  padding: 12px 24px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  font-weight: 850;
-}
-
-.hero-button:hover {
-  border-color: var(--yellow);
-}
-
 .hero-photo {
   margin: 0;
   justify-self: end;
