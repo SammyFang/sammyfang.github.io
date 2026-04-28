@@ -182,19 +182,16 @@ function faviconUrl(href = "") {
 }
 
 function linkPreviewThumb(item = {}, className = "visual-thumb") {
-  const host = linkHost(item.href);
-  const previewTitle = item.previewTitle || host || linkKind(item.href);
+  const previewTitle = item.previewTitle || linkKind(item.href);
+  const previewCaption = item.previewCaption || linkDescriptor(item.href);
   return `
     <div class="${className} link-preview-thumb">
-      <div class="link-preview-top">
-        <span class="link-preview-icon">
-          <img src="${faviconUrl(item.href)}" alt="" loading="lazy" />
-        </span>
-        <span>${escapeHtml(linkKind(item.href))}</span>
-      </div>
+      <span class="link-preview-icon" aria-hidden="true">
+        <img src="${faviconUrl(item.href)}" alt="" loading="lazy" />
+      </span>
       <div class="link-preview-main">
         <strong>${escapeHtml(previewTitle)}</strong>
-        <span>${escapeHtml(linkDescriptor(item.href))}</span>
+        <span>${escapeHtml(previewCaption)}</span>
       </div>
     </div>
   `;
