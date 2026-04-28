@@ -137,6 +137,22 @@ function fallbackBadge(item = {}, fallback = "Record") {
   );
 }
 
+function recentYearKey(item = {}, index = 0) {
+  const source = [item.sortDate, item.date, item.year, item.period]
+    .filter(Boolean)
+    .join(" ");
+  const years = source.match(/\b(20\d{2}|19\d{2})\b/g);
+  const year = years ? Math.max(...years.map(Number)) : 0;
+  return { year, index };
+}
+
+function byMostRecent(items = []) {
+  return [...items]
+    .map((item, index) => ({ item, ...recentYearKey(item, index) }))
+    .sort((a, b) => b.year - a.year || a.index - b.index)
+    .map(({ item }) => item);
+}
+
 const GENERIC_MEDIA_IMAGES = new Set([
   "./assets/research-pipeline.svg",
   "./assets/research-battery.svg",
@@ -601,14 +617,14 @@ function renderPress(data) {
         ${sectionTitle("", label("pressSpeaking"))}
         <h3 class="block-heading">${escapeHtml(label("invitedTalks"))}</h3>
         <div class="visual-grid">
-          ${data.speaking.items
+          ${byMostRecent(data.speaking.items)
             .map((item, index) => visualCard(item, [item.role, item.host, item.year], { index }))
             .join("")}
         </div>
         <div class="anchor-block" id="media">
           <h3 class="block-heading">${escapeHtml(label("mediaFeatures"))}</h3>
           <div class="visual-grid media-grid">
-            ${data.media.items
+            ${byMostRecent(data.media.items)
               .map((item, index) => visualCard(item, [item.source, item.year], { compact: true, index }))
               .join("")}
           </div>
