@@ -330,9 +330,12 @@ window.PORTFOLIO_CONTENT = {
           },
           {
             title: "Security Encryption Methods and Key Generation: Based on Biometric Authentication Passkey and Quantum Logic",
-            venue: "TANET & NCS Conference",
+            venue: "TANET 2023 Conference: Next-Generation AI and Digital Resilience",
             year: "2023",
+            note: "Conference paper · Nov 2023",
             image: "./assets/research-intelligence.svg",
+            description:
+              "Biometric authentication passkey, quantum logic, secure encryption, and key generation.",
           },
           {
             title:
@@ -958,9 +961,12 @@ window.PORTFOLIO_CONTENT = {
           },
           {
             title: "安全加密方式與金鑰生成 - 以生物特徵通行密鑰結合量子邏輯為例",
-            venue: "臺灣網際網路研討會暨全國計算機會議",
+            venue: "2023 TANET 臺灣網際網路研討會：次世代 AI 與數位韌性",
             year: "2023",
+            note: "會議論文 · 2023.11",
             image: "./assets/research-intelligence.svg",
+            description:
+              "生物特徵通行密鑰、量子邏輯、安全加密與金鑰生成。",
           },
           {
             title: "運用教師動態表情與聲音結合深度學習進行情緒分析與分數評估之智慧回饋工具",
