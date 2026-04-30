@@ -591,13 +591,6 @@ window.PORTFOLIO_CONTENT = {
         ],
         awards: [
           {
-            title: "AGSM Professional MBA Merit Scholarship",
-            issuer: "A. Gary Anderson Graduate School of Management, UC Riverside",
-            year: "2025",
-            detail:
-              "Merit-based admission scholarship for the Professional MBA program.",
-          },
-          {
             title: "1st Place Poster Presentation",
             issuer: "UC Riverside Graduate Research Symposium",
             year: "2026",
@@ -617,6 +610,20 @@ window.PORTFOLIO_CONTENT = {
             year: "2026",
             detail:
               "Pitch recognition for venture framing, problem clarity, and market communication.",
+          },
+          {
+            title: "Vision & Initiative Award",
+            issuer: "AGSM Graduate Ambassadors, UC Riverside School of Business",
+            year: "Dec 2025",
+            detail:
+              "Winter recognition for introducing and implementing an automation workflow that streamlined ambassador operations and improved timely community updates.",
+          },
+          {
+            title: "AGSM Professional MBA Merit Scholarship",
+            issuer: "A. Gary Anderson Graduate School of Management, UC Riverside",
+            year: "2025",
+            detail:
+              "Merit-based admission scholarship for the Professional MBA program.",
           },
           {
             title: "Academic Excellence Award",
@@ -1282,13 +1289,6 @@ window.PORTFOLIO_CONTENT = {
         ],
         awards: [
           {
-            title: "企業管理碩士入學優秀獎學金",
-            issuer: "加州大學河濱分校商學院",
-            year: "2025",
-            detail:
-              "專業企業管理碩士入學獎學金，依入學表現授予。",
-          },
-          {
             title: "海報發表第一名",
             issuer: "加州大學河濱分校研究生研究論壇",
             year: "2026",
@@ -1308,6 +1308,20 @@ window.PORTFOLIO_CONTENT = {
             year: "2026",
             detail:
               "快速提案競賽獎項，重點在問題定義與商業表達。",
+          },
+          {
+            title: "Vision & Initiative Award",
+            issuer: "加州大學河濱分校商學院研究生大使",
+            year: "2025 年 12 月",
+            detail:
+              "冬季表揚獎項；因提出並落實自動化流程，協助簡化研究生大使組織作業並提升社群更新效率。",
+          },
+          {
+            title: "企業管理碩士入學優秀獎學金",
+            issuer: "加州大學河濱分校商學院",
+            year: "2025",
+            detail:
+              "專業企業管理碩士入學獎學金，依入學表現授予。",
           },
           {
             title: "書卷獎",
