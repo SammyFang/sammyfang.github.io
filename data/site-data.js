@@ -498,11 +498,16 @@ window.PORTFOLIO_CONTENT = {
             description:
               "Supported AGSM and UCR student organizations through operations, ambassador outreach, entrepreneurship, internal communications, and graduate community programming.",
             metrics: [
-              "Product Club operations",
-              "Graduate ambassador",
-              "Entrepreneurship lead",
-              "Supply Chain communications",
-              "Taiwanese graduate community",
+              "Operations Executive · Product Club",
+              "Graduate Student Ambassador · AGSM",
+              "Entrepreneurial Lead · AGSM SA",
+              "Internal Comms Executive · Supply Chain Society",
+            ],
+            links: [
+              {
+                label: "TGSA · Taiwanese Graduate Students Association",
+                href: "https://sites.google.com/view/tgsaucr/home?authuser=0",
+              },
             ],
           },
           {
@@ -510,7 +515,8 @@ window.PORTFOLIO_CONTENT = {
             organization: "UCLA NSF I-Corps Regional Program",
             period: "2025",
             description:
-              "Led customer discovery and commercialization framing for an AI-enabled product concept.",
+              "Led customer discovery for DuckCard, translating user interviews into product assumptions, market framing, and commercialization next steps.",
+            metrics: ["DuckCard", "Customer discovery", "Market framing"],
           },
           {
             title: "Core Team Member",
@@ -1221,11 +1227,16 @@ window.PORTFOLIO_CONTENT = {
             description:
               "支援 AGSM 與 UCR 校園組織的營運、招生大使溝通、創業領導、內部溝通與研究生社群活動。",
             metrics: [
-              "Product Club 營運",
-              "研究生大使",
-              "創業領導",
-              "供應鏈社群內部溝通",
-              "台灣研究生社群",
+              "營運幹部 · Product Club",
+              "研究生大使 · AGSM",
+              "創業領導 · AGSM SA",
+              "內部溝通幹部 · Supply Chain Society",
+            ],
+            links: [
+              {
+                label: "TGSA · 台灣研究生協會",
+                href: "https://sites.google.com/view/tgsaucr/home?authuser=0",
+              },
             ],
           },
           {
@@ -1233,7 +1244,8 @@ window.PORTFOLIO_CONTENT = {
             organization: "加州大學洛杉磯分校 NSF I-Corps 區域計畫",
             period: "2025",
             description:
-              "帶領客戶探索與商業化定位，驗證人工智慧產品概念。",
+              "以 DuckCard 為核心進行客戶探索，將訪談回饋轉化為產品假設、市場定位與商業化下一步。",
+            metrics: ["DuckCard", "客戶探索", "市場定位"],
           },
           {
             title: "核心團隊成員",

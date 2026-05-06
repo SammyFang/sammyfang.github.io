@@ -39,6 +39,15 @@ function chips(items = []) {
   return items.map((item) => `<span>${escapeHtml(item)}</span>`).join("");
 }
 
+function textLinks(items = []) {
+  return items
+    .map(
+      (item) =>
+        `<a href="${escapeHtml(item.href)}"${linkAttrs(item.href)}>${escapeHtml(item.label)}</a>`,
+    )
+    .join("");
+}
+
 function listItems(items = []) {
   return items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
 }
@@ -594,6 +603,7 @@ function leadershipCard(item, index = 0) {
         <h3>${escapeHtml(item.organization || item.title)}</h3>
         ${item.description ? `<p class="visual-description">${escapeHtml(item.description)}</p>` : ""}
         ${item.metrics?.length ? `<div class="inline-tags leadership-metrics">${chips(item.metrics)}</div>` : ""}
+        ${item.links?.length ? `<div class="inline-links leadership-links">${textLinks(item.links)}</div>` : ""}
         ${cardOpenCue(item)}
       </div>
   `;

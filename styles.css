@@ -890,6 +890,29 @@ img {
   max-width: 100%;
 }
 
+.inline-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.inline-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 4px 8px;
+  border: 1px solid color-mix(in srgb, var(--blue) 32%, var(--line));
+  border-radius: 6px;
+  color: var(--blue);
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.inline-links a:is(:hover, :focus-visible) {
+  text-decoration: underline;
+}
+
 .resume-columns {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
