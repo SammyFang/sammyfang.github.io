@@ -501,7 +501,7 @@ window.PORTFOLIO_CONTENT = {
             metrics: [
               {
                 label: "Operations Executive · Product Club",
-                href: "https://highlanderlink.ucr.edu/actioncenter/organization/productatucr/",
+                href: "https://highlanderlink.ucr.edu/organization/productatucr",
               },
               {
                 label: "Graduate Student Ambassador · AGSM",
@@ -1243,7 +1243,7 @@ window.PORTFOLIO_CONTENT = {
             metrics: [
               {
                 label: "營運幹部 · Product Club",
-                href: "https://highlanderlink.ucr.edu/actioncenter/organization/productatucr/",
+                href: "https://highlanderlink.ucr.edu/organization/productatucr",
               },
               {
                 label: "研究生大使 · AGSM",
