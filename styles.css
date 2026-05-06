@@ -500,6 +500,18 @@ img {
   display: grid;
 }
 
+.leadership-grid {
+  align-items: start;
+}
+
+.leadership-grid .visual-card {
+  height: auto;
+}
+
+.leadership-grid .card-open {
+  margin-top: 10px;
+}
+
 .card-link {
   display: block;
   color: inherit;
@@ -872,6 +884,10 @@ img {
 
 .leadership-metrics {
   margin-top: 0;
+}
+
+.leadership-metrics span {
+  max-width: 100%;
 }
 
 .resume-columns {

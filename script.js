@@ -585,9 +585,10 @@ function leadershipCard(item, index = 0) {
     .filter(Boolean)
     .map((part) => escapeHtml(part))
     .join(" · ");
+  const thumb = item.image || item.href ? mediaThumb(item, index, "visual-thumb", item.organization || item.title) : "";
 
   const inner = `
-      ${mediaThumb(item, index, "visual-thumb", item.organization || item.title)}
+      ${thumb}
       <div class="visual-body">
         ${meta ? `<p class="visual-meta">${meta}</p>` : ""}
         <h3>${escapeHtml(item.organization || item.title)}</h3>
@@ -597,7 +598,7 @@ function leadershipCard(item, index = 0) {
       </div>
   `;
 
-  return cardShell(item, "visual-card", inner);
+  return cardShell(item, `visual-card${thumb ? "" : " visual-card-text-only"}`, inner);
 }
 
 function renderLeadership(data) {

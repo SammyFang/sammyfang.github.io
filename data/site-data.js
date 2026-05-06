@@ -490,19 +490,19 @@ window.PORTFOLIO_CONTENT = {
             metrics: ["98 members", "700+ page views in 90 days", "70+ kickoff RSVPs", "50+ active participants"],
           },
           {
-            title: "Student Leadership Portfolio",
+            title: "Student Leadership",
             organization: "UC Riverside / AGSM Communities",
             period: "2025 - 2026",
             location: "Riverside, CA",
             category: "Student leadership",
             description:
-              "Coordinated operations, ambassador outreach, entrepreneurial programming, internal communications, and graduate student community support across AGSM and UCR organizations.",
+              "Supported AGSM and UCR student organizations through operations, ambassador outreach, entrepreneurship, internal communications, and graduate community programming.",
             metrics: [
-              "Operations Executive - AGSM Product Club",
-              "Graduate Student Ambassador - AGSM",
-              "Entrepreneurial Leadership Team Lead - AGSM Student Association",
-              "Internal Communications Executive - Supply Chain Society",
-              "Taiwanese Graduate Students Association",
+              "Product Club operations",
+              "Graduate ambassador",
+              "Entrepreneurship lead",
+              "Supply Chain communications",
+              "Taiwanese graduate community",
             ],
           },
           {
@@ -1213,19 +1213,19 @@ window.PORTFOLIO_CONTENT = {
             metrics: ["98 位成員", "90 天內 700+ 瀏覽", "70+ 啟動活動報名", "50+ 實際參與者"],
           },
           {
-            title: "學生領導職務組合",
+            title: "學生領導",
             organization: "UC Riverside / AGSM 校園社群",
             period: "2025 - 2026",
             location: "美國加州河濱",
             category: "學生領導",
             description:
-              "支援 AGSM 與 UCR 校園組織的營運協調、招生大使溝通、創業領導、內部溝通與研究生社群服務。",
+              "支援 AGSM 與 UCR 校園組織的營運、招生大使溝通、創業領導、內部溝通與研究生社群活動。",
             metrics: [
-              "AGSM Product Club 營運幹部",
-              "AGSM 研究生大使",
-              "AGSM Student Association 創業領導組長",
-              "Supply Chain Society 內部溝通幹部",
-              "Taiwanese Graduate Students Association",
+              "Product Club 營運",
+              "研究生大使",
+              "創業領導",
+              "供應鏈社群內部溝通",
+              "台灣研究生社群",
             ],
           },
           {
