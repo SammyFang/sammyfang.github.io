@@ -500,6 +500,8 @@ window.PORTFOLIO_CONTENT = {
             title: "Core Team Member",
             organization: "HPE Early Career Network",
             period: "2024 - 2025",
+            image: "./assets/hpe-early-career-network.jpg",
+            imagePosition: "center 48%",
             description:
               "Helped structure early-career programming, booth engagement, and cross-functional professional development.",
           },
@@ -1205,6 +1207,8 @@ window.PORTFOLIO_CONTENT = {
             title: "核心團隊成員",
             organization: "慧與科技早期職涯社群",
             period: "2024 - 2025",
+            image: "./assets/hpe-early-career-network.jpg",
+            imagePosition: "center 48%",
             description:
               "協助建立早期職涯活動、展攤互動與跨職能職涯發展活動。",
           },
