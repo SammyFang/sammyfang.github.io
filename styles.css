@@ -505,11 +505,11 @@ img {
 }
 
 .leadership-grid {
-  align-items: start;
+  align-items: stretch;
 }
 
 .leadership-grid .visual-card {
-  height: auto;
+  height: 100%;
 }
 
 .leadership-grid .card-open {
