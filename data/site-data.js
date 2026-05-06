@@ -476,11 +476,18 @@ window.PORTFOLIO_CONTENT = {
         title: "Technical community, entrepreneurship, and student leadership.",
         items: [
           {
-            title: "Organizer / President",
-            organization: "Google Developer Groups on Campus at UC Riverside",
+            title: "Founder / President",
+            organization: "Google Developer Groups on Campus, UC Riverside",
             period: "2026 - 2027",
+            location: "Riverside, CA",
+            category: "Developer community",
+            href: "https://gdg.community.dev/gdg-on-campus-university-of-california-riverside-riverside-united-states/",
+            actionLabel: "View chapter",
+            previewTitle: "GDG at UCR",
+            previewCaption: "gdg.community.dev",
             description:
-              "Building a student-led technical community around AI, Cloud, Web, study jams, and practical workshops.",
+              "Founded and launched a campus developer chapter, combining community strategy, AI-focused programming, event operations, and growth analytics to turn student interest into active technical participation.",
+            metrics: ["98 members", "700+ page views in 90 days", "70+ kickoff RSVPs", "50+ active participants"],
           },
           {
             title: "Team Lead",
@@ -1174,11 +1181,18 @@ window.PORTFOLIO_CONTENT = {
         title: "技術社群、創業探索與學生領導。",
         items: [
           {
-            title: "組織者 / 會長",
+            title: "創辦人 / 會長",
             organization: "加州大學河濱分校 Google 校園開發者社群",
             period: "2026 - 2027",
+            location: "美國加州河濱",
+            category: "開發者社群",
+            href: "https://gdg.community.dev/gdg-on-campus-university-of-california-riverside-riverside-united-states/",
+            actionLabel: "查看社群",
+            previewTitle: "GDG at UCR",
+            previewCaption: "gdg.community.dev",
             description:
-              "建立以人工智慧、雲端、網頁技術、讀書會與實作工作坊為主的學生技術社群。",
+              "創辦並啟動校園開發者社群，結合社群策略、人工智慧主題活動、活動營運與成長數據，把學生興趣轉化為實際技術參與。",
+            metrics: ["98 位成員", "90 天內 700+ 瀏覽", "70+ 啟動活動報名", "50+ 實際參與者"],
           },
           {
             title: "團隊負責人",

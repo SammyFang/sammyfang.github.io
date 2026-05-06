@@ -580,6 +580,40 @@ function visualCard(item, metaParts = [], options = {}) {
   return cardShell(item, `visual-card${options.compact ? " visual-card-compact" : ""}`, inner);
 }
 
+function leadershipCard(item, index = 0) {
+  const meta = [item.title, item.period, item.location]
+    .filter(Boolean)
+    .map((part) => escapeHtml(part))
+    .join(" · ");
+
+  const inner = `
+      ${mediaThumb(item, index, "visual-thumb", item.organization || item.title)}
+      <div class="visual-body">
+        ${meta ? `<p class="visual-meta">${meta}</p>` : ""}
+        <h3>${escapeHtml(item.organization || item.title)}</h3>
+        ${item.description ? `<p class="visual-description">${escapeHtml(item.description)}</p>` : ""}
+        ${item.metrics?.length ? `<div class="inline-tags leadership-metrics">${chips(item.metrics)}</div>` : ""}
+        ${cardOpenCue(item)}
+      </div>
+  `;
+
+  return cardShell(item, "visual-card", inner);
+}
+
+function renderLeadership(data) {
+  const items = data.leadership?.items || [];
+  if (!items.length) return "";
+
+  return `
+        <div class="anchor-block" id="leadership">
+          <h3 class="block-heading">${escapeHtml(data.leadership.eyebrow)}</h3>
+          <div class="visual-grid leadership-grid">
+            ${items.map((item, index) => leadershipCard(item, index)).join("")}
+          </div>
+        </div>
+  `;
+}
+
 function renderResearch(data) {
   return `
     <section class="plain-section" id="research">
@@ -622,6 +656,7 @@ function renderPress(data) {
             .map((item, index) => visualCard(item, [item.role, item.host, item.year], { index }))
             .join("")}
         </div>
+        ${renderLeadership(data)}
         <div class="anchor-block" id="media">
           <h3 class="block-heading">${escapeHtml(label("mediaFeatures"))}</h3>
           <div class="visual-grid media-grid">
