@@ -490,6 +490,22 @@ window.PORTFOLIO_CONTENT = {
             metrics: ["98 members", "700+ page views in 90 days", "70+ kickoff RSVPs", "50+ active participants"],
           },
           {
+            title: "Student Leadership Portfolio",
+            organization: "UC Riverside / AGSM Communities",
+            period: "2025 - 2026",
+            location: "Riverside, CA",
+            category: "Student leadership",
+            description:
+              "Coordinated operations, ambassador outreach, entrepreneurial programming, internal communications, and graduate student community support across AGSM and UCR organizations.",
+            metrics: [
+              "Operations Executive - AGSM Product Club",
+              "Graduate Student Ambassador - AGSM",
+              "Entrepreneurial Leadership Team Lead - AGSM Student Association",
+              "Internal Communications Executive - Supply Chain Society",
+              "Taiwanese Graduate Students Association",
+            ],
+          },
+          {
             title: "Team Lead",
             organization: "UCLA NSF I-Corps Regional Program",
             period: "2025",
@@ -1195,6 +1211,22 @@ window.PORTFOLIO_CONTENT = {
             description:
               "創辦並啟動校園開發者社群，結合社群策略、人工智慧主題活動、活動營運與成長數據，把學生興趣轉化為實際技術參與。",
             metrics: ["98 位成員", "90 天內 700+ 瀏覽", "70+ 啟動活動報名", "50+ 實際參與者"],
+          },
+          {
+            title: "學生領導職務組合",
+            organization: "UC Riverside / AGSM 校園社群",
+            period: "2025 - 2026",
+            location: "美國加州河濱",
+            category: "學生領導",
+            description:
+              "支援 AGSM 與 UCR 校園組織的營運協調、招生大使溝通、創業領導、內部溝通與研究生社群服務。",
+            metrics: [
+              "AGSM Product Club 營運幹部",
+              "AGSM 研究生大使",
+              "AGSM Student Association 創業領導組長",
+              "Supply Chain Society 內部溝通幹部",
+              "Taiwanese Graduate Students Association",
+            ],
           },
           {
             title: "團隊負責人",
