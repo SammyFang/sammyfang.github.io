@@ -29,7 +29,7 @@ window.PORTFOLIO_CONTENT = {
         resume: "About",
         portfolio: "Work",
         research: "Research",
-        press: "Talks",
+        press: "Engagement",
         media: "Media",
         contact: "Contact",
       },
@@ -398,8 +398,8 @@ window.PORTFOLIO_CONTENT = {
         ],
       },
       speaking: {
-        eyebrow: "Speaking and workshops",
-        title: "Prepared for talks, workshops, and community programs.",
+        eyebrow: "Talks and workshops",
+        title: "Prepared for talks, workshops, and public programs.",
         intro:
           "Invited talks, workshops, conference sessions, and selected public programs.",
         items: [
@@ -753,7 +753,7 @@ window.PORTFOLIO_CONTENT = {
         resume: "關於",
         portfolio: "作品",
         research: "研究",
-        press: "邀訪/工作坊",
+        press: "參與/領導",
         media: "媒體報導",
         contact: "聯絡",
       },
