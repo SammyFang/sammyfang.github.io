@@ -2,6 +2,8 @@
   --navy: #14213d;
   --navy-deep: #0b1728;
   --blue: #2f5f9f;
+  --ucr-blue: #003da5;
+  --ucr-gold: #ffb81c;
   --teal: #2f7775;
   --gold: #f2b84b;
   --green: #2f7775;
@@ -21,6 +23,8 @@
   --navy: #101d33;
   --navy-deep: #08111f;
   --blue: #5e8bd5;
+  --ucr-blue: #003da5;
+  --ucr-gold: #ffb81c;
   --teal: #4aa19c;
   --gold: #ffd166;
   --green: #4aa19c;
@@ -512,6 +516,59 @@ img {
   margin-top: 10px;
 }
 
+.visual-card-ucr {
+  border-color: color-mix(in srgb, var(--ucr-blue) 36%, var(--line));
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--ucr-blue) 6%, transparent), transparent 58%),
+    var(--paper);
+  box-shadow: 0 10px 26px color-mix(in srgb, var(--ucr-blue) 10%, transparent);
+}
+
+.visual-card-ucr .visual-meta {
+  color: color-mix(in srgb, var(--ucr-blue) 76%, var(--blue));
+}
+
+.visual-card-ucr .leadership-metrics a {
+  border: 1px solid color-mix(in srgb, var(--ucr-blue) 18%, var(--line));
+  background: color-mix(in srgb, var(--ucr-blue) 10%, var(--green-soft));
+  color: color-mix(in srgb, var(--ucr-blue) 72%, var(--ink));
+}
+
+.visual-card-ucr .leadership-metrics a:is(:hover, :focus-visible) {
+  border-color: color-mix(in srgb, var(--ucr-gold) 72%, var(--line));
+  background: color-mix(in srgb, var(--ucr-gold) 18%, var(--green-soft));
+  color: color-mix(in srgb, var(--ucr-blue) 82%, var(--ink));
+}
+
+.visual-card-ucr .leadership-links a {
+  border-color: color-mix(in srgb, var(--ucr-blue) 40%, var(--line));
+  color: color-mix(in srgb, var(--ucr-blue) 70%, var(--blue));
+}
+
+[data-theme="dark"] .visual-card-ucr {
+  border-color: color-mix(in srgb, var(--ucr-gold) 28%, var(--line));
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--ucr-blue) 18%, transparent), transparent 62%),
+    var(--paper);
+}
+
+[data-theme="dark"] .visual-card-ucr .visual-meta,
+[data-theme="dark"] .visual-card-ucr .leadership-links a {
+  color: color-mix(in srgb, var(--ucr-gold) 58%, var(--blue));
+}
+
+[data-theme="dark"] .visual-card-ucr .leadership-metrics a {
+  border-color: color-mix(in srgb, var(--ucr-blue) 42%, var(--line));
+  background: color-mix(in srgb, var(--ucr-blue) 38%, var(--paper));
+  color: var(--ink);
+}
+
+[data-theme="dark"] .visual-card-ucr .leadership-metrics a:is(:hover, :focus-visible) {
+  border-color: color-mix(in srgb, var(--ucr-gold) 62%, var(--line));
+  background: color-mix(in srgb, var(--ucr-gold) 20%, var(--paper));
+  color: var(--ink);
+}
+
 .card-link {
   display: block;
   color: inherit;
@@ -870,7 +927,7 @@ img {
   margin-top: 12px;
 }
 
-.inline-tags span {
+.inline-tags :is(span, a) {
   display: inline-flex;
   align-items: center;
   min-height: 26px;
@@ -882,11 +939,24 @@ img {
   font-weight: 800;
 }
 
+.inline-tags a {
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.inline-tags a:is(:hover, :focus-visible) {
+  text-decoration: underline;
+}
+
 .leadership-metrics {
   margin-top: 0;
 }
 
-.leadership-metrics span {
+.leadership-metrics :is(span, a) {
   max-width: 100%;
 }
 

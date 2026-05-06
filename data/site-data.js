@@ -495,13 +495,26 @@ window.PORTFOLIO_CONTENT = {
             period: "2025 - 2026",
             location: "Riverside, CA",
             category: "Student leadership",
+            variant: "ucr",
             description:
               "Supported AGSM and UCR student organizations through operations, ambassador outreach, entrepreneurship, internal communications, and graduate community programming.",
             metrics: [
-              "Operations Executive · Product Club",
-              "Graduate Student Ambassador · AGSM",
-              "Entrepreneurial Lead · AGSM SA",
-              "Internal Comms Executive · Supply Chain Society",
+              {
+                label: "Operations Executive · Product Club",
+                href: "https://highlanderlink.ucr.edu/actioncenter/organization/productatucr/",
+              },
+              {
+                label: "Graduate Student Ambassador · AGSM",
+                href: "https://business.ucr.edu/graduate/ambassadors#yung-sian-fang-pmba-taiwan-yfa",
+              },
+              {
+                label: "Entrepreneurial Lead · AGSM SA",
+                href: "https://business.ucr.edu/graduate/student-association",
+              },
+              {
+                label: "Internal Comms Executive · Supply Chain Society",
+                href: "https://linktr.ee/scs.ucr",
+              },
             ],
             links: [
               {
@@ -1224,13 +1237,26 @@ window.PORTFOLIO_CONTENT = {
             period: "2025 - 2026",
             location: "美國加州河濱",
             category: "學生領導",
+            variant: "ucr",
             description:
               "支援 AGSM 與 UCR 校園組織的營運、招生大使溝通、創業領導、內部溝通與研究生社群活動。",
             metrics: [
-              "營運幹部 · Product Club",
-              "研究生大使 · AGSM",
-              "創業領導 · AGSM SA",
-              "內部溝通幹部 · Supply Chain Society",
+              {
+                label: "營運幹部 · Product Club",
+                href: "https://highlanderlink.ucr.edu/actioncenter/organization/productatucr/",
+              },
+              {
+                label: "研究生大使 · AGSM",
+                href: "https://business.ucr.edu/graduate/ambassadors#yung-sian-fang-pmba-taiwan-yfa",
+              },
+              {
+                label: "創業領導 · AGSM SA",
+                href: "https://business.ucr.edu/graduate/student-association",
+              },
+              {
+                label: "內部溝通幹部 · Supply Chain Society",
+                href: "https://linktr.ee/scs.ucr",
+              },
             ],
             links: [
               {

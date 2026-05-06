@@ -35,8 +35,20 @@ function linkAttrs(href) {
   return isExternal(href) ? ' target="_blank" rel="noreferrer"' : "";
 }
 
-function chips(items = []) {
-  return items.map((item) => `<span>${escapeHtml(item)}</span>`).join("");
+function chips(items = [], options = {}) {
+  return items
+    .map((item) => {
+      if (item && typeof item === "object") {
+        const label = escapeHtml(item.label || "");
+        if (options.linked && item.href) {
+          return `<a href="${escapeHtml(item.href)}"${linkAttrs(item.href)}>${label}</a>`;
+        }
+        return `<span>${label}</span>`;
+      }
+
+      return `<span>${escapeHtml(item)}</span>`;
+    })
+    .join("");
 }
 
 function textLinks(items = []) {
@@ -602,13 +614,14 @@ function leadershipCard(item, index = 0) {
         ${meta ? `<p class="visual-meta">${meta}</p>` : ""}
         <h3>${escapeHtml(item.organization || item.title)}</h3>
         ${item.description ? `<p class="visual-description">${escapeHtml(item.description)}</p>` : ""}
-        ${item.metrics?.length ? `<div class="inline-tags leadership-metrics">${chips(item.metrics)}</div>` : ""}
+        ${item.metrics?.length ? `<div class="inline-tags leadership-metrics">${chips(item.metrics, { linked: !item.href })}</div>` : ""}
         ${item.links?.length ? `<div class="inline-links leadership-links">${textLinks(item.links)}</div>` : ""}
         ${cardOpenCue(item)}
       </div>
   `;
 
-  return cardShell(item, `visual-card${thumb ? "" : " visual-card-text-only"}`, inner);
+  const variantClass = item.variant ? ` visual-card-${escapeHtml(item.variant)}` : "";
+  return cardShell(item, `visual-card${thumb ? "" : " visual-card-text-only"}${variantClass}`, inner);
 }
 
 function renderLeadership(data) {
