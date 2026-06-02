@@ -359,6 +359,18 @@ window.PORTFOLIO_CONTENT = {
         publications: [
           {
             title:
+              "NuclearGuard AI: Agent-Assisted Radiation Anomaly Detection and Operator Decision Support Using Gamma-Ray Spectral Data",
+            venue: "UCR AI Graduate Research Brown Bag Series",
+            year: "2026",
+            note: "eScholarship · May 29, 2026",
+            href: "https://escholarship.org/uc/item/0c67f27h",
+            actionLabel: "Show publication",
+            image: "./assets/research-intelligence.svg",
+            description:
+              "Agent-assisted dashboard using public gamma-ray spectral data, Isolation Forest, autoencoders, Streamlit, and Plotly for anomaly scoring, spatial risk visualization, and operator decision support.",
+          },
+          {
+            title:
               "Quantum-Assisted Candidate Selection for High-Energy Lithium Battery Materials Using the Materials Project Database",
             venue: "University of California, Riverside Graduate Research Symposium",
             year: "2026",
@@ -1121,6 +1133,18 @@ window.PORTFOLIO_CONTENT = {
         eyebrow: "研究",
         title: "研究、發表與進行中論文。",
         publications: [
+          {
+            title:
+              "NuclearGuard AI：以伽瑪射線光譜資料進行輻射異常偵測與操作員決策支援",
+            venue: "UCR AI 研究生研究 Brown Bag 系列",
+            year: "2026",
+            note: "eScholarship · 2026 年 5 月 29 日",
+            href: "https://escholarship.org/uc/item/0c67f27h",
+            actionLabel: "查看出版頁",
+            image: "./assets/research-intelligence.svg",
+            description:
+              "以公開伽瑪射線光譜資料、Isolation Forest、深度自編碼器、Streamlit 與 Plotly 建立操作智慧儀表板，支援異常評分、空間風險視覺化與高風險作業決策。",
+          },
           {
             title:
               "量子輔助高能量鋰電池材料候選篩選",
