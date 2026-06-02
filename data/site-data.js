@@ -98,6 +98,27 @@ window.PORTFOLIO_CONTENT = {
         title: "Representative projects and public-facing work.",
         items: [
           {
+            title: "1099Ready Lite",
+            type: "FinOps tool · Vendor readiness",
+            description:
+              "Paid vendor W-9 readiness checker that flags missing W-9 status, TIN status, legal names, addresses, entity types, and follow-up notes before 1099 review.",
+            tags: ["FinOps", "Tax Readiness", "Exception Queue", "82.8% Time Reduction"],
+            href: "https://ready-lite.web.app/",
+            actionLabel: "Open web app",
+            image: "./assets/projects/1099ready-lite-workflow-impact.jpg",
+            imageFit: "contain",
+          },
+          {
+            title: "AI-Assisted Supply Chain Optimization System",
+            type: "Supply chain · AI decision support",
+            description:
+              "MBA supply chain system expanded into a FUTURES 2026 paper, consolidating simulation data into KPI tracking, risk rules, scheduled reporting, and AI-generated action notes.",
+            tags: ["Supply Chain", "AI Operations", "FUTURES 2026", "83.3% Faster Review"],
+            href: "https://github.com/SammyFang/MGT267watchdog",
+            actionLabel: "View GitHub",
+            image: "./assets/research-pipeline.svg",
+          },
+          {
             title: "SurplusLink",
             type: "AI product · Social impact",
             description:
@@ -840,6 +861,27 @@ window.PORTFOLIO_CONTENT = {
         eyebrow: "精選成果",
         title: "代表性專案與公開成果。",
         items: [
+          {
+            title: "1099Ready Lite",
+            type: "財務營運工具 · 供應商資料準備",
+            description:
+              "付費供應商 W-9 準備度檢查工具，在 1099 審查前標記 W-9 狀態、TIN 狀態、法定名稱、地址、實體類型與追蹤備註缺口。",
+            tags: ["財務營運", "稅務準備", "例外佇列", "82.8% 時間降低"],
+            href: "https://ready-lite.web.app/",
+            actionLabel: "開啟網頁工具",
+            image: "./assets/projects/1099ready-lite-workflow-impact.jpg",
+            imageFit: "contain",
+          },
+          {
+            title: "AI-Assisted Supply Chain Optimization System",
+            type: "供應鏈 · AI 決策支援",
+            description:
+              "MBA 供應鏈課程延伸專案，後續擴展為 FUTURES 2026 論文；整合模擬資料、KPI 追蹤、風險規則、定期報告與 AI 行動建議。",
+            tags: ["供應鏈", "AI 營運", "FUTURES 2026", "83.3% 審查加速"],
+            href: "https://github.com/SammyFang/MGT267watchdog",
+            actionLabel: "查看 GitHub",
+            image: "./assets/research-pipeline.svg",
+          },
           {
             title: "SurplusLink",
             type: "人工智慧產品 · 社會影響",

@@ -1286,6 +1286,10 @@ img {
   object-fit: cover;
 }
 
+.portfolio-thumb.media-contain img {
+  object-fit: contain;
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
