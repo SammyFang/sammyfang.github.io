@@ -587,6 +587,15 @@ window.PORTFOLIO_CONTENT = {
         title: "Coverage and public profiles.",
         items: [
           {
+            title: "'Something Students Have Been Waiting For'",
+            source: "UCR School of Business",
+            year: "2026",
+            href: "https://business.ucr.edu/news/2026/05/27/something-students-have-been-waiting",
+            mediaLabel: "GDG at UCR",
+            description:
+              "School of Business feature on the launch of GDG at UCR, its kickoff momentum, and a student community open to coders and noncoders.",
+          },
+          {
             title: "Riverside County Fast Pitch regional recognition",
             source: "Riverside County Office of Economic Development",
             year: "2026",
@@ -1361,6 +1370,15 @@ window.PORTFOLIO_CONTENT = {
         eyebrow: "媒體與公開介紹",
         title: "媒體報導與公開介紹",
         items: [
+          {
+            title: "Something Students Have Been Waiting For",
+            source: "加州大學河濱分校商學院",
+            year: "2026",
+            href: "https://business.ucr.edu/news/2026/05/27/something-students-have-been-waiting",
+            mediaLabel: "GDG at UCR",
+            description:
+              "商學院專文報導 GDG at UCR 的成立、啟動活動動能，以及面向不同背景學生的技術學習社群定位。",
+          },
           {
             title: "Riverside County Fast Pitch 區域賽紀錄",
             source: "Riverside County Office of Economic Development",
