@@ -371,6 +371,19 @@ window.PORTFOLIO_CONTENT = {
           },
           {
             title:
+              "AI-Assisted Supply Chain Monitoring for Operations Decision Support: A Simulation-Based Study on Visibility, Risk Detection, and Benchmark Performance",
+            venue: "2026 STEM-Humanities Early Career Scientist Symposium · UC Riverside Postdoctoral Association",
+            year: "2026",
+            note: "Poster presentation · Jun 17, 2026",
+            href: "https://rpa.ucr.edu/page/Symposium-2026/",
+            actionLabel: "View symposium",
+            image: "./assets/stem-humanities-supply-chain-symposium-2026.webp",
+            imagePosition: "center 40%",
+            description:
+              "A simulation-based study of how an AI-assisted monitoring layer can turn fragmented procurement, inventory, production, logistics, and financial signals into structured visibility, transparent risk alerts, and reviewable decision notes for human teams.",
+          },
+          {
+            title:
               "NuclearGuard AI: Agent-Assisted Radiation Anomaly Detection and Operator Decision Support Using Gamma-Ray Spectral Data",
             venue: "UCR AI Graduate Research Brown Bag Series",
             year: "2026",
@@ -1164,6 +1177,19 @@ window.PORTFOLIO_CONTENT = {
             image: "./assets/research-pipeline.svg",
             description:
               "以 M5 零售資料整合分位數預測、循環神經網路、隨機控制、mean-CVaR 與 QUBO 相容搜尋。120 組配對的模型決策中，預估利潤提升 9.48%、風險調整目標提升 10.44%；搜尋結果吻合精確基準，但不代表已證明量子優勢。",
+          },
+          {
+            title:
+              "AI 輔助供應鏈監控與營運決策支援：以模擬研究檢視可視性、風險偵測與基準績效",
+            venue: "2026 STEM-Humanities 早期職涯科學家研討會 · UCR 博士後研究人員協會",
+            year: "2026",
+            note: "海報發表 · 2026 年 6 月 17 日",
+            href: "https://rpa.ucr.edu/page/Symposium-2026/",
+            actionLabel: "查看研討會",
+            image: "./assets/stem-humanities-supply-chain-symposium-2026.webp",
+            imagePosition: "center 40%",
+            description:
+              "以模擬研究探討 AI 輔助監控層如何將分散於採購、庫存、生產、物流與財務流程的營運訊號，轉化為結構化可視性、透明風險警示與可供人員覆核的決策紀錄。",
           },
           {
             title:
