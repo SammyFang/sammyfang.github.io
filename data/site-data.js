@@ -367,7 +367,7 @@ window.PORTFOLIO_CONTENT = {
             actionLabel: "Explore research demo",
             image: "./assets/research-pipeline.svg",
             description:
-              "Integrated quantile forecasting, recurrent neural networks, stochastic control, mean-CVaR optimization, and QUBO-compatible search on the M5 dataset. Across 120 matched model-based decisions, the framework estimated 9.48% profit lift and 10.44% risk-adjusted objective lift; the search matched the exact benchmark without demonstrating quantum advantage.",
+              "Integrated quantile forecasting, mean-CVaR optimization, and QUBO-compatible search on the M5 dataset. Across 120 matched model-based decisions, the framework estimated 9.48% profit lift and 10.44% risk-adjusted objective lift; it does not establish quantum advantage.",
           },
           {
             title:
@@ -378,9 +378,9 @@ window.PORTFOLIO_CONTENT = {
             href: "https://rpa.ucr.edu/page/Symposium-2026/",
             actionLabel: "View symposium",
             image: "./assets/stem-humanities-supply-chain-symposium-2026.webp",
-            imagePosition: "center 40%",
+            imagePosition: "center 38%",
             description:
-              "A simulation-based study of how an AI-assisted monitoring layer can turn fragmented procurement, inventory, production, logistics, and financial signals into structured visibility, transparent risk alerts, and reviewable decision notes for human teams.",
+              "Simulation-based AI monitoring that turns fragmented procurement, inventory, production, logistics, and financial signals into structured visibility, transparent risk alerts, and reviewable decision notes.",
           },
           {
             title:
@@ -392,7 +392,7 @@ window.PORTFOLIO_CONTENT = {
             actionLabel: "Show publication",
             image: "./assets/research-intelligence.svg",
             description:
-              "Agent-assisted dashboard using public gamma-ray spectral data, Isolation Forest, autoencoders, Streamlit, and Plotly for anomaly scoring, spatial risk visualization, and operator decision support.",
+              "Agent-assisted dashboard using public gamma-ray spectra for anomaly scoring, spatial risk visualization, and operator decision support.",
           },
           {
             title:
@@ -1176,7 +1176,7 @@ window.PORTFOLIO_CONTENT = {
             actionLabel: "開啟研究互動展示",
             image: "./assets/research-pipeline.svg",
             description:
-              "以 M5 零售資料整合分位數預測、循環神經網路、隨機控制、mean-CVaR 與 QUBO 相容搜尋。120 組配對的模型決策中，預估利潤提升 9.48%、風險調整目標提升 10.44%；搜尋結果吻合精確基準，但不代表已證明量子優勢。",
+              "以 M5 資料整合分位數預測、mean-CVaR 與 QUBO 相容搜尋。120 組配對的模型決策中，預估利潤提升 9.48%、風險調整目標提升 10.44%；結果不代表已證明量子優勢。",
           },
           {
             title:
@@ -1187,9 +1187,9 @@ window.PORTFOLIO_CONTENT = {
             href: "https://rpa.ucr.edu/page/Symposium-2026/",
             actionLabel: "查看研討會",
             image: "./assets/stem-humanities-supply-chain-symposium-2026.webp",
-            imagePosition: "center 40%",
+            imagePosition: "center 38%",
             description:
-              "以模擬研究探討 AI 輔助監控層如何將分散於採購、庫存、生產、物流與財務流程的營運訊號，轉化為結構化可視性、透明風險警示與可供人員覆核的決策紀錄。",
+              "以模擬研究將採購、庫存、生產、物流與財務訊號轉化為可視性、透明風險警示與可覆核的決策紀錄。",
           },
           {
             title:
@@ -1201,7 +1201,7 @@ window.PORTFOLIO_CONTENT = {
             actionLabel: "查看出版頁",
             image: "./assets/research-intelligence.svg",
             description:
-              "以公開伽瑪射線光譜資料、Isolation Forest、深度自編碼器、Streamlit 與 Plotly 建立操作智慧儀表板，支援異常評分、空間風險視覺化與高風險作業決策。",
+              "以公開伽瑪射線光譜建立異常評分、空間風險視覺化與操作員決策支援儀表板。",
           },
           {
             title:
