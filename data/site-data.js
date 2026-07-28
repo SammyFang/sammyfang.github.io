@@ -359,6 +359,18 @@ window.PORTFOLIO_CONTENT = {
         publications: [
           {
             title:
+              "Dynamic Pricing and Markdown Optimization under Demand Uncertainty via Deep Learning and Quantum Search",
+            venue: "2026 INFORMS Revenue Management and Pricing Section Conference · Michigan Ross",
+            year: "2026",
+            note: "Conference paper · Jul 2026",
+            href: "https://sammyfang.tw/dynamic-pricing-impact/",
+            actionLabel: "Explore research demo",
+            image: "./assets/research-pipeline.svg",
+            description:
+              "Integrated quantile forecasting, recurrent neural networks, stochastic control, mean-CVaR optimization, and QUBO-compatible search on the M5 dataset. Across 120 matched model-based decisions, the framework estimated 9.48% profit lift and 10.44% risk-adjusted objective lift; the search matched the exact benchmark without demonstrating quantum advantage.",
+          },
+          {
+            title:
               "NuclearGuard AI: Agent-Assisted Radiation Anomaly Detection and Operator Decision Support Using Gamma-Ray Spectral Data",
             venue: "UCR AI Graduate Research Brown Bag Series",
             year: "2026",
@@ -424,7 +436,6 @@ window.PORTFOLIO_CONTENT = {
           },
         ],
         workingPapers: [
-          "Dynamic Pricing and Markdown Optimization under Demand Uncertainty via Deep Learning and Quantum-Assisted Search",
           "Computational Primitives for High-Fidelity Supply Chain Simulation: A GPU Kernel Reformulation Using Triton",
           "Anonymous Reporting with Verifiable Audit Trails and AI-Assisted Incident Triage",
           "Brain-Inspired EEG Motor Imagery Decoding Using Spiking Neural Networks and Hybrid Quantum Classifiers",
@@ -1144,6 +1155,18 @@ window.PORTFOLIO_CONTENT = {
         publications: [
           {
             title:
+              "需求不確定下的動態定價與降價最佳化：結合深度學習與量子搜尋",
+            venue: "2026 INFORMS 收益管理與定價分會年會 · 密西根大學 Ross 商學院",
+            year: "2026",
+            note: "會議論文 · 2026 年 7 月",
+            href: "https://sammyfang.tw/dynamic-pricing-impact/",
+            actionLabel: "開啟研究互動展示",
+            image: "./assets/research-pipeline.svg",
+            description:
+              "以 M5 零售資料整合分位數預測、循環神經網路、隨機控制、mean-CVaR 與 QUBO 相容搜尋。120 組配對的模型決策中，預估利潤提升 9.48%、風險調整目標提升 10.44%；搜尋結果吻合精確基準，但不代表已證明量子優勢。",
+          },
+          {
+            title:
               "NuclearGuard AI：以伽瑪射線光譜資料進行輻射異常偵測與操作員決策支援",
             venue: "UCR AI 研究生研究 Brown Bag 系列",
             year: "2026",
@@ -1208,7 +1231,6 @@ window.PORTFOLIO_CONTENT = {
           },
         ],
         workingPapers: [
-          "需求不確定下的動態定價與降價最佳化：深度學習與量子輔助搜尋方法",
           "高擬真供應鏈模擬的計算基礎：以平行運算框架重新設計圖形處理器核心",
           "具可驗證稽核軌跡與人工智慧輔助事件分流的匿名通報機制",
           "結合脈衝神經網路與混合量子分類器的腦波動作想像解碼",
