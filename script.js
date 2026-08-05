@@ -1,21 +1,38 @@
 const content = window.PORTFOLIO_CONTENT;
 const root = document.documentElement;
+root.classList.add("js");
 const app = document.querySelector("[data-app]");
+const skipLink = document.querySelector(".skip-link");
 const brand = document.querySelector("[data-brand]");
 const nav = document.querySelector("[data-nav]");
 const footer = document.querySelector("[data-footer]");
 const topEmail = document.querySelector("[data-top-email]");
 const socialLinks = document.querySelector("[data-social-links]");
 const themeToggle = document.querySelector("[data-theme-toggle]");
+const themeIcon = document.querySelector("[data-theme-icon]");
 const languageToggle = document.querySelector("[data-lang-toggle]");
+const scrollProgress = document.querySelector("[data-scroll-progress]");
 
 const savedTheme = window.localStorage.getItem("portfolio-theme");
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 const savedLanguage = window.localStorage.getItem("portfolio-language");
 let language = savedLanguage || "zh";
+let revealObserver;
+let sectionObserver;
 
 if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
   root.dataset.theme = "dark";
+}
+
+function updateThemeControl() {
+  const isDark = root.dataset.theme === "dark";
+  const nextLabel = language === "zh"
+    ? isDark ? "切換至淺色主題" : "切換至深色主題"
+    : isDark ? "Switch to light theme" : "Switch to dark theme";
+
+  themeToggle?.setAttribute("aria-label", nextLabel);
+  themeToggle?.setAttribute("title", nextLabel);
+  if (themeIcon) themeIcon.textContent = isDark ? "☀" : "☾";
 }
 
 function escapeHtml(value) {
@@ -342,10 +359,14 @@ function renderHeader(data) {
     ${brandAccent ? `<strong>${escapeHtml(brandAccent)}</strong>` : ""}
   `;
   brand.setAttribute("aria-label", data.ui.backToTop);
+  if (skipLink) {
+    skipLink.textContent = language === "zh" ? "跳至主要內容" : "Skip to content";
+  }
 
   if (topEmail) {
     topEmail.href = `mailto:${content.profile.email}`;
     topEmail.innerHTML = `${iconSvg("mail")}<span>${escapeHtml(content.profile.email)}</span>`;
+    topEmail.setAttribute("aria-label", content.profile.email);
   }
 
   if (socialLinks) {
@@ -374,25 +395,47 @@ function renderHeader(data) {
     "aria-label",
     language === "zh" ? "Switch to English" : "切換到中文",
   );
+  updateThemeControl();
 }
 
 function renderHero(data) {
   const heroTags = data.hero.tags || [];
   const displayName = data.displayName || content.profile.name;
+  const scrollLabel = language === "zh" ? "向下探索" : "Scroll to explore";
 
   return `
     <section class="hero" id="home" style="--hero-bg: url('${escapeHtml(content.profile.image)}')">
+      <div class="hero-atmosphere" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
       <div class="hero-inner">
         <div class="hero-copy">
           <p class="hero-kicker">${escapeHtml(data.hero.eyebrow)}</p>
           <h1>${escapeHtml(displayName)}</h1>
-          <p>${escapeHtml(data.hero.lede)}</p>
-          <div class="hero-tags">${heroTags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
+          <p class="hero-lede">${escapeHtml(data.hero.lede)}</p>
+          <div class="hero-actions">
+            <a href="#portfolio">${escapeHtml(data.ui.viewWork)}</a>
+            <a href="mailto:${escapeHtml(content.profile.email)}">${escapeHtml(data.ui.contactMe)}</a>
+          </div>
+          <div class="hero-meta" aria-label="Profile details">
+            <span>${escapeHtml(content.profile.pronouns)}</span>
+            <span>${escapeHtml(content.profile.location)}</span>
+          </div>
         </div>
         <figure class="hero-photo">
-          <img src="${escapeHtml(content.profile.image)}" alt="${escapeHtml(displayName)}" />
+          <div class="hero-photo-frame">
+            <img src="${escapeHtml(content.profile.image)}" alt="${escapeHtml(displayName)}" />
+          </div>
+          <figcaption>
+            <span>UC Riverside</span>
+            <span>Strategy × Systems × Research</span>
+          </figcaption>
         </figure>
       </div>
+      <div class="hero-tag-rail" aria-label="Focus areas">
+        ${heroTags.map((tag, index) => `<span><i>${String(index + 1).padStart(2, "0")}</i>${escapeHtml(tag)}</span>`).join("")}
+      </div>
+      <a class="scroll-cue" href="#resume"><span>${scrollLabel}</span><i aria-hidden="true"></i></a>
     </section>
   `;
 }
@@ -709,6 +752,67 @@ function scrollToCurrentHash() {
   document.getElementById(targetId)?.scrollIntoView({ block: "start" });
 }
 
+function setupPageInteractions() {
+  revealObserver?.disconnect();
+  sectionObserver?.disconnect();
+
+  const revealTargets = document.querySelectorAll([
+    ".section-title",
+    ".about-summary",
+    ".resume-entry",
+    ".credential-card",
+    ".portfolio-card",
+    ".visual-card",
+    ".compact-entry",
+    ".block-heading",
+    ".contact-panel",
+  ].join(","));
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  revealTargets.forEach((target) => target.classList.add("reveal"));
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    revealTargets.forEach((target) => target.classList.add("is-visible"));
+  } else {
+    revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        });
+      },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.08 },
+    );
+    revealTargets.forEach((target) => revealObserver.observe(target));
+  }
+
+  const sections = document.querySelectorAll("main > section[id], .anchor-block[id]");
+  if ("IntersectionObserver" in window) {
+    sectionObserver = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!visible) return;
+        nav.querySelectorAll("a").forEach((link) => {
+          const active = link.getAttribute("href") === `#${visible.target.id}`;
+          if (active) link.setAttribute("aria-current", "page");
+          else link.removeAttribute("aria-current");
+        });
+      },
+      { rootMargin: "-28% 0px -58% 0px", threshold: [0, 0.08, 0.2] },
+    );
+    sections.forEach((section) => sectionObserver.observe(section));
+  }
+}
+
+function updateScrollInterface() {
+  const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+  const progress = Math.min(Math.max(window.scrollY / maxScroll, 0), 1);
+  scrollProgress?.style.setProperty("--scroll-progress", progress);
+  document.querySelector(".site-header")?.classList.toggle("is-scrolled", window.scrollY > 24);
+}
+
 function render() {
   const data = content.locales[language] || content.locales.zh;
   document.title = data.meta.title;
@@ -726,6 +830,8 @@ function render() {
     renderPress(data),
   ].join("");
   renderFooter(data);
+  setupPageInteractions();
+  updateScrollInterface();
   scrollToCurrentHash();
 }
 
@@ -733,6 +839,7 @@ themeToggle?.addEventListener("click", () => {
   const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
   root.dataset.theme = nextTheme;
   window.localStorage.setItem("portfolio-theme", nextTheme);
+  updateThemeControl();
 });
 
 languageToggle?.addEventListener("click", () => {
@@ -740,5 +847,8 @@ languageToggle?.addEventListener("click", () => {
   window.localStorage.setItem("portfolio-language", language);
   render();
 });
+
+window.addEventListener("scroll", updateScrollInterface, { passive: true });
+window.addEventListener("resize", updateScrollInterface, { passive: true });
 
 render();
