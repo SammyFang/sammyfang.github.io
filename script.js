@@ -749,7 +749,21 @@ function scrollToCurrentHash() {
   const targetId = window.location.hash.slice(1);
   if (!targetId) return;
 
-  document.getElementById(targetId)?.scrollIntoView({ block: "start" });
+  const alignTarget = () => {
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    const previousBehavior = root.style.scrollBehavior;
+    root.style.scrollBehavior = "auto";
+    target.scrollIntoView({ block: "start" });
+    root.style.scrollBehavior = previousBehavior;
+  };
+
+  alignTarget();
+  const fontsReady = document.fonts?.ready || Promise.resolve();
+  fontsReady.then(() => {
+    window.requestAnimationFrame(() => window.requestAnimationFrame(alignTarget));
+  });
 }
 
 function setupPageInteractions() {
