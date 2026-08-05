@@ -9,6 +9,7 @@ const dataSource = readFileSync(resolve(repositoryRoot, "data/site-data.js"), "u
 const shellSource = readFileSync(resolve(repositoryRoot, "index.html"), "utf8");
 const scriptSource = readFileSync(resolve(repositoryRoot, "script.js"), "utf8");
 const styleSource = readFileSync(resolve(repositoryRoot, "styles.css"), "utf8");
+const themeSource = readFileSync(resolve(repositoryRoot, "theme-v3.css"), "utf8");
 const sandbox = { window: {} };
 
 vm.runInNewContext(dataSource, sandbox, { filename: "site-data.js" });
@@ -96,6 +97,7 @@ test("the shell exposes bilingual, theme, navigation, and accessible controls", 
   assert.match(shellSource, /data-theme-toggle/);
   assert.match(shellSource, /class="skip-link"/);
   assert.match(shellSource, /data-scroll-progress/);
+  assert.match(shellSource, /theme-v3\.css\?v=20260805-duck-tech/);
 
   for (const id of ["resume", "portfolio", "research", "press", "media", "contact"]) {
     assert.match(scriptSource, new RegExp(`id=["']${id}["']`), `rendered #${id} section`);
@@ -110,4 +112,20 @@ test("the shell exposes bilingual, theme, navigation, and accessible controls", 
     /hero-tag-rail\s*>\s*span:nth-child[^}]*display:\s*none/s,
     "mobile styles must not hide existing focus areas",
   );
+  assert.match(themeSource, /--duck-yellow:\s*#ffc928/i);
+  assert.match(themeSource, /--duck-orange:\s*#ff7139/i);
+  assert.match(themeSource, /--tech-blue:\s*#2f7df4/i);
+  assert.match(themeSource, /#research \.visual-card:first-child\s*\{[^}]*grid-column:\s*1 \/ -1/s);
+  assert.match(themeSource, /\.portfolio-grid\s*\{[^}]*align-items:\s*start/s);
+  assert.match(themeSource, /@media \(max-width: 720px\)/);
+});
+
+test("duck-tech cards guard against overlap and stretched whitespace regressions", () => {
+  assert.match(themeSource, /\.portfolio-card,\s*\.portfolio-card:nth-child\(n\)\s*\{[^}]*grid-template-rows:\s*auto auto/s);
+  assert.match(themeSource, /\.portfolio-grid\s*\{[^}]*align-items:\s*start/s);
+  assert.match(themeSource, /\.portfolio-thumb,\s*\.portfolio-card:nth-child\(n\) \.portfolio-thumb\s*\{[^}]*margin:\s*0/s);
+  assert.match(themeSource, /#research \.visual-card:first-child\s*\{[^}]*grid-column:\s*1 \/ -1[^}]*grid-template-columns:/s);
+  assert.match(themeSource, /#research \.visual-card:first-child \.visual-body\s*\{[^}]*padding:/s);
+  assert.match(themeSource, /border-radius:\s*var\(--radius-lg\)/);
+  assert.doesNotMatch(themeSource, /hero-tag-rail[^}]*display:\s*none/s);
 });
