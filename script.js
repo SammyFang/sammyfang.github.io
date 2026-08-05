@@ -386,8 +386,13 @@ function renderHero(data) {
         <div class="hero-copy">
           <p class="hero-kicker">${escapeHtml(data.hero.eyebrow)}</p>
           <h1>${escapeHtml(displayName)}</h1>
-          <p>${escapeHtml(data.hero.lede)}</p>
+          <p class="hero-statement">${escapeHtml(data.hero.title)}</p>
+          <p class="hero-lede">${escapeHtml(data.hero.lede)}</p>
           <div class="hero-tags">${heroTags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
+          <a class="hero-scroll" href="#resume">
+            <span>${escapeHtml(label("heroCta"))}</span>
+            <span aria-hidden="true">&#8595;</span>
+          </a>
         </div>
         <figure class="hero-photo">
           <img src="${escapeHtml(content.profile.image)}" alt="${escapeHtml(displayName)}" />

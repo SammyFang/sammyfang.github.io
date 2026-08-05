@@ -50,7 +50,7 @@ window.PORTFOLIO_CONTENT = {
       },
       hero: {
         eyebrow: "Strategy · Supply Chain Analytics · AI Systems",
-        title: "Business-minded technologist connecting operations and AI.",
+        title: "Turning uncertainty into decisions.",
         lede:
           "Sammy Fang works across strategic sourcing, procurement operations, automation engineering, applied AI research, and product-oriented analytics.",
         tags: [
@@ -859,7 +859,7 @@ window.PORTFOLIO_CONTENT = {
       },
       hero: {
         eyebrow: "策略規劃 · 供應鏈分析 · 人工智慧系統",
-        title: "把營運問題、資料分析與人工智慧系統接在一起。",
+        title: "把不確定，變成可以執行的決策。",
         lede:
           "聚焦策略採購、採購營運、自動化工程、人工智慧研究與產品導向分析。",
         tags: [
