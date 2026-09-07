@@ -170,6 +170,22 @@ window.PORTFOLIO_CONTENT = {
           "Each role is summarized for scanning first. Longer implementation details can be added in the data file without touching the page code.",
         items: [
           {
+            title: "Supply Chain Analyst, Intern",
+            organization: "d-Matrix",
+            employment: "Internship",
+            period: "Jun 2026 - Sep 2026",
+            location: "Santa Clara, California, United States",
+            department: "Supply Chain Operations",
+            summary:
+              "Supported supply chain analytics and cross-border logistics process improvements through data integration, reporting, and workflow automation.",
+            highlights: [
+              "Helped launch a centralized shipment-request workflow and improve logistics visibility through integrated monitoring and exception notifications.",
+              "Built analytics and automation prototypes supporting logistics cost review and inventory cycle-count operations.",
+            ],
+            details: [],
+            tools: ["Supply Chain Analytics", "Logistics Operations", "SQL", "Power BI", "Workflow Automation"],
+          },
+          {
             title: "Procurement Operations Analyst",
             organization: "Hewlett Packard Enterprise",
             employment: "Full-time",
@@ -360,14 +376,14 @@ window.PORTFOLIO_CONTENT = {
           {
             title:
               "Dynamic Pricing and Markdown Optimization under Demand Uncertainty via Deep Learning and Quantum Search",
-            venue: "2026 INFORMS Revenue Management and Pricing Section Conference · Michigan Ross",
+            venue: "2026 INFORMS Revenue Management and Pricing Section Conference · University of Michigan",
             year: "2026",
-            note: "Conference paper · Jul 2026",
+            note: "Conference presentation · Jul 22, 2026",
             href: "https://sammyfang.tw/dynamic-pricing-impact/",
-            actionLabel: "Explore research demo",
+            actionLabel: "Show publication",
             image: "./assets/research-pipeline.svg",
             description:
-              "Integrated quantile forecasting, mean-CVaR optimization, and QUBO-compatible search on the M5 dataset. Across 120 matched model-based decisions, the framework estimated 9.48% profit lift and 10.44% risk-adjusted objective lift; it does not establish quantum advantage.",
+              "Presented a framework integrating recurrent quantile forecasting, risk-aware mean-CVaR optimization, and QUBO-assisted search. Using the M5 dataset and 120 matched item-store-origin decisions, it identified a 9.48% model-based profit lift over historical pricing. QUBO-assisted search matched classical and exhaustive benchmarks at displayed precision; quantum-hardware and scaling advantages remain to be established.",
           },
           {
             title:
@@ -979,6 +995,22 @@ window.PORTFOLIO_CONTENT = {
           "每段經歷先保留可掃讀摘要，較長的實作細節放在可展開區塊；之後只要改資料檔，不需要逐行改頁面程式。",
         items: [
           {
+            title: "供應鏈分析師實習生",
+            organization: "d-Matrix",
+            employment: "實習",
+            period: "2026.06 - 2026.09",
+            location: "美國加州聖塔克拉拉",
+            department: "供應鏈營運",
+            summary:
+              "透過資料整合、報表與工作流程自動化，支援供應鏈分析及跨境物流流程改善。",
+            highlights: [
+              "協助集中式出貨申請流程上線，並透過整合監控與異常通知改善物流可視性。",
+              "建立分析與自動化原型，支援物流成本檢視及庫存盤點作業。",
+            ],
+            details: [],
+            tools: ["供應鏈分析", "物流營運", "SQL", "Power BI", "工作流程自動化"],
+          },
+          {
             title: "採購營運分析師",
             organization: "慧與科技",
             employment: "全職",
@@ -1169,14 +1201,14 @@ window.PORTFOLIO_CONTENT = {
           {
             title:
               "需求不確定下的動態定價與降價最佳化：結合深度學習與量子搜尋",
-            venue: "2026 INFORMS 收益管理與定價分會年會 · 密西根大學 Ross 商學院",
+            venue: "2026 INFORMS 收益管理與定價分會研討會 · 密西根大學",
             year: "2026",
-            note: "會議論文 · 2026 年 7 月",
+            note: "會議發表 · 2026 年 7 月 22 日",
             href: "https://sammyfang.tw/dynamic-pricing-impact/",
-            actionLabel: "開啟研究互動展示",
+            actionLabel: "查看發表",
             image: "./assets/research-pipeline.svg",
             description:
-              "以 M5 資料整合分位數預測、mean-CVaR 與 QUBO 相容搜尋。120 組配對的模型決策中，預估利潤提升 9.48%、風險調整目標提升 10.44%；結果不代表已證明量子優勢。",
+              "提出整合循環分位數預測、風險感知 mean-CVaR 最佳化與 QUBO 輔助搜尋的架構。使用 M5 資料集與 120 組品項、門市、產地配對決策，相較歷史定價辨識出 9.48% 的模型估計利潤提升。QUBO 輔助搜尋在顯示精度下與傳統及窮舉基準一致；量子硬體與規模化優勢仍待驗證。",
           },
           {
             title:
