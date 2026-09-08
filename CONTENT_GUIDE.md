@@ -152,7 +152,7 @@ href: "",
 About 區塊的履歷 PDF 按鈕使用：
 
 ```js
-resumePdf: "./assets/sammy-fang-resume.pdf",
+resumePdf: "./assets/yung-sian-fang-resume.pdf",
 ```
 
 若要換履歷檔，先把新的 PDF 放進 `docs/assets/`，再更新 `profile.resumePdf`。

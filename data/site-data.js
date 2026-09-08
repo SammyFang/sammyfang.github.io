@@ -18,7 +18,7 @@ window.PORTFOLIO_CONTENT = {
       { src: "./assets/ucr-profile-960.webp", width: 960 },
     ],
     imageBackdrop: "./assets/ucr-profile-backdrop.webp",
-    resumePdf: "./assets/sammy-fang-resume.pdf",
+    resumePdf: "./assets/yung-sian-fang-resume.pdf",
   },
   locales: {
     en: {
