@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#14213d" />
     <meta
       name="description"
       content="方方/Sammy 的雙語個人履歷與作品集網站。"
@@ -10,37 +11,102 @@
     <title>Sammy</title>
     <link rel="icon" type="image/svg+xml" href="./assets/duck-favicon.svg" />
     <link rel="shortcut icon" type="image/svg+xml" href="./assets/duck-favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css?v=20260727-research-rwd" />
+    <link rel="stylesheet" href="./styles.css?v=c53ca90f0dc1" />
   </head>
   <body>
+    <a class="skip-link" href="#resume">跳至主要內容 / Skip to content</a>
     <header class="site-header">
       <div class="top-strip">
-        <a class="top-email" href="mailto:yfang097@ucr.edu" data-top-email></a>
-        <div class="top-links" data-social-links></div>
+        <a class="top-email" href="mailto:yfang097@ucr.edu" data-top-email>
+          <span>yfang097@ucr.edu</span>
+        </a>
+        <div class="top-links" data-social-links>
+          <a href="https://www.linkedin.com/in/yung-sian-fang/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+          <a href="https://github.com/SammyFang" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
+        </div>
       </div>
       <div class="nav-bar">
-        <a class="brand" href="#home" data-brand aria-label="Back to top"></a>
-        <nav class="desktop-nav" data-nav aria-label="Primary navigation"></nav>
+        <a class="brand" href="#home" data-brand aria-label="Back to top"><span>Sammy</span> <strong>Fang</strong></a>
+        <nav id="primary-navigation" class="desktop-nav" data-nav aria-label="Primary navigation">
+          <a href="#home">首頁</a>
+          <a href="#resume">關於</a>
+          <a href="#contact">聯絡</a>
+        </nav>
         <div class="header-actions">
-          <button class="language-button" type="button" data-lang-toggle></button>
+          <button class="language-button" type="button" data-lang-toggle>EN</button>
           <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle theme">
             <span aria-hidden="true">◐</span>
+          </button>
+          <button
+            class="menu-button"
+            type="button"
+            data-menu-toggle
+            aria-controls="primary-navigation"
+            aria-expanded="false"
+          >
+            <span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span data-menu-label>選單</span>
           </button>
         </div>
       </div>
     </header>
 
-    <main data-app></main>
+    <main id="main-content" data-app>
+      <section class="hero fallback-hero" id="home" style="--hero-bg: url('./assets/ucr-profile-backdrop.webp')">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="hero-kicker">策略規劃 · 供應鏈分析 · 人工智慧系統</p>
+            <h1>方方 / Sammy</h1>
+            <p>聚焦策略採購、採購營運、自動化工程、人工智慧研究與產品導向分析。</p>
+          </div>
+          <figure class="hero-photo">
+            <img
+              src="./assets/ucr-profile-768.webp"
+              srcset="./assets/ucr-profile-480.webp 480w, ./assets/ucr-profile-768.webp 768w, ./assets/ucr-profile-960.webp 960w"
+              sizes="(max-width: 640px) calc(100vw - 28px), (max-width: 900px) 380px, 390px"
+              width="960"
+              height="1200"
+              alt="Yung-Sian (Sammy) Fang"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </figure>
+        </div>
+      </section>
+      <section class="plain-section" id="resume">
+        <div class="resume-layout">
+          <div class="resume-main">
+            <div class="section-title"><h2>關於</h2></div>
+            <div class="about-summary">
+              <p>Yung-Sian (Sammy) Fang 的雙語個人履歷、研究與作品集網站。</p>
+              <a class="resume-file-button" href="./assets/sammy-fang-resume.pdf" target="_blank" rel="noopener noreferrer">查看履歷檔案</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="plain-section contact-section" id="contact">
+        <div class="single-column visual-section contact-section-inner">
+          <div class="contact-heading">
+            <div class="section-title"><h2>聯絡</h2></div>
+            <p class="contact-intro">可聯繫研究合作、工作坊、演講、產品專案與媒體採訪。</p>
+          </div>
+          <div class="contact-layout fallback-contact">
+            <div class="contact-panel">
+              <a href="mailto:yfang097@ucr.edu"><span>yfang097@ucr.edu</span></a>
+              <a href="https://www.linkedin.com/in/yung-sian-fang/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span></a>
+            </div>
+          </div>
+          <noscript><p class="fallback-note">JavaScript 未啟用，現顯示基本聯絡與履歷資訊。</p></noscript>
+        </div>
+      </section>
+    </main>
 
-    <footer class="site-footer" data-footer></footer>
+    <footer class="site-footer" data-footer>
+      <span>© 2026 Yung-Sian (Sammy) Fang.</span>
+      <a href="#home">回到頂端</a>
+    </footer>
 
-    <script src="./data/site-data.js?v=20260727-research-rwd"></script>
-    <script src="./script.js?v=20260601-ucr-gdg-media"></script>
+    <script src="./data/site-data.js?v=d06b36094a63"></script>
+    <script src="./script.js?v=603e666c47ed"></script>
   </body>
 </html>

@@ -11,7 +11,13 @@ window.PORTFOLIO_CONTENT = {
     instagram: "https://www.instagram.com/duck_duck_fang/",
     orcid: "https://orcid.org/0009-0007-9786-2684",
     scholar: "https://scholar.google.com/citations?user=VqA6DO8AAAAJ&hl=en",
-    image: "./assets/ucr-profile.jpg",
+    image: "./assets/ucr-profile-768.webp",
+    imageSrcSet: [
+      { src: "./assets/ucr-profile-480.webp", width: 480 },
+      { src: "./assets/ucr-profile-768.webp", width: 768 },
+      { src: "./assets/ucr-profile-960.webp", width: 960 },
+    ],
+    imageBackdrop: "./assets/ucr-profile-backdrop.webp",
     resumePdf: "./assets/sammy-fang-resume.pdf",
   },
   locales: {

@@ -1,6 +1,7 @@
 const content = window.PORTFOLIO_CONTENT;
 const root = document.documentElement;
 const app = document.querySelector("[data-app]");
+const siteHeader = document.querySelector(".site-header");
 const brand = document.querySelector("[data-brand]");
 const nav = document.querySelector("[data-nav]");
 const footer = document.querySelector("[data-footer]");
@@ -8,11 +9,59 @@ const topEmail = document.querySelector("[data-top-email]");
 const socialLinks = document.querySelector("[data-social-links]");
 const themeToggle = document.querySelector("[data-theme-toggle]");
 const languageToggle = document.querySelector("[data-lang-toggle]");
+const menuToggle = document.querySelector("[data-menu-toggle]");
+const menuLabel = document.querySelector("[data-menu-label]");
+const themeColor = document.querySelector('meta[name="theme-color"]');
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const mobileNavigation = window.matchMedia(
+  "(max-width: 640px), (max-height: 520px) and (max-width: 1120px)",
+);
+const requiredNavigationIds = [
+  "home",
+  "resume",
+  "portfolio",
+  "research",
+  "press",
+  "media",
+  "contact",
+];
+
+let revealObserver;
+let scrollFrame;
+let resizeFrame;
+let navigationTargets = [];
+let hasRendered = false;
+let anchorSettleTimer;
+let renderSettleTimers = [];
 
 const savedTheme = window.localStorage.getItem("portfolio-theme");
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 const savedLanguage = window.localStorage.getItem("portfolio-language");
 let language = savedLanguage || "zh";
+
+function hasValidContent(data) {
+  if (!data || typeof data !== "object") return false;
+  if (!data.profile || !data.locales?.en || !data.locales?.zh) return false;
+
+  return [data.locales.en, data.locales.zh].every((locale) =>
+    Boolean(
+      locale.meta?.title &&
+        locale.meta?.lang &&
+        locale.hero?.lede &&
+        locale.about?.paragraphs?.length &&
+        locale.experience?.items?.length &&
+        locale.education?.schools?.length &&
+        locale.featured?.items &&
+        locale.projects?.items &&
+        locale.research?.publications &&
+        locale.speaking?.items &&
+        locale.media?.items &&
+        requiredNavigationIds.every((id) => locale.nav?.[id]),
+    ),
+  );
+}
+
+const contentIsValid = hasValidContent(content);
 
 if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
   root.dataset.theme = "dark";
@@ -32,7 +81,7 @@ function isExternal(href = "") {
 }
 
 function linkAttrs(href) {
-  return isExternal(href) ? ' target="_blank" rel="noreferrer"' : "";
+  return isExternal(href) ? ' target="_blank" rel="noopener noreferrer"' : "";
 }
 
 function chips(items = [], options = {}) {
@@ -185,6 +234,10 @@ function isGenericImage(image = "") {
   return GENERIC_MEDIA_IMAGES.has(image);
 }
 
+function hasAuthenticMedia(item = {}) {
+  return Boolean(item.image && !isGenericImage(item.image));
+}
+
 function linkHost(href = "") {
   try {
     const url = new URL(href, window.location.href);
@@ -214,8 +267,19 @@ function linkDescriptor(href = "") {
   return host;
 }
 
-function faviconUrl(href = "") {
-  return `https://www.google.com/s2/favicons?sz=96&domain_url=${encodeURIComponent(href)}`;
+function sourceMonogram(item = {}) {
+  const source = item.previewTitle || linkKind(item.href) || "Web";
+  const parts = source.match(/[\p{L}\p{N}]+/gu) || ["W"];
+
+  if (parts.length > 1) {
+    return parts
+      .slice(0, 2)
+      .map((part) => part[0])
+      .join("")
+      .toUpperCase();
+  }
+
+  return parts[0].slice(0, 2).toUpperCase();
 }
 
 function linkPreviewThumb(item = {}, className = "visual-thumb") {
@@ -224,7 +288,7 @@ function linkPreviewThumb(item = {}, className = "visual-thumb") {
   return `
     <div class="${className} link-preview-thumb">
       <span class="link-preview-icon" aria-hidden="true">
-        <img src="${faviconUrl(item.href)}" alt="" loading="lazy" />
+        <span class="source-monogram">${escapeHtml(sourceMonogram(item))}</span>
       </span>
       <div class="link-preview-main">
         <strong>${escapeHtml(previewTitle)}</strong>
@@ -232,6 +296,10 @@ function linkPreviewThumb(item = {}, className = "visual-thumb") {
       </div>
     </div>
   `;
+}
+
+function sourceLockup(item = {}) {
+  return item.href ? linkPreviewThumb(item, "source-lockup") : "";
 }
 
 function mediaThumb(item = {}, index = 0, className = "visual-thumb", fallback = "Record") {
@@ -243,7 +311,7 @@ function mediaThumb(item = {}, index = 0, className = "visual-thumb", fallback =
   if (item.image && !isGenericImage(item.image)) {
     return `
       <figure class="${className}${fitClass}">
-        <img src="${escapeHtml(item.image)}" alt=""${imageStyle} loading="lazy" />
+        <img src="${escapeHtml(item.image)}" alt=""${imageStyle} loading="lazy" decoding="async" />
       </figure>
     `;
   }
@@ -368,20 +436,28 @@ function renderHeader(data) {
   nav.innerHTML = Object.entries(data.nav)
     .map(([key, label]) => `<a href="#${key}">${escapeHtml(label)}</a>`)
     .join("");
+  nav.setAttribute("aria-label", language === "zh" ? "主要導覽" : "Primary navigation");
 
   languageToggle.textContent = data.ui.languageLabel;
   languageToggle.setAttribute(
     "aria-label",
     language === "zh" ? "Switch to English" : "切換到中文",
   );
+
+  if (menuLabel) menuLabel.textContent = language === "zh" ? "選單" : "Menu";
+  syncMenuControl();
 }
 
 function renderHero(data) {
   const heroTags = data.hero.tags || [];
   const displayName = data.displayName || content.profile.name;
+  const imageSrcSet = (content.profile.imageSrcSet || [])
+    .map((source) => `${escapeHtml(source.src)} ${Number(source.width)}w`)
+    .join(", ");
+  const imageBackdrop = content.profile.imageBackdrop || content.profile.image;
 
   return `
-    <section class="hero" id="home" style="--hero-bg: url('${escapeHtml(content.profile.image)}')">
+    <section class="hero" id="home" style="--hero-bg: url('${escapeHtml(imageBackdrop)}')">
       <div class="hero-inner">
         <div class="hero-copy">
           <p class="hero-kicker">${escapeHtml(data.hero.eyebrow)}</p>
@@ -390,14 +466,23 @@ function renderHero(data) {
           <div class="hero-tags">${heroTags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</div>
         </div>
         <figure class="hero-photo">
-          <img src="${escapeHtml(content.profile.image)}" alt="${escapeHtml(displayName)}" />
+          <img
+            src="${escapeHtml(content.profile.image)}"
+            ${imageSrcSet ? `srcset="${imageSrcSet}"` : ""}
+            sizes="(max-width: 640px) calc(100vw - 28px), (max-width: 900px) 380px, 390px"
+            width="960"
+            height="1200"
+            alt="${escapeHtml(displayName)}"
+            fetchpriority="high"
+            decoding="async"
+          />
         </figure>
       </div>
     </section>
   `;
 }
 
-function renderContactPanel(data) {
+function renderContact(data) {
   const contactLabels =
     language === "zh"
       ? {
@@ -416,16 +501,25 @@ function renderContactPanel(data) {
         };
 
   return `
-    <aside class="contact-panel" id="contact">
-      <h2>${escapeHtml(label("contact"))}</h2>
-      <a href="mailto:${escapeHtml(content.profile.email)}">${rowIcon("mail")}<span>${escapeHtml(content.profile.email)}</span></a>
-      <a href="${escapeHtml(content.profile.linkedin)}"${linkAttrs(content.profile.linkedin)}>${rowIcon(contactLabels.linkedin.icon)}<span>${escapeHtml(contactLabels.linkedin.label)}</span></a>
-      <a href="${escapeHtml(content.profile.github)}"${linkAttrs(content.profile.github)}>${rowIcon(contactLabels.github.icon)}<span>${escapeHtml(contactLabels.github.label)}</span></a>
-      <a href="${escapeHtml(content.profile.instagram)}"${linkAttrs(content.profile.instagram)}>${rowIcon(contactLabels.instagram.icon)}<span>${escapeHtml(contactLabels.instagram.label)}</span></a>
-      <a href="${escapeHtml(content.profile.orcid)}"${linkAttrs(content.profile.orcid)}>${rowIcon(contactLabels.orcid.icon)}<span>${escapeHtml(contactLabels.orcid.label)}</span></a>
-      <a href="${escapeHtml(content.profile.scholar)}"${linkAttrs(content.profile.scholar)}>${rowIcon(contactLabels.scholar.icon)}<span>${escapeHtml(contactLabels.scholar.label)}</span></a>
-      ${renderPodcastNote(data)}
-    </aside>
+    <section class="plain-section contact-section" id="contact">
+      <div class="single-column visual-section contact-section-inner">
+        <div class="contact-heading">
+          ${sectionTitle("", label("contact"))}
+          ${data.contact?.body ? `<p class="contact-intro">${escapeHtml(data.contact.body)}</p>` : ""}
+        </div>
+        <div class="contact-layout">
+          <div class="contact-panel">
+            <a href="mailto:${escapeHtml(content.profile.email)}">${rowIcon("mail")}<span>${escapeHtml(content.profile.email)}</span></a>
+            <a href="${escapeHtml(content.profile.linkedin)}"${linkAttrs(content.profile.linkedin)}>${rowIcon(contactLabels.linkedin.icon)}<span>${escapeHtml(contactLabels.linkedin.label)}</span></a>
+            <a href="${escapeHtml(content.profile.github)}"${linkAttrs(content.profile.github)}>${rowIcon(contactLabels.github.icon)}<span>${escapeHtml(contactLabels.github.label)}</span></a>
+            <a href="${escapeHtml(content.profile.instagram)}"${linkAttrs(content.profile.instagram)}>${rowIcon(contactLabels.instagram.icon)}<span>${escapeHtml(contactLabels.instagram.label)}</span></a>
+            <a href="${escapeHtml(content.profile.orcid)}"${linkAttrs(content.profile.orcid)}>${rowIcon(contactLabels.orcid.icon)}<span>${escapeHtml(contactLabels.orcid.label)}</span></a>
+            <a href="${escapeHtml(content.profile.scholar)}"${linkAttrs(content.profile.scholar)}>${rowIcon(contactLabels.scholar.icon)}<span>${escapeHtml(contactLabels.scholar.label)}</span></a>
+          </div>
+          ${renderPodcastNote(data)}
+        </div>
+      </div>
+    </section>
   `;
 }
 
@@ -433,7 +527,7 @@ function renderPodcastNote(data) {
   if (!data.podcast?.title) return "";
   const hasCover = Boolean(data.podcast.image);
   const media = hasCover
-    ? `<span class="podcast-cover"><img src="${escapeHtml(data.podcast.image)}" alt="${escapeHtml(data.podcast.title)}" loading="lazy" /></span>`
+    ? `<span class="podcast-cover"><img src="${escapeHtml(data.podcast.image)}" alt="${escapeHtml(data.podcast.title)}" loading="lazy" decoding="async" /></span>`
     : `<span class="podcast-mark">${iconSvg("youtube")}</span>`;
 
   const inner = `
@@ -487,7 +581,7 @@ function renderResume(data) {
             ${data.about.paragraphs.map((text) => `<p>${escapeHtml(text)}</p>`).join("")}
             ${
               content.profile.resumePdf
-                ? `<a class="resume-file-button" href="${escapeHtml(content.profile.resumePdf)}" target="_blank" rel="noreferrer">${escapeHtml(data.ui.requestResume || label("resumeByRequest"))}</a>`
+                ? `<a class="resume-file-button" href="${escapeHtml(content.profile.resumePdf)}" target="_blank" rel="noopener noreferrer">${escapeHtml(data.ui.requestResume || label("resumeByRequest"))}</a>`
                 : ""
             }
           </div>
@@ -550,7 +644,6 @@ function renderResume(data) {
             </div>
           </div>
         </div>
-        ${renderContactPanel(data)}
       </div>
     </section>
   `;
@@ -564,9 +657,11 @@ function renderPortfolio(data) {
       <div class="portfolio-grid">
         ${items
           .map((item, index) => {
+            const hasMedia = hasAuthenticMedia(item);
             const inner = `
-                ${mediaThumb(item, index, "portfolio-thumb", item.previewTitle || item.mediaTitle || item.title || label("portfolio"))}
+                ${hasMedia ? mediaThumb(item, index, "portfolio-thumb", item.previewTitle || item.mediaTitle || item.title || label("portfolio")) : ""}
                 <div>
+                  ${hasMedia ? "" : sourceLockup(item)}
                   <p>${escapeHtml(item.type)}</p>
                   <h3>${escapeHtml(item.title)}</h3>
                   <span class="portfolio-description">${escapeHtml(item.description)}</span>
@@ -574,7 +669,11 @@ function renderPortfolio(data) {
                   ${cardOpenCue(item)}
                 </div>
               `;
-            return cardShell(item, "portfolio-card", inner);
+            return cardShell(
+              item,
+              `portfolio-card ${hasMedia ? "portfolio-card-media" : "portfolio-card-text-first"}`,
+              inner,
+            );
           })
           .join("")}
       </div>
@@ -586,10 +685,13 @@ function visualCard(item, metaParts = [], options = {}) {
   const meta = metaParts.filter(Boolean).map((part) => escapeHtml(part)).join(" · ");
   const note = options.showNote && item.note ? item.note : "";
   const index = options.index || 0;
+  const hasMedia = hasAuthenticMedia(item);
+  const textFirst = Boolean(options.textFirst && !hasMedia);
 
   const inner = `
-      ${mediaThumb(item, index, "visual-thumb", label("publication"))}
+      ${hasMedia || !options.textFirst ? mediaThumb(item, index, "visual-thumb", label("publication")) : ""}
       <div class="visual-body">
+        ${textFirst ? sourceLockup(item) : ""}
         ${meta ? `<p class="visual-meta">${meta}</p>` : ""}
         <h3>${escapeHtml(item.title)}</h3>
         ${note ? `<span class="visual-note">${escapeHtml(note)}</span>` : ""}
@@ -598,7 +700,16 @@ function visualCard(item, metaParts = [], options = {}) {
       </div>
   `;
 
-  return cardShell(item, `visual-card${options.compact ? " visual-card-compact" : ""}`, inner);
+  const classes = [
+    "visual-card",
+    options.compact ? "visual-card-compact" : "",
+    textFirst ? "visual-card-text-first" : "",
+    options.featured ? "visual-card-featured" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  return cardShell(item, classes, inner);
 }
 
 function leadershipCard(item, index = 0) {
@@ -606,11 +717,13 @@ function leadershipCard(item, index = 0) {
     .filter(Boolean)
     .map((part) => escapeHtml(part))
     .join(" · ");
-  const thumb = item.image || item.href ? mediaThumb(item, index, "visual-thumb", item.organization || item.title) : "";
+  const hasMedia = hasAuthenticMedia(item);
+  const thumb = hasMedia ? mediaThumb(item, index, "visual-thumb", item.organization || item.title) : "";
 
   const inner = `
       ${thumb}
       <div class="visual-body">
+        ${hasMedia ? "" : sourceLockup(item)}
         ${meta ? `<p class="visual-meta">${meta}</p>` : ""}
         <h3>${escapeHtml(item.organization || item.title)}</h3>
         ${item.description ? `<p class="visual-description">${escapeHtml(item.description)}</p>` : ""}
@@ -621,7 +734,7 @@ function leadershipCard(item, index = 0) {
   `;
 
   const variantClass = item.variant ? ` visual-card-${escapeHtml(item.variant)}` : "";
-  return cardShell(item, `visual-card${thumb ? "" : " visual-card-text-only"}${variantClass}`, inner);
+  return cardShell(item, `visual-card${thumb ? "" : " visual-card-text-first"}${variantClass}`, inner);
 }
 
 function renderLeadership(data) {
@@ -646,7 +759,14 @@ function renderResearch(data) {
         <h3 class="block-heading">${escapeHtml(label("publication"))}</h3>
         <div class="visual-grid">
           ${data.research.publications
-            .map((item, index) => visualCard(item, [item.venue, item.year], { showNote: true, index }))
+            .map((item, index) =>
+              visualCard(item, [item.venue, item.year], {
+                showNote: true,
+                index,
+                textFirst: true,
+                featured: index === 0,
+              }),
+            )
             .join("")}
         </div>
         <details class="compact-disclosure">
@@ -677,7 +797,9 @@ function renderPress(data) {
         <h3 class="block-heading">${escapeHtml(label("invitedTalks"))}</h3>
         <div class="visual-grid">
           ${byMostRecent(data.speaking.items)
-            .map((item, index) => visualCard(item, [item.role, item.host, item.year], { index }))
+            .map((item, index) =>
+              visualCard(item, [item.role, item.host, item.year], { index, textFirst: true }),
+            )
             .join("")}
         </div>
         ${renderLeadership(data)}
@@ -685,7 +807,13 @@ function renderPress(data) {
           <h3 class="block-heading">${escapeHtml(label("mediaFeatures"))}</h3>
           <div class="visual-grid media-grid">
             ${byMostRecent(data.media.items)
-              .map((item, index) => visualCard(item, [item.source, item.year], { compact: true, index }))
+              .map((item, index) =>
+                visualCard(item, [item.source, item.year], {
+                  compact: true,
+                  index,
+                  textFirst: true,
+                }),
+              )
               .join("")}
           </div>
         </div>
@@ -702,14 +830,281 @@ function renderFooter(data) {
   `;
 }
 
+function syncThemeControl() {
+  const isDark = root.dataset.theme === "dark";
+  const controlLabel =
+    language === "zh"
+      ? isDark
+        ? "切換至淺色模式"
+        : "切換至深色模式"
+      : isDark
+        ? "Switch to light theme"
+        : "Switch to dark theme";
+
+  themeToggle?.setAttribute("aria-label", controlLabel);
+  themeToggle?.setAttribute("aria-pressed", String(isDark));
+  themeToggle?.setAttribute("title", controlLabel);
+  themeColor?.setAttribute("content", isDark ? "#08111f" : "#14213d");
+}
+
+function setActiveNavigation(targetId) {
+  nav.querySelectorAll('a[href^="#"]').forEach((link) => {
+    const isCurrent = link.getAttribute("href") === `#${targetId}`;
+    link.classList.toggle("is-active", isCurrent);
+
+    if (isCurrent) {
+      link.setAttribute("aria-current", "location");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
+}
+
+function syncMenuControl() {
+  if (!menuToggle) return;
+
+  const isOpen = siteHeader?.dataset.menuOpen === "true";
+  const controlLabel =
+    language === "zh"
+      ? `${isOpen ? "關閉" : "開啟"}導覽選單`
+      : `${isOpen ? "Close" : "Open"} navigation menu`;
+
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute("aria-label", controlLabel);
+  menuToggle.setAttribute("title", controlLabel);
+}
+
+function setMenuOpen(isOpen, { restoreFocus = false } = {}) {
+  if (!siteHeader || !menuToggle) return;
+
+  siteHeader.dataset.menuOpen = String(Boolean(isOpen && mobileNavigation.matches));
+  syncMenuControl();
+
+  if (restoreFocus) menuToggle.focus();
+}
+
+function withoutSmoothScroll(callback) {
+  const previousScrollBehavior = root.style.scrollBehavior;
+  root.style.scrollBehavior = "auto";
+  callback();
+  root.style.scrollBehavior = previousScrollBehavior;
+}
+
+function alignSectionTarget(targetId, { smooth = false } = {}) {
+  const target = document.getElementById(targetId);
+  if (!target) return;
+  const distance = Math.abs(target.getBoundingClientRect().top);
+  const useSmooth =
+    smooth && !reducedMotion.matches && distance <= window.innerHeight * 2.5;
+
+  const scrollTarget = (behavior) => {
+    if (behavior === "smooth") {
+      target.scrollIntoView({ block: "start", behavior: "smooth" });
+      return;
+    }
+
+    withoutSmoothScroll(() => {
+      target.scrollIntoView({ block: "start", behavior: "auto" });
+    });
+  };
+
+  window.clearTimeout(anchorSettleTimer);
+  scrollTarget(useSmooth ? "smooth" : "auto");
+
+  anchorSettleTimer = window.setTimeout(() => {
+    scrollTarget("auto");
+    window.requestAnimationFrame(syncActiveNavigation);
+  }, useSmooth ? 720 : 160);
+}
+
+function setupMobileMenu() {
+  if (!siteHeader || !menuToggle) return;
+
+  siteHeader.classList.add("menu-ready");
+  setMenuOpen(false);
+
+  menuToggle.addEventListener("click", () => {
+    setMenuOpen(siteHeader.dataset.menuOpen !== "true");
+  });
+
+  nav.addEventListener("click", (event) => {
+    const link = event.target.closest('a[href^="#"]');
+    if (!link) return;
+
+    const targetId = link.getAttribute("href")?.slice(1);
+    const isKeyboardActivation = event.detail === 0;
+    const target = targetId ? document.getElementById(targetId) : null;
+    if (targetId && target) {
+      event.preventDefault();
+      if (window.location.hash !== `#${targetId}`) {
+        window.history.pushState(null, "", `#${targetId}`);
+      }
+      setActiveNavigation(targetId);
+    }
+    setMenuOpen(false);
+
+    if (targetId && target) {
+      window.requestAnimationFrame(() => alignSectionTarget(targetId, { smooth: true }));
+    }
+
+    if (targetId && isKeyboardActivation) {
+      window.requestAnimationFrame(() => {
+        const target = document.getElementById(targetId);
+        const focusTarget = target?.querySelector("h1, h2, h3") || target;
+        if (!(focusTarget instanceof HTMLElement)) return;
+
+        const hadTabIndex = focusTarget.hasAttribute("tabindex");
+        if (!hadTabIndex) focusTarget.setAttribute("tabindex", "-1");
+        try {
+          focusTarget.focus({ preventScroll: true });
+        } catch {
+          focusTarget.focus();
+        }
+
+        if (!hadTabIndex) {
+          focusTarget.addEventListener(
+            "blur",
+            () => focusTarget.removeAttribute("tabindex"),
+            { once: true },
+          );
+        }
+      });
+    }
+  });
+
+  brand?.addEventListener("click", () => setMenuOpen(false));
+
+  document.addEventListener("pointerdown", (event) => {
+    if (
+      siteHeader.dataset.menuOpen === "true" &&
+      event.target instanceof Node &&
+      !siteHeader.contains(event.target)
+    ) {
+      setMenuOpen(false);
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && siteHeader.dataset.menuOpen === "true") {
+      setMenuOpen(false, { restoreFocus: true });
+    }
+  });
+}
+
+function collectNavigationTargets() {
+  navigationTargets = requiredNavigationIds
+    .map((id) => document.getElementById(id))
+    .filter(Boolean)
+    .map((target) => {
+      const sentinel =
+        target.id === "home"
+          ? target.querySelector(".hero-copy") || target
+          : target.id === "contact"
+            ? target
+          : target.querySelector(".section-title, .block-heading, h2") || target;
+      return { id: target.id, sentinel };
+    });
+}
+
+function syncActiveNavigation() {
+  if (!navigationTargets.length) return;
+
+  const headerHeight = siteHeader?.getBoundingClientRect().height || 0;
+  const readingOffset = Math.min(
+    120,
+    Math.max(64, (window.innerHeight - headerHeight) * 0.3),
+  );
+  const activeLine = headerHeight + readingOffset;
+  const positions = navigationTargets
+    .map((target) => ({
+      id: target.id,
+      top: target.sentinel.getBoundingClientRect().top,
+    }))
+    .sort((a, b) => a.top - b.top);
+
+  let activeTarget = positions[0]?.id || "home";
+
+  positions.forEach((target) => {
+    if (target.top <= activeLine) activeTarget = target.id;
+  });
+
+  const isAtPageEnd =
+    window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4;
+  if (isAtPageEnd && positions.length) {
+    activeTarget = positions[positions.length - 1].id;
+  }
+
+  setActiveNavigation(activeTarget);
+}
+
+function setupSectionTracking() {
+  collectNavigationTargets();
+
+  const initialTarget = window.location.hash.slice(1);
+  setActiveNavigation(initialTarget || "home");
+}
+
+function setupRevealMotion() {
+  revealObserver?.disconnect();
+
+  const targets = app.querySelectorAll(
+    ".hero-copy, .hero-photo, .section-title, .about-summary, .simple-list, .resume-columns, .contact-panel, .portfolio-grid, .visual-grid, .compact-disclosure",
+  );
+
+  targets.forEach((target, index) => {
+    target.dataset.reveal = "";
+    target.style.setProperty("--reveal-order", String(index % 3));
+  });
+
+  if (reducedMotion.matches || !("IntersectionObserver" in window)) {
+    root.classList.remove("motion-ready");
+    targets.forEach((target) => target.classList.add("is-visible"));
+    return;
+  }
+
+  root.classList.add("motion-ready");
+  revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { rootMargin: "0px 0px -7%", threshold: 0.06 },
+  );
+
+  targets.forEach((target) => revealObserver.observe(target));
+}
+
+function syncHeaderState() {
+  if (scrollFrame) return;
+
+  scrollFrame = window.requestAnimationFrame(() => {
+    siteHeader?.classList.toggle("is-scrolled", window.scrollY > 18);
+    syncActiveNavigation();
+    scrollFrame = undefined;
+  });
+}
+
 function scrollToCurrentHash() {
   const targetId = window.location.hash.slice(1);
   if (!targetId) return;
 
-  document.getElementById(targetId)?.scrollIntoView({ block: "start" });
+  alignSectionTarget(targetId);
 }
 
 function render() {
+  renderSettleTimers.forEach((timer) => window.clearTimeout(timer));
+  renderSettleTimers = [];
+  const preservedScrollY = window.scrollY;
+  const preservedNavigationId = nav
+    .querySelector(".is-active")
+    ?.getAttribute("href")
+    ?.slice(1);
+  const preservedTargetTop = navigationTargets
+    .find((target) => target.id === preservedNavigationId)
+    ?.sentinel.getBoundingClientRect().top;
   const data = content.locales[language] || content.locales.zh;
   document.title = data.meta.title;
   document.documentElement.lang = data.meta.lang;
@@ -724,21 +1119,93 @@ function render() {
     renderPortfolio(data),
     renderResearch(data),
     renderPress(data),
+    renderContact(data),
   ].join("");
   renderFooter(data);
-  scrollToCurrentHash();
+  syncThemeControl();
+  setupSectionTracking();
+  setupRevealMotion();
+
+  if (hasRendered) {
+    const nextTarget = navigationTargets.find(
+      (target) => target.id === preservedNavigationId,
+    );
+
+    const restoreSemanticPosition = () => {
+      if (nextTarget && Number.isFinite(preservedTargetTop)) {
+        const nextTargetTop = nextTarget.sentinel.getBoundingClientRect().top;
+        withoutSmoothScroll(() => {
+          window.scrollBy(0, nextTargetTop - preservedTargetTop);
+        });
+      } else {
+        withoutSmoothScroll(() => window.scrollTo(0, preservedScrollY));
+      }
+      window.requestAnimationFrame(syncActiveNavigation);
+    };
+
+    window.requestAnimationFrame(() => {
+      restoreSemanticPosition();
+    });
+    renderSettleTimers = [180, 460].map((delay) =>
+      window.setTimeout(restoreSemanticPosition, delay),
+    );
+  } else {
+    hasRendered = true;
+    scrollToCurrentHash();
+  }
 }
 
 themeToggle?.addEventListener("click", () => {
   const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
   root.dataset.theme = nextTheme;
   window.localStorage.setItem("portfolio-theme", nextTheme);
+  syncThemeControl();
 });
 
 languageToggle?.addEventListener("click", () => {
+  if (!contentIsValid) return;
+  setMenuOpen(false);
   language = language === "zh" ? "en" : "zh";
   window.localStorage.setItem("portfolio-language", language);
   render();
 });
 
-render();
+window.addEventListener("scroll", syncHeaderState, { passive: true });
+window.addEventListener("hashchange", () => {
+  setMenuOpen(false);
+  const targetId = window.location.hash.slice(1);
+  if (targetId) {
+    setActiveNavigation(targetId);
+    alignSectionTarget(targetId);
+  }
+  window.requestAnimationFrame(syncActiveNavigation);
+});
+window.addEventListener(
+  "resize",
+  () => {
+    if (resizeFrame) return;
+    resizeFrame = window.requestAnimationFrame(() => {
+      setMenuOpen(false);
+      setupSectionTracking();
+      resizeFrame = undefined;
+    });
+  },
+  { passive: true },
+);
+reducedMotion.addEventListener?.("change", setupRevealMotion);
+
+setupMobileMenu();
+if (contentIsValid) {
+  render();
+} else {
+  root.classList.add("content-fallback");
+  if (languageToggle) {
+    languageToggle.disabled = true;
+    languageToggle.setAttribute("aria-label", "Language switch unavailable");
+  }
+  setupSectionTracking();
+  setupRevealMotion();
+  console.warn("Site data is unavailable or invalid; displaying the built-in fallback content.");
+}
+syncThemeControl();
+syncHeaderState();
