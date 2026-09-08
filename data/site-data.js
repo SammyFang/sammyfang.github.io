@@ -399,7 +399,8 @@ window.PORTFOLIO_CONTENT = {
             note: "Poster presentation · Jun 17, 2026",
             href: "https://rpa.ucr.edu/page/Symposium-2026/",
             actionLabel: "View symposium",
-            image: "./assets/stem-humanities-supply-chain-symposium-2026.webp",
+            image: "./assets/stem-humanities-supply-chain-symposium-2026-960.webp",
+            imageLoading: "eager",
             imagePosition: "center 38%",
             description:
               "Simulation-based AI monitoring that turns fragmented procurement, inventory, production, logistics, and financial signals into structured visibility, transparent risk alerts, and reviewable decision notes.",
@@ -1224,7 +1225,8 @@ window.PORTFOLIO_CONTENT = {
             note: "海報發表 · 2026 年 6 月 17 日",
             href: "https://rpa.ucr.edu/page/Symposium-2026/",
             actionLabel: "查看研討會",
-            image: "./assets/stem-humanities-supply-chain-symposium-2026.webp",
+            image: "./assets/stem-humanities-supply-chain-symposium-2026-960.webp",
+            imageLoading: "eager",
             imagePosition: "center 38%",
             description:
               "以模擬研究將採購、庫存、生產、物流與財務訊號轉化為可視性、透明風險警示與可覆核的決策紀錄。",

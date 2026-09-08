@@ -307,11 +307,13 @@ function mediaThumb(item = {}, index = 0, className = "visual-thumb", fallback =
     ? ` style="object-position: ${escapeHtml(item.imagePosition)};"`
     : "";
   const fitClass = item.imageFit === "contain" ? " media-contain" : "";
+  const imageLoading = item.imageLoading === "eager" ? "eager" : "lazy";
+  const fetchPriority = imageLoading === "eager" ? ' fetchpriority="low"' : "";
 
   if (item.image && !isGenericImage(item.image)) {
     return `
       <figure class="${className}${fitClass}">
-        <img src="${escapeHtml(item.image)}" alt=""${imageStyle} loading="lazy" decoding="async" />
+        <img src="${escapeHtml(item.image)}" alt=""${imageStyle} loading="${imageLoading}"${fetchPriority} decoding="async" />
       </figure>
     `;
   }
@@ -691,7 +693,6 @@ function visualCard(item, metaParts = [], options = {}) {
   const inner = `
       ${hasMedia || !options.textFirst ? mediaThumb(item, index, "visual-thumb", label("publication")) : ""}
       <div class="visual-body">
-        ${textFirst ? sourceLockup(item) : ""}
         ${meta ? `<p class="visual-meta">${meta}</p>` : ""}
         <h3>${escapeHtml(item.title)}</h3>
         ${note ? `<span class="visual-note">${escapeHtml(note)}</span>` : ""}
