@@ -45,13 +45,9 @@
 {
   title: "Role title",
   organization: "Company",
-  employment: "Full-time",
-  period: "2026 - Present",
-  location: "City · Hybrid",
+  period: "2026",
   department: "Department",
   summary: "One sentence summary.",
-  highlights: ["Short bullet", "Short bullet"],
-  details: ["Optional detail"],
   tools: ["Tool", "Skill"]
 }
 ```

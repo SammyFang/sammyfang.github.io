@@ -5,10 +5,9 @@ window.PORTFOLIO_CONTENT = {
     shortName: "Sammy Fang",
     pronouns: "He/Him",
     email: "yfang097@ucr.edu",
-    location: "Riverside, California, United States",
+    location: "California, United States",
     github: "https://github.com/SammyFang",
     linkedin: "https://www.linkedin.com/in/yung-sian-fang/",
-    instagram: "https://www.instagram.com/duck_duck_fang/",
     orcid: "https://orcid.org/0009-0007-9786-2684",
     scholar: "https://scholar.google.com/citations?user=VqA6DO8AAAAJ&hl=en",
     image: "./assets/ucr-profile-768.webp",
@@ -104,6 +103,26 @@ window.PORTFOLIO_CONTENT = {
         title: "Representative projects and public-facing work.",
         items: [
           {
+            title: "Amigo Friends",
+            type: "Customer discovery · NSF I-Corps Hub West ZAP",
+            description:
+              "Participating in the 2026 ZAP program to test customer needs, engagement, and product positioning through interviews.",
+            tags: ["Customer Discovery", "Product Strategy", "2026"],
+            image: "./assets/amigo-friends-mascot.png",
+            imageFit: "contain",
+          },
+          {
+            title: "DuckCard",
+            type: "Product discovery · Live showcase",
+            description:
+              "Applied UCLA NSF I-Corps customer discovery to product iteration, then tested the experience at its first booth during SBIR/STTR Con 2026.",
+            tags: ["Customer Discovery", "Product Testing", "2026"],
+            href: "https://duckcard.app/",
+            actionLabel: "Explore DuckCard",
+            image: "./assets/duckcard-sbir-sttrcon-booth-2026.png",
+            imagePosition: "center 48%",
+          },
+          {
             title: "1099Ready Lite",
             type: "FinOps tool · Vendor readiness",
             description:
@@ -156,132 +175,59 @@ window.PORTFOLIO_CONTENT = {
             href: "https://github.com/SammyFang/scm-kernel",
             image: "./assets/research-battery.svg",
           },
-          {
-            title: "DuckCard",
-            type: "Contact intelligence · NSF I-Corps",
-            description:
-              "Multilingual contact intelligence concept shaped through customer discovery and market framing.",
-            tags: ["Customer Discovery", "Data Modeling", "AI"],
-            href: "https://duckcard.app/",
-            previewTitle: "DuckCard",
-            previewCaption: "duckcard.app",
-            image: "./assets/research-intelligence.svg",
-          },
         ],
       },
       experience: {
         eyebrow: "Experience",
-        title: "LinkedIn experience, condensed for the web.",
-        note:
-          "Each role is summarized for scanning first. Longer implementation details can be added in the data file without touching the page code.",
+        title: "Professional experience, briefly.",
         items: [
           {
             title: "Supply Chain Analyst, Intern",
             organization: "d-Matrix",
-            employment: "Internship",
-            period: "Jun 2026 - Sep 2026",
-            location: "Santa Clara, California, United States",
-            department: "Supply Chain Operations",
-            summary:
-              "Supported supply chain analytics and cross-border logistics process improvements through data integration, reporting, and workflow automation.",
-            highlights: [
-              "Helped launch a centralized shipment-request workflow and improve logistics visibility through integrated monitoring and exception notifications.",
-              "Built analytics and automation prototypes supporting logistics cost review and inventory cycle-count operations.",
-            ],
-            details: [],
-            tools: ["Supply Chain Analytics", "Logistics Operations", "SQL", "Power BI", "Workflow Automation"],
+            period: "2026",
+            department: "Operations and supply chain",
+            summary: "Supported logistics visibility and supply chain planning through cross-functional process improvement and analytics.",
+            tools: ["Supply Chain Analytics", "Process Improvement"],
           },
           {
             title: "Procurement Operations Analyst",
             organization: "Hewlett Packard Enterprise",
-            employment: "Full-time",
-            period: "Jun 2024 - May 2025",
-            location: "Taipei, Taiwan · Hybrid",
-            department: "Planning, Global Strategic Sourcing Operations",
-            summary:
-              "Executed procurement operations for NAND Flash and other high-value components across global production needs.",
-            highlights: [
-              "Coordinated finance, engineering, suppliers, and ODM partners to maintain cost accuracy, component availability, and supply continuity.",
-              "Used ERP/SAP workflows, market analysis, and predictive analytics to improve sourcing decisions, inventory planning, and shortage prevention.",
-            ],
-            details: [
-              "Aligned procurement timing with NPI testing and manufacturing readiness.",
-              "Translated business requirements into actionable sourcing strategies and tactical purchasing plans.",
-            ],
-            tools: ["SAP", "ERP", "Predictive Analytics", "Inventory Planning", "Project Management"],
+            period: "2024 - 2025",
+            department: "Procurement operations",
+            summary: "Coordinated sourcing and planning with cross-functional teams to support supply continuity.",
+            tools: ["Procurement", "Supply Planning"],
           },
           {
             title: "Software Engineer (Systems)",
             organization: "Hewlett Packard Enterprise",
-            employment: "Internship",
-            period: "Jul 2023 - Jun 2024",
-            location: "Taipei, Taiwan · Hybrid",
-            department: "Global Operations Engineering, Supply Chain Engineering Lab",
-            summary:
-              "Built automation for firmware recipe management, QA workflows, cross-system data retrieval, and version tracking.",
-            highlights: [
-              "Developed Python, Shell Script, and Perl automation that replaced repetitive manual review with repeatable workflows.",
-              "Improved collaboration between ODM, OEM, and QA teams through structured data handling and real-time distribution.",
-            ],
-            details: [
-              "Implemented visual comparison and diagnostic analysis for firmware and manufacturing data.",
-              "Built Python/Shell/Perl pull-and-push scripts, automated crawlers, and CSV-style data handling for QA users and cross-functional stakeholders.",
-            ],
-            tools: ["Python", "Shell Script", "Perl", "QA Automation", "Data Pipelines"],
+            period: "2023 - 2024",
+            department: "Systems engineering",
+            summary: "Built automation and data workflows for engineering operations and reporting.",
+            tools: ["Automation", "Data Workflows"],
           },
           {
             title: "Research Assistant",
             organization: "Phoenix Interactive / NTNU Industry Project",
-            employment: "Part-time",
-            period: "Aug 2023 - Jul 2024",
-            location: "Taipei, Taiwan · Hybrid",
-            department: "AI-driven emotion recognition for education and online services",
-            summary:
-              "Supported an industry-academia AI project applying image and audio models to emotion recognition.",
-            highlights: [
-              "Coordinated timelines, stakeholder communication, statistical analysis, technical reporting, and project infrastructure.",
-              "Worked with software development partners and adult education institutions on practical AI applications.",
-            ],
-            details: [
-              "Supported budgeting, expense auditing, web maintenance, and server operations for the research project.",
-            ],
-            tools: ["Python", "TensorFlow", "OpenCV", "LSTM/CNN", "Docker", "Statistical Analysis"],
+            period: "2023 - 2024",
+            department: "Applied AI research",
+            summary: "Supported research analysis and project coordination in an industry-academia setting.",
+            tools: ["Applied AI", "Research Coordination"],
           },
           {
             title: "DevOps Engineer",
             organization: "Pojen General Hospital",
-            employment: "Part-time",
-            period: "Feb 2023 - Jun 2023",
-            location: "Taipei, Taiwan · On-site",
-            department: "Information Technology Department",
-            summary:
-              "Supported medical imaging, data visualization, cybersecurity assessment, network operations, and API integration.",
-            highlights: [
-              "Built Python, C#, and SQL tools for medical data workflows and actionable reporting.",
-              "Maintained servers, network devices, and security tooling including Nessus, OpenVAS, and Snort experiments.",
-            ],
-            details: [
-              "Collaborated with vendors to integrate HR attendance data through APIs.",
-            ],
-            tools: ["Python", "C#", "SQL", "Nessus", "OpenVAS", "Snort"],
+            period: "2023",
+            department: "IT operations",
+            summary: "Developed internal data tools and supported IT operations.",
+            tools: ["Data Tools", "IT Operations"],
           },
           {
             title: "R&D Engineer (HSM)",
             organization: "Provision Information Co., Ltd.",
-            employment: "Internship",
-            period: "Jul 2021 - Aug 2022",
-            location: "Taipei, Taiwan · Hybrid",
-            department: "Hardware Security Module research and tooling",
-            summary:
-              "Built encryption tools, test artifacts, manuals, and HSM research reports for secure banking operations.",
-            highlights: [
-              "Designed standalone encryption and decryption tools for HSM integration using C, Java, and Python.",
-              "Produced test reports, operational manuals, and troubleshooting guides for implementation and knowledge transfer.",
-            ],
-            details: [
-              "Supported product validation, performance testing, and secure key-management documentation.",
-            ],
-            tools: ["C", "Java", "Python", "HSM", "Cryptography", "Quality Assurance"],
+            period: "2021 - 2022",
+            department: "Security research",
+            summary: "Contributed to security tooling and technical documentation for product research.",
+            tools: ["Security Research", "Technical Documentation"],
           },
         ],
       },
@@ -295,19 +241,15 @@ window.PORTFOLIO_CONTENT = {
             title: "Manufacturing Supply Chain Optimization",
             type: "Operations · HPE",
             description:
-              "Coordinated suppliers, manufacturers, ERP setup, demand forecasting, pricing, logistics, and customs clearance.",
+              "Improved planning and coordination across procurement and supply chain operations.",
             tags: ["Procurement", "Operations", "ERP"],
-            image: "./assets/projects/manufacturing-supply-chain-optimization.jpg",
-            imagePosition: "center 48%",
           },
           {
             title: "Intelligent Version Tracking and Data Automation",
             type: "Automation · HPE",
             description:
-              "Python, Shell Script, and Perl workflow for version tracking, cross-system extraction, visualization, and QA communication.",
+              "Built reusable automation and reporting tools for engineering workflows.",
             tags: ["Python", "Shell Script", "Perl"],
-            image: "./assets/projects/intelligent-version-tracking.jpg",
-            imagePosition: "center 46%",
           },
           {
             title: "AI-EMO Expert System",
@@ -512,8 +454,6 @@ window.PORTFOLIO_CONTENT = {
             role: "Workshop Leader",
             host: "Supply Chain Society at UC Riverside",
             year: "2026",
-            image: "./assets/pdf-events/ucr-interview-workshop-presentation.jpg",
-            imagePosition: "center 54%",
             description:
               "Hands-on workshop on using spreadsheets to organize assumptions, compare scenarios, and support supply chain decisions.",
             topics: ["Excel", "Supply chain analytics", "Decision support"],
@@ -523,7 +463,7 @@ window.PORTFOLIO_CONTENT = {
             role: "Workshop Leader",
             host: "Supply Chain Society at UC Riverside",
             year: "2026",
-            image: "./assets/pdf-events/gdsc-ntnu-security-workshop-session.jpg",
+            image: "./assets/pdf-events/ucr-interview-workshop-session.jpg",
             description:
               "Interview preparation, response structure, and concise project-experience examples.",
             topics: ["Interview practice", "Career communication", "Behavioral questions"],
@@ -533,7 +473,7 @@ window.PORTFOLIO_CONTENT = {
             role: "Invited Technical Lecture",
             host: "Google Developer Student Club, National Taiwan Normal University",
             year: "2024",
-            image: "./assets/pdf-events/gdsc-ntnu-ml-cv-workshop-group.jpg",
+            image: "./assets/pdf-events/gdsc-ntnu-security-workshop-session.jpg",
             description:
               "Technical session covering PKI, passwordless authentication, OTP/SSO, and security tool demonstrations.",
             topics: ["PKI", "FIDO", "OTP", "SSO", "Nessus/OpenVAS"],
@@ -558,8 +498,7 @@ window.PORTFOLIO_CONTENT = {
           {
             title: "Founder / President",
             organization: "Google Developer Groups on Campus, UC Riverside",
-            period: "2026 - 2027",
-            location: "Riverside, CA",
+            period: "2026",
             category: "Developer community",
             href: "https://gdg.community.dev/gdg-on-campus-university-of-california-riverside-riverside-united-states/",
             actionLabel: "View chapter",
@@ -567,39 +506,31 @@ window.PORTFOLIO_CONTENT = {
             previewCaption: "gdg.community.dev",
             description:
               "Founded and launched a campus developer chapter, combining community strategy, AI-focused programming, event operations, and growth analytics to turn student interest into active technical participation.",
-            metrics: ["98 members", "700+ page views in 90 days", "70+ kickoff RSVPs", "50+ active participants"],
+            metrics: ["Community building", "Technical workshops"],
           },
           {
             title: "Student Leadership",
             organization: "UC Riverside / AGSM Communities",
             period: "2025 - 2026",
-            location: "Riverside, CA",
             category: "Student leadership",
             variant: "ucr",
             description:
-              "Supported AGSM and UCR student organizations through operations, ambassador outreach, entrepreneurship, internal communications, and graduate community programming.",
-            metrics: [
+              "Contributed to product, supply chain, and graduate student communities at UC Riverside.",
+            affiliations: [
               {
-                label: "Operations Executive · Product Club",
+                name: "Product Club at UCR",
+                area: "Product and operations",
                 href: "https://highlanderlink.ucr.edu/organization/productatucr",
               },
               {
-                label: "Graduate Student Ambassador · AGSM",
-                href: "https://business.ucr.edu/graduate/ambassadors#yung-sian-fang-pmba-taiwan-yfa",
-              },
-              {
-                label: "Entrepreneurial Lead · AGSM SA",
-                href: "https://business.ucr.edu/graduate/student-association",
-              },
-              {
-                label: "Internal Comms Executive · Supply Chain Society",
+                name: "Supply Chain Society",
+                area: "Student community",
                 href: "https://linktr.ee/scs.ucr",
               },
-            ],
-            links: [
               {
-                label: "TGSA · Taiwanese Graduate Students Association",
-                href: "https://sites.google.com/view/tgsaucr/home?authuser=0",
+                name: "AGSM Student Association",
+                area: "Graduate leadership",
+                href: "https://business.ucr.edu/graduate/student-association",
               },
             ],
           },
@@ -615,8 +546,6 @@ window.PORTFOLIO_CONTENT = {
             title: "Core Team Member",
             organization: "HPE Early Career Network",
             period: "2024 - 2025",
-            image: "./assets/hpe-early-career-network.jpg",
-            imagePosition: "center 48%",
             description:
               "Helped structure early-career programming, booth engagement, and cross-functional professional development.",
           },
@@ -930,6 +859,26 @@ window.PORTFOLIO_CONTENT = {
         title: "代表性專案與公開成果。",
         items: [
           {
+            title: "Amigo Friends",
+            type: "客戶探索 · NSF I-Corps Hub West ZAP",
+            description:
+              "參與 2026 年 ZAP 計畫，透過訪談檢驗使用需求、互動體驗與產品定位。",
+            tags: ["客戶探索", "產品策略", "2026"],
+            image: "./assets/amigo-friends-mascot.png",
+            imageFit: "contain",
+          },
+          {
+            title: "DuckCard",
+            type: "產品探索 · 現場展示",
+            description:
+              "延續 UCLA NSF I-Corps 客戶探索，在 SBIR/STTR Con 2026 首次展攤，觀察現場互動並調整產品。",
+            tags: ["客戶探索", "產品測試", "2026"],
+            href: "https://duckcard.app/",
+            actionLabel: "了解 DuckCard",
+            image: "./assets/duckcard-sbir-sttrcon-booth-2026.png",
+            imagePosition: "center 48%",
+          },
+          {
             title: "1099Ready Lite",
             type: "財務營運工具 · 供應商資料準備",
             description:
@@ -982,132 +931,59 @@ window.PORTFOLIO_CONTENT = {
             href: "https://github.com/SammyFang/scm-kernel",
             image: "./assets/research-battery.svg",
           },
-          {
-            title: "DuckCard",
-            type: "名片智慧化 · 客戶探索",
-            description:
-              "多語名片資訊整理系統，透過客戶探索驗證產品定位。",
-            tags: ["客戶探索", "資料建模", "人工智慧"],
-            href: "https://duckcard.app/",
-            previewTitle: "DuckCard",
-            previewCaption: "duckcard.app",
-            image: "./assets/research-intelligence.svg",
-          },
         ],
       },
       experience: {
         eyebrow: "經歷",
-        title: "經歷摘要。",
-        note:
-          "每段經歷先保留可掃讀摘要，較長的實作細節放在可展開區塊；之後只要改資料檔，不需要逐行改頁面程式。",
+        title: "專業經歷摘要。",
         items: [
           {
             title: "供應鏈分析師實習生",
             organization: "d-Matrix",
-            employment: "實習",
-            period: "2026.06 - 2026.09",
-            location: "美國加州聖塔克拉拉",
-            department: "供應鏈營運",
-            summary:
-              "透過資料整合、報表與工作流程自動化，支援供應鏈分析及跨境物流流程改善。",
-            highlights: [
-              "協助集中式出貨申請流程上線，並透過整合監控與異常通知改善物流可視性。",
-              "建立分析與自動化原型，支援物流成本檢視及庫存盤點作業。",
-            ],
-            details: [],
-            tools: ["供應鏈分析", "物流營運", "SQL", "Power BI", "工作流程自動化"],
+            period: "2026",
+            department: "營運與供應鏈",
+            summary: "透過跨部門流程改善與分析，支援物流資訊整合及供應鏈規劃。",
+            tools: ["供應鏈分析", "流程改善"],
           },
           {
             title: "採購營運分析師",
             organization: "慧與科技",
-            employment: "全職",
-            period: "2024.06 - 2025.05",
-            location: "台北 · 混合辦公",
-            department: "全球策略採購營運規劃部門",
-            summary:
-              "負責快閃記憶體與高價值零組件採購執行，支援全球生產需求與供應鏈穩定。",
-            highlights: [
-              "協調財務、工程、供應商與代工夥伴，確保成本準確、零組件可用性與供應連續性。",
-              "透過企業資源規劃系統流程、市場分析與預測分析，改善採購決策、庫存規劃與缺料風險控管。",
-            ],
-            details: [
-              "將採購節奏與新產品導入測試、製造準備度對齊。",
-              "把業務需求轉成可執行的採購策略與短期採購計畫。",
-            ],
-            tools: ["SAP", "ERP", "預測分析", "庫存規劃", "專案管理"],
+            period: "2024 - 2025",
+            department: "採購營運",
+            summary: "協調跨部門採購與規劃工作，支援供應連續性。",
+            tools: ["採購", "供應規劃"],
           },
           {
             title: "系統軟體工程師",
             organization: "慧與科技",
-            employment: "實習",
-            period: "2023.07 - 2024.06",
-            location: "台北 · 混合辦公",
-            department: "全球營運工程部門，供應鏈工程實驗室",
-            summary:
-              "建立韌體配方管理、品質驗證流程、跨系統資料擷取與版本追蹤自動化。",
-            highlights: [
-              "以 Python、Shell Script 與 Perl 建立自動化流程，將重複性人工審查轉成可重複執行的作業。",
-              "透過結構化資料處理與即時資料分發，改善代工夥伴與品質驗證團隊協作。",
-            ],
-            details: [
-              "導入視覺化比對與診斷分析，支援韌體與製造資料檢查。",
-              "建立 Python/Shell/Perl 資料拉取、推送、自動化爬取與 CSV 類資料處理流程，支援品質驗證使用者與跨職能團隊。",
-            ],
-            tools: ["Python", "Shell Script", "Perl", "品質驗證自動化", "資料管線"],
+            period: "2023 - 2024",
+            department: "系統工程",
+            summary: "建立工程營運與報表所需的自動化及資料流程。",
+            tools: ["自動化", "資料流程"],
           },
           {
             title: "研究助理",
-            organization: "鳳凰互動 / 師大產學專案",
-            employment: "兼職",
-            period: "2023.08 - 2024.07",
-            location: "台北 · 混合辦公",
-            department: "教育與線上服務情境的人工智慧情緒辨識",
-            summary:
-              "參與產學人工智慧專案，將影像與音訊模型應用於教育與線上服務情境的情緒辨識。",
-            highlights: [
-              "負責時程協調、利害關係人溝通、統計分析、技術報告與專案基礎設施。",
-              "與軟體開發夥伴及成人教育機構合作，推動人工智慧實務應用。",
-            ],
-            details: [
-              "支援研究專案預算、費用審核、網站維護與伺服器營運。",
-            ],
-            tools: ["Python", "TensorFlow", "OpenCV", "LSTM/CNN", "Docker", "統計分析"],
+            organization: "Phoenix Interactive / 臺師大產學計畫",
+            period: "2023 - 2024",
+            department: "應用人工智慧研究",
+            summary: "支援產學研究的分析與專案協調。",
+            tools: ["應用人工智慧", "研究協調"],
           },
           {
             title: "系統維運工程師",
             organization: "博仁綜合醫院",
-            employment: "兼職",
-            period: "2023.02 - 2023.06",
-            location: "台北 · 現場辦公",
-            department: "資訊技術部門",
-            summary:
-              "支援醫療影像、資料視覺化、資安檢測、網路維運與介面整合。",
-            highlights: [
-              "以 Python、C# 與 SQL 建立醫療資料流程、資料視覺化與可讀報表。",
-              "維護伺服器與網路設備，並使用 Nessus、OpenVAS 與 Snort 進行資安掃描與入侵偵測實驗。",
-            ],
-            details: [
-              "與廠商協作整合人資出勤介面，改善資料一致性。",
-            ],
-            tools: ["Python", "C#", "SQL", "Nessus", "OpenVAS", "Snort"],
+            period: "2023",
+            department: "資訊營運",
+            summary: "開發內部資料工具並支援資訊營運。",
+            tools: ["資料工具", "資訊營運"],
           },
           {
             title: "硬體安全模組研發工程師",
-            organization: "普鴻資訊股份有限公司",
-            employment: "實習",
-            period: "2021.07 - 2022.08",
-            location: "台北 · 混合辦公",
-            department: "硬體安全模組研究與工具開發",
-            summary:
-              "為硬體安全模組與銀行資安作業建立加解密工具、測試文件、操作手冊與研究報告。",
-            highlights: [
-              "使用 C、Java 與 Python 設計硬體安全模組整合用的獨立加解密工具。",
-              "產出測試報告、操作手冊與疑難排解指南，支援系統導入與知識移轉。",
-            ],
-            details: [
-              "支援產品驗證、效能測試與安全金鑰管理文件。",
-            ],
-            tools: ["C", "Java", "Python", "硬體安全模組", "密碼學", "品質驗證"],
+            organization: "Provision Information Co., Ltd.",
+            period: "2021 - 2022",
+            department: "資訊安全研究",
+            summary: "參與安全工具與產品研究文件的開發。",
+            tools: ["資訊安全研究", "技術文件"],
           },
         ],
       },
@@ -1121,19 +997,15 @@ window.PORTFOLIO_CONTENT = {
             title: "製造供應鏈優化",
             type: "營運 · 慧與科技",
             description:
-              "協調供應商、製造商、企業資源規劃系統設定、需求預測、定價、物流與清關。",
+              "改善採購與供應鏈營運的規劃及跨部門協調。",
             tags: ["採購", "營運", "企業資源規劃"],
-            image: "./assets/projects/manufacturing-supply-chain-optimization.jpg",
-            imagePosition: "center 48%",
           },
           {
             title: "智慧版本追蹤與資料自動化",
             type: "自動化 · 慧與科技",
             description:
-              "以 Python、Shell Script 與 Perl 建立版本追蹤、跨系統資料擷取、視覺化與品質驗證溝通流程。",
+              "建立工程流程所需的可重複使用自動化與報表工具。",
             tags: ["Python", "Shell Script", "Perl"],
-            image: "./assets/projects/intelligent-version-tracking.jpg",
-            imagePosition: "center 46%",
           },
           {
             title: "情緒分析專家系統",
@@ -1337,8 +1209,6 @@ window.PORTFOLIO_CONTENT = {
             role: "工作坊主講",
             host: "加州大學河濱分校供應鏈社群",
             year: "2026",
-            image: "./assets/pdf-events/ucr-interview-workshop-presentation.jpg",
-            imagePosition: "center 54%",
             description:
               "以試算表整理供應鏈假設、比較情境並支援營運決策的實作工作坊。",
             topics: ["試算表", "供應鏈分析", "決策支援"],
@@ -1348,7 +1218,7 @@ window.PORTFOLIO_CONTENT = {
             role: "工作坊主講",
             host: "加州大學河濱分校供應鏈社群",
             year: "2026",
-            image: "./assets/pdf-events/gdsc-ntnu-security-workshop-session.jpg",
+            image: "./assets/pdf-events/ucr-interview-workshop-session.jpg",
             description:
               "面試準備、回答架構與專案經驗表達練習。",
             topics: ["面試實戰", "職涯溝通", "行為題回答"],
@@ -1358,7 +1228,7 @@ window.PORTFOLIO_CONTENT = {
             role: "邀請技術講座",
             host: "國立臺灣師範大學 Google 學生開發者社群",
             year: "2024",
-            image: "./assets/pdf-events/gdsc-ntnu-ml-cv-workshop-group.jpg",
+            image: "./assets/pdf-events/gdsc-ntnu-security-workshop-session.jpg",
             description:
               "介紹公開金鑰基礎建設、免密碼驗證、一次性密碼、單一登入與資安工具實作。",
             topics: ["公開金鑰基礎建設", "免密碼驗證", "一次性密碼", "單一登入", "Nessus/OpenVAS"],
@@ -1383,8 +1253,7 @@ window.PORTFOLIO_CONTENT = {
           {
             title: "創辦人 / 會長",
             organization: "加州大學河濱分校 Google 校園開發者社群",
-            period: "2026 - 2027",
-            location: "美國加州河濱",
+            period: "2026",
             category: "開發者社群",
             href: "https://gdg.community.dev/gdg-on-campus-university-of-california-riverside-riverside-united-states/",
             actionLabel: "查看社群",
@@ -1392,39 +1261,31 @@ window.PORTFOLIO_CONTENT = {
             previewCaption: "gdg.community.dev",
             description:
               "創辦並啟動校園開發者社群，結合社群策略、人工智慧主題活動、活動營運與成長數據，把學生興趣轉化為實際技術參與。",
-            metrics: ["98 位成員", "90 天內 700+ 瀏覽", "70+ 啟動活動報名", "50+ 實際參與者"],
+            metrics: ["社群建立", "技術工作坊"],
           },
           {
             title: "學生領導",
             organization: "UC Riverside / AGSM 校園社群",
             period: "2025 - 2026",
-            location: "美國加州河濱",
             category: "學生領導",
             variant: "ucr",
             description:
-              "支援 AGSM 與 UCR 校園組織的營運、招生大使溝通、創業領導、內部溝通與研究生社群活動。",
-            metrics: [
+              "參與 UCR 的產品、供應鏈與研究生社群活動。",
+            affiliations: [
               {
-                label: "營運幹部 · Product Club",
+                name: "Product Club at UCR",
+                area: "產品與營運",
                 href: "https://highlanderlink.ucr.edu/organization/productatucr",
               },
               {
-                label: "研究生大使 · AGSM",
-                href: "https://business.ucr.edu/graduate/ambassadors#yung-sian-fang-pmba-taiwan-yfa",
-              },
-              {
-                label: "創業領導 · AGSM SA",
-                href: "https://business.ucr.edu/graduate/student-association",
-              },
-              {
-                label: "內部溝通幹部 · Supply Chain Society",
+                name: "Supply Chain Society",
+                area: "學生社群",
                 href: "https://linktr.ee/scs.ucr",
               },
-            ],
-            links: [
               {
-                label: "TGSA · 台灣研究生協會",
-                href: "https://sites.google.com/view/tgsaucr/home?authuser=0",
+                name: "AGSM Student Association",
+                area: "研究生領導",
+                href: "https://business.ucr.edu/graduate/student-association",
               },
             ],
           },
@@ -1440,8 +1301,6 @@ window.PORTFOLIO_CONTENT = {
             title: "核心團隊成員",
             organization: "慧與科技早期職涯社群",
             period: "2024 - 2025",
-            image: "./assets/hpe-early-career-network.jpg",
-            imagePosition: "center 48%",
             description:
               "協助建立早期職涯活動、展攤互動與跨職能職涯發展活動。",
           },

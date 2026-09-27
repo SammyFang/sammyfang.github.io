@@ -2,14 +2,14 @@
 
 這個版本的版面不用動。日後只改兩個地方：
 
-- 文字、連結、圖片路徑：`docs/data/site-data.js`
-- 圖片與媒體檔案：`docs/assets/`
+- 文字、連結、圖片路徑：`data/site-data.js`
+- 圖片與媒體檔案：`assets/`
 
-不要為了改文字去動 `docs/index.html`、`docs/script.js`、`docs/styles.css`。那三個檔案分別負責載入、渲染、排版。
+不要為了改文字去動 `index.html`、`script.js`、`styles.css`。那三個檔案分別負責載入、渲染、排版。
 
 ## 內容修改位置
 
-`docs/data/site-data.js` 裡分成三層：
+`data/site-data.js` 裡分成三層：
 
 - `profile`：全站共用資料，例如姓名、信箱、LinkedIn、GitHub、ORCID、首頁照片。
 - `locales.en`：英文版內容。
@@ -86,12 +86,12 @@ description: "以 Python、SQL 與 LINE Notify 建立資料擷取與通知流程
 所有可被網站顯示的圖片放在：
 
 ```text
-docs/assets/
+assets/
 ```
 
 使用方式：
 
-1. 把圖片放進 `docs/assets/`。
+1. 把圖片放進 `assets/`。
 2. 在內容項目中把 `image` 改成相對路徑，例如：
 
 ```js
@@ -117,6 +117,14 @@ mediaLabel: "營運專案",
 ```
 
 頁面會自動產生一致的類別視覺，不會出現空白卡片。
+
+公開活動照片只放在確實對應的活動或產品項目；不確定來源、包含可辨識旁人的合照，或顯示內部畫面的照片，先不要發布。未使用的照片不要留在 `assets/`，因為靜態主機仍可能直接提供檔案。
+
+## 社群與經歷的公開範圍
+
+`leadership.items` 可用 `affiliations` 呈現多個社團，每筆保留 `name`、`area`、`href`。這會顯示為清楚的組織列表，不需要把職務塞進標籤。
+
+公開經歷建議只寫年度、職務、組織與高層次成果；不要放工作地點、內部流程、系統欄位、即時作業節奏或未經核准的數字。網站的履歷 PDF 也要維持相同的公開範圍。
 
 建議圖片比例：
 
@@ -155,7 +163,7 @@ About 區塊的履歷 PDF 按鈕使用：
 resumePdf: "./assets/yung-sian-fang-resume.pdf",
 ```
 
-若要換履歷檔，先把新的 PDF 放進 `docs/assets/`，再更新 `profile.resumePdf`。
+若要換履歷檔，先把新的 PDF 放進 `assets/`，再更新 `profile.resumePdf`。
 
 ## Podcast 放法
 
@@ -174,14 +182,14 @@ podcast: {
 }
 ```
 
-若要更換封面，把圖片放到 `docs/assets/`，再更新 `image`。
+若要更換封面，把圖片放到 `assets/`，再更新 `image`。
 
 ## 修改後檢查
 
 修改內容後先開：
 
 ```text
-docs/index.html
+index.html
 ```
 
 再檢查：

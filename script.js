@@ -492,14 +492,12 @@ function renderContact(data) {
           github: { icon: "github", label: "GitHub" },
           orcid: { icon: "orcid", label: "ORCID" },
           scholar: { icon: "scholar", label: "Google Scholar" },
-          instagram: { icon: "instagram", label: "Instagram" },
         }
       : {
           linkedin: { icon: "linkedin", label: "LinkedIn" },
           github: { icon: "github", label: "GitHub" },
           orcid: { icon: "orcid", label: "ORCID" },
           scholar: { icon: "scholar", label: "Google Scholar" },
-          instagram: { icon: "instagram", label: "Instagram" },
         };
 
   return `
@@ -514,7 +512,6 @@ function renderContact(data) {
             <a href="mailto:${escapeHtml(content.profile.email)}">${rowIcon("mail")}<span>${escapeHtml(content.profile.email)}</span></a>
             <a href="${escapeHtml(content.profile.linkedin)}"${linkAttrs(content.profile.linkedin)}>${rowIcon(contactLabels.linkedin.icon)}<span>${escapeHtml(contactLabels.linkedin.label)}</span></a>
             <a href="${escapeHtml(content.profile.github)}"${linkAttrs(content.profile.github)}>${rowIcon(contactLabels.github.icon)}<span>${escapeHtml(contactLabels.github.label)}</span></a>
-            <a href="${escapeHtml(content.profile.instagram)}"${linkAttrs(content.profile.instagram)}>${rowIcon(contactLabels.instagram.icon)}<span>${escapeHtml(contactLabels.instagram.label)}</span></a>
             <a href="${escapeHtml(content.profile.orcid)}"${linkAttrs(content.profile.orcid)}>${rowIcon(contactLabels.orcid.icon)}<span>${escapeHtml(contactLabels.orcid.label)}</span></a>
             <a href="${escapeHtml(content.profile.scholar)}"${linkAttrs(content.profile.scholar)}>${rowIcon(contactLabels.scholar.icon)}<span>${escapeHtml(contactLabels.scholar.label)}</span></a>
           </div>
@@ -597,14 +594,14 @@ function renderResume(data) {
                     ${rowIcon(language === "zh" ? "歷" : "i")}
                     <div>
                       <h3>${escapeHtml(item.title)} - ${escapeHtml(item.organization)}</h3>
-                      <p>${escapeHtml(item.department)}</p>
-                      <p>${escapeHtml(item.period)} · ${escapeHtml(item.location)}</p>
+                      ${item.department ? `<p>${escapeHtml(item.department)}</p>` : ""}
+                      <p>${escapeHtml(item.period)}${item.location ? ` · ${escapeHtml(item.location)}` : ""}</p>
                       <p>${escapeHtml(item.summary)}</p>
-                      <details>
+                      ${item.highlights?.length || item.details?.length ? `<details>
                         <summary>${escapeHtml(data.ui.details)}</summary>
-                        <ul>${listItems(item.highlights.concat(item.details || []))}</ul>
-                      </details>
-                      <div class="inline-tags">${chips(item.tools)}</div>
+                        <ul>${listItems([...(item.highlights || []), ...(item.details || [])])}</ul>
+                      </details>` : ""}
+                      ${item.tools?.length ? `<div class="inline-tags">${chips(item.tools)}</div>` : ""}
                     </div>
                   </article>
                 `,
@@ -720,6 +717,12 @@ function leadershipCard(item, index = 0) {
     .join(" · ");
   const hasMedia = hasAuthenticMedia(item);
   const thumb = hasMedia ? mediaThumb(item, index, "visual-thumb", item.organization || item.title) : "";
+  const affiliations = item.affiliations?.length
+    ? `<ul class="affiliation-list">${item.affiliations.map((affiliation) => `
+        <li><a href="${escapeHtml(affiliation.href)}"${linkAttrs(affiliation.href)}>
+          <span><strong>${escapeHtml(affiliation.name)}</strong><small>${escapeHtml(affiliation.area)}</small></span>
+        </a></li>`).join("")}</ul>`
+    : "";
 
   const inner = `
       ${thumb}
@@ -728,6 +731,7 @@ function leadershipCard(item, index = 0) {
         ${meta ? `<p class="visual-meta">${meta}</p>` : ""}
         <h3>${escapeHtml(item.organization || item.title)}</h3>
         ${item.description ? `<p class="visual-description">${escapeHtml(item.description)}</p>` : ""}
+        ${affiliations}
         ${item.metrics?.length ? `<div class="inline-tags leadership-metrics">${chips(item.metrics, { linked: !item.href })}</div>` : ""}
         ${item.links?.length ? `<div class="inline-links leadership-links">${textLinks(item.links)}</div>` : ""}
         ${cardOpenCue(item)}
