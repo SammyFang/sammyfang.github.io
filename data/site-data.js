@@ -104,19 +104,19 @@ window.PORTFOLIO_CONTENT = {
         items: [
           {
             title: "Amigo Friends",
-            type: "Customer discovery · NSF I-Corps Hub West ZAP",
+            type: "Venture · Customer discovery",
             description:
-              "Participating in the 2026 ZAP program to test customer needs, engagement, and product positioning through interviews.",
-            tags: ["Customer Discovery", "Product Strategy", "2026"],
+              "Participating in the 2026 U.S. National Science Foundation (NSF) I-Corps Hub West ZAP program to test customer needs and product positioning through interviews.",
+            tags: ["NSF I-Corps", "Customer Discovery", "2026"],
             image: "./assets/amigo-friends-mascot.png",
             imageFit: "contain",
           },
           {
             title: "DuckCard",
-            type: "Product discovery · Live showcase",
+            type: "Product · Field testing",
             description:
-              "Applied UCLA NSF I-Corps customer discovery to product iteration, then tested the experience at its first booth during SBIR/STTR Con 2026.",
-            tags: ["Customer Discovery", "Product Testing", "2026"],
+              "Built on UCLA NSF I-Corps customer discovery, tested the product at SBIR/STTR Con 2026, and is preparing for the next stage through UCR INNOVAR.",
+            tags: ["Customer Discovery", "UCR INNOVAR", "2026"],
             href: "https://duckcard.app/",
             actionLabel: "Explore DuckCard",
             image: "./assets/duckcard-sbir-sttrcon-booth-2026.png",
@@ -186,8 +186,8 @@ window.PORTFOLIO_CONTENT = {
             organization: "d-Matrix",
             period: "2026",
             department: "Operations and supply chain",
-            summary: "Supported logistics visibility and supply chain planning through cross-functional process improvement and analytics.",
-            tools: ["Supply Chain Analytics", "Process Improvement"],
+            summary: "Improved logistics and inventory visibility through cross-functional workflow standardization and API/SQL-enabled Power BI analytics.",
+            tools: ["SQL & APIs", "Power BI", "Process Improvement"],
           },
           {
             title: "Procurement Operations Analyst",
@@ -504,6 +504,8 @@ window.PORTFOLIO_CONTENT = {
             actionLabel: "View chapter",
             previewTitle: "GDG at UCR",
             previewCaption: "gdg.community.dev",
+            logo: "./assets/gdg-logo.svg",
+            logoAlt: "Google Developer Groups",
             description:
               "Founded and launched a campus developer chapter, combining community strategy, AI-focused programming, event operations, and growth analytics to turn student interest into active technical participation.",
             metrics: ["Community building", "Technical workshops"],
@@ -860,19 +862,19 @@ window.PORTFOLIO_CONTENT = {
         items: [
           {
             title: "Amigo Friends",
-            type: "客戶探索 · NSF I-Corps Hub West ZAP",
+            type: "創業專案 · 客戶探索",
             description:
-              "參與 2026 年 ZAP 計畫，透過訪談檢驗使用需求、互動體驗與產品定位。",
-            tags: ["客戶探索", "產品策略", "2026"],
+              "參與 2026 年美國國家科學基金會（National Science Foundation, NSF）I-Corps Hub West ZAP 計畫，透過訪談檢驗需求與產品定位。",
+            tags: ["NSF I-Corps", "客戶探索", "2026"],
             image: "./assets/amigo-friends-mascot.png",
             imageFit: "contain",
           },
           {
             title: "DuckCard",
-            type: "產品探索 · 現場展示",
+            type: "產品專案 · 現場測試",
             description:
-              "延續 UCLA NSF I-Corps 客戶探索，在 SBIR/STTR Con 2026 首次展攤，觀察現場互動並調整產品。",
-            tags: ["客戶探索", "產品測試", "2026"],
+              "延續 UCLA NSF I-Corps 客戶探索，在 SBIR/STTR Con 2026 測試現場互動，並準備透過 UCR INNOVAR 推進下一階段。",
+            tags: ["客戶探索", "UCR INNOVAR", "2026"],
             href: "https://duckcard.app/",
             actionLabel: "了解 DuckCard",
             image: "./assets/duckcard-sbir-sttrcon-booth-2026.png",
@@ -942,8 +944,8 @@ window.PORTFOLIO_CONTENT = {
             organization: "d-Matrix",
             period: "2026",
             department: "營運與供應鏈",
-            summary: "透過跨部門流程改善與分析，支援物流資訊整合及供應鏈規劃。",
-            tools: ["供應鏈分析", "流程改善"],
+            summary: "以跨部門流程標準化、API 與 SQL 資料分析及 Power BI 報表，提升物流與庫存資訊可視性。",
+            tools: ["SQL 與 API", "Power BI", "流程改善"],
           },
           {
             title: "採購營運分析師",
@@ -1259,6 +1261,8 @@ window.PORTFOLIO_CONTENT = {
             actionLabel: "查看社群",
             previewTitle: "GDG at UCR",
             previewCaption: "gdg.community.dev",
+            logo: "./assets/gdg-logo.svg",
+            logoAlt: "Google Developer Groups",
             description:
               "創辦並啟動校園開發者社群，結合社群策略、人工智慧主題活動、活動營運與成長數據，把學生興趣轉化為實際技術參與。",
             metrics: ["社群建立", "技術工作坊"],

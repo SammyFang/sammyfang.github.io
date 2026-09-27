@@ -1027,6 +1027,26 @@ img {
   background: transparent;
 }
 
+.source-logo {
+  display: flex;
+  width: min(100%, 250px);
+  min-height: 44px;
+  align-items: center;
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.source-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 30px;
+  object-fit: contain;
+  object-position: left center;
+}
+
 .source-lockup .link-preview-icon {
   width: 30px;
   height: 30px;
@@ -1725,6 +1745,55 @@ img {
   font-size: 0.92rem;
 }
 
+.back-to-top {
+  position: fixed;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 45;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--blue);
+  box-shadow: 0 8px 24px rgba(20, 33, 61, 0.16);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 220ms ease, transform 260ms var(--ease-out), visibility 220ms ease, background-color 180ms ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 180ms var(--ease-out);
+}
+
+.back-to-top:is(:hover, :focus-visible) {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #fff;
+}
+
+.back-to-top:is(:hover, :focus-visible) svg {
+  transform: translateY(-2px);
+}
+
 .motion-ready [data-reveal] {
   opacity: 0;
   transform: translate3d(0, 12px, 0);
@@ -1809,6 +1878,12 @@ img {
 }
 
 @media (max-width: 900px) {
+  .contact-heading {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+
   .desktop-nav {
     order: 3;
     display: flex;
@@ -2100,8 +2175,17 @@ img {
   }
 
   .contact-intro {
-    max-width: 24em;
-    text-wrap: balance;
+    max-width: 36rem;
+    font-size: 0.97rem;
+    line-height: 1.75;
+    text-wrap: wrap;
+  }
+
+  .back-to-top {
+    right: max(14px, env(safe-area-inset-right));
+    bottom: max(14px, env(safe-area-inset-bottom));
+    width: 44px;
+    height: 44px;
   }
 
   .contact-layout {
