@@ -634,15 +634,15 @@ function renderResume(data) {
 
           <div class="resume-columns">
             <div class="credential-section">
-              ${sectionTitle("", label("certification"))}
-              <div class="credential-grid">
-                ${data.education.certifications.map((item) => renderCredentialCard(item, "cert")).join("")}
-              </div>
-            </div>
-            <div class="credential-section">
               ${sectionTitle("", label("award"))}
               <div class="credential-grid">
                 ${data.education.awards.map((item) => renderCredentialCard(item, "award")).join("")}
+              </div>
+            </div>
+            <div class="credential-section">
+              ${sectionTitle("", label("certification"))}
+              <div class="credential-grid">
+                ${data.education.certifications.map((item) => renderCredentialCard(item, "cert")).join("")}
               </div>
             </div>
           </div>
@@ -1061,7 +1061,7 @@ function setupRevealMotion() {
   revealObserver?.disconnect();
 
   const targets = app.querySelectorAll(
-    ".hero-copy, .hero-photo, .section-title, .about-summary, .simple-list, .resume-columns, .contact-panel, .portfolio-grid, .visual-grid, .compact-disclosure",
+    ".hero-copy, .section-title, .about-summary, .simple-list, .resume-columns, .contact-panel, .portfolio-grid, .visual-grid, .compact-disclosure",
   );
 
   targets.forEach((target, index) => {

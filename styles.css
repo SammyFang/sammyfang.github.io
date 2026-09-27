@@ -347,15 +347,12 @@ img {
 }
 
 .hero::before {
-  inset: -40px;
   background-color: var(--navy);
   background-image: var(--hero-bg);
   background-position: left -10vw center;
   background-repeat: no-repeat;
   background-size: min(70vw, 880px) auto;
-  filter: blur(22px) grayscale(0.18) saturate(0.78) contrast(1.04);
-  opacity: 0.26;
-  transform: scale(1.04);
+  opacity: 0.18;
 }
 
 .hero::after {
@@ -417,22 +414,39 @@ img {
 }
 
 .hero-photo {
+  position: relative;
+  isolation: isolate;
   margin: 0;
   justify-self: end;
   width: min(100%, 390px);
+  aspect-ratio: 4 / 5;
+  border-radius: 12px;
+  background-color: var(--navy-deep);
+  background-image: var(--hero-bg);
+  background-position: center 28%;
+  background-size: cover;
+  box-shadow: 14px 20px 34px rgba(4, 14, 27, 0.3);
+}
+
+.hero-photo::after {
+  position: absolute;
+  z-index: -1;
+  inset: 12px -12px -12px 12px;
+  border: 1px solid rgba(255, 209, 102, 0.48);
+  border-radius: inherit;
+  content: "";
+  pointer-events: none;
 }
 
 .hero-photo img {
   width: 100%;
-  height: auto;
+  height: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center 28%;
   border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 10px;
-  background: var(--green-soft);
-  box-shadow: 14px 20px 34px rgba(4, 14, 27, 0.3);
-  filter: saturate(0.92) contrast(1.03);
+  border-radius: inherit;
+  background: transparent;
 }
 
 .plain-section {
@@ -1368,47 +1382,68 @@ img {
 
 .resume-columns {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(36px, 5vw, 56px);
 }
 
 .credential-section .section-title {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .credential-section .section-title h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-size: clamp(1.34rem, 2vw, 1.7rem);
   line-height: 1.15;
 }
 
+.credential-section .section-title h2::before {
+  width: 28px;
+  height: 3px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: var(--gold);
+  content: "";
+}
+
+.credential-section + .credential-section .section-title h2::before {
+  background: var(--teal);
+}
+
 .credential-grid {
   display: grid;
-  gap: 14px;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .credential-card {
   display: grid;
-  gap: 9px;
+  grid-template-columns: minmax(145px, 0.24fr) minmax(0, 1fr);
+  align-content: start;
+  column-gap: 24px;
+  row-gap: 6px;
   min-width: 0;
-  padding: 16px;
-  border: 1px solid var(--line);
-  border: 1px solid color-mix(in srgb, var(--line) 86%, transparent);
-  border-left: 4px solid var(--blue);
-  border-radius: 8px;
-  background: var(--card);
-  box-shadow: 0 6px 18px rgba(20, 33, 61, 0.05);
+  padding: 18px 4px;
+  border-top: 1px solid var(--line);
 }
 
-.credential-award {
-  border-left-color: var(--gold);
+.credential-award:nth-child(-n + 2) {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+  border-radius: 10px;
   background: var(--card);
+  box-shadow: 0 10px 26px rgba(20, 33, 61, 0.08);
 }
 
 .credential-head {
   display: flex;
+  grid-column: 1;
+  grid-row: 1 / span 4;
+  align-content: start;
   align-items: center;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 6px;
   min-width: 0;
 }
 
@@ -1444,8 +1479,11 @@ img {
 }
 
 .credential-year {
-  margin-left: auto;
   color: var(--muted);
+}
+
+.credential-card :is(h3, .credential-issuer, .credential-detail, .entry-action) {
+  grid-column: 2;
 }
 
 .credential-card h3 {
@@ -1654,6 +1692,25 @@ img {
   border-radius: 8px;
   background: var(--card);
   box-shadow: 0 5px 18px rgba(20, 33, 61, 0.06);
+}
+
+.portfolio-card:nth-child(-n + 2) {
+  --feature-tint: var(--gold);
+  border-top: 3px solid var(--feature-tint);
+  box-shadow: 0 10px 26px rgba(20, 33, 61, 0.1);
+}
+
+.portfolio-card:nth-child(2) {
+  --feature-tint: var(--teal);
+}
+
+.portfolio-card:nth-child(-n + 2) > div:last-child {
+  background: var(--card);
+  background: linear-gradient(145deg, var(--card) 68%, color-mix(in srgb, var(--feature-tint) 8%, var(--card)));
+}
+
+.portfolio-card:nth-child(-n + 2) h3 {
+  font-size: 1.18rem;
 }
 
 .portfolio-card.card-link {
@@ -2132,6 +2189,24 @@ img {
 }
 
 @media (max-width: 720px) {
+  .credential-card {
+    grid-template-columns: 1fr;
+    row-gap: 7px;
+  }
+
+  .credential-head {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .credential-year {
+    margin-left: auto;
+  }
+
+  .credential-card :is(h3, .credential-issuer, .credential-detail, .entry-action) {
+    grid-column: 1;
+  }
+
   .visual-card-featured {
     grid-column: span 1;
   }
