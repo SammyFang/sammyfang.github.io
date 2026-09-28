@@ -464,6 +464,7 @@ function renderHero(data) {
 
   return `
     <section class="hero" id="home" style="--hero-bg: url('${escapeHtml(imageBackdrop)}')">
+      <span class="hero-glow" aria-hidden="true"></span>
       <div class="hero-inner">
         <div class="hero-copy">
           <p class="hero-kicker">${escapeHtml(data.hero.eyebrow)}</p>
@@ -575,6 +576,19 @@ function renderCredentialCard(item, type = "cert") {
 }
 
 function renderResume(data) {
+  const experienceEntry = (item) => `
+    <article class="experience-entry">
+      <span class="experience-date">${escapeHtml(item.period)}</span>
+      <div class="experience-body">
+        <p class="experience-organization">${escapeHtml(item.organization)}</p>
+        <h3>${escapeHtml(item.title)}</h3>
+        <p class="experience-summary">${escapeHtml(item.summary)}</p>
+      </div>
+    </article>
+  `;
+  const recentExperience = data.experience.items.slice(0, 3);
+  const earlierExperience = data.experience.items.slice(3);
+
   return `
     <section class="plain-section" id="resume">
         <div class="resume-layout">
@@ -590,27 +604,18 @@ function renderResume(data) {
           </div>
 
           ${sectionTitle("", label("experience"))}
-          <div class="simple-list">
-            ${data.experience.items
-              .map(
-                (item) => `
-                  <article class="resume-entry">
-                    ${rowIcon(language === "zh" ? "歷" : "i")}
-                    <div>
-                      <h3>${escapeHtml(item.title)} - ${escapeHtml(item.organization)}</h3>
-                      ${item.department ? `<p>${escapeHtml(item.department)}</p>` : ""}
-                      <p>${escapeHtml(item.period)}${item.location ? ` · ${escapeHtml(item.location)}` : ""}</p>
-                      <p>${escapeHtml(item.summary)}</p>
-                      ${item.highlights?.length || item.details?.length ? `<details>
-                        <summary>${escapeHtml(data.ui.details)}</summary>
-                        <ul>${listItems([...(item.highlights || []), ...(item.details || [])])}</ul>
-                      </details>` : ""}
-                      ${item.tools?.length ? `<div class="inline-tags">${chips(item.tools)}</div>` : ""}
-                    </div>
-                  </article>
-                `,
-              )
-              .join("")}
+          <div class="experience-section">
+            <div class="experience-list experience-list-featured">
+              ${recentExperience.map(experienceEntry).join("")}
+            </div>
+            ${earlierExperience.length ? `
+              <details class="experience-more">
+                <summary>${escapeHtml(data.ui.earlierExperience)} <span aria-hidden="true">(${earlierExperience.length})</span></summary>
+                <div class="experience-list">
+                  ${earlierExperience.map(experienceEntry).join("")}
+                </div>
+              </details>
+            ` : ""}
           </div>
 
           ${sectionTitle("", label("education"))}
