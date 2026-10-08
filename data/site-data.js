@@ -46,7 +46,7 @@ window.PORTFOLIO_CONTENT = {
         viewWork: "Selected work",
         requestResume: "View resume PDF",
         details: "Details",
-        earlierExperience: "Earlier experience",
+        earlierExperience: "Research and earlier experience",
         selected: "Selected",
         tools: "Technologies",
         highlights: "Highlights",
@@ -55,26 +55,24 @@ window.PORTFOLIO_CONTENT = {
         location: "Location",
       },
       hero: {
-        eyebrow: "Strategy · Supply Chain Analytics · AI Systems",
-        title: "Business-minded technologist connecting operations and AI.",
+        eyebrow: "Operations · Analytics · AI-Assisted Decisions",
+        title: "Connecting engineering and management research to improve operational decisions.",
         lede:
-          "Sammy Fang works across strategic sourcing, procurement operations, automation engineering, applied AI research, and product-oriented analytics.",
+          "My work spans supply chain analytics, workflow automation, and AI-assisted decision-making, connecting operational problems with simulation, optimization, and product validation.",
         tags: [
-          "#ProductAnalytics",
-          "#ProjectManagement",
-          "#SupplyChainOperations",
+          "#SupplyChainAnalytics",
           "#Automation",
-          "#ArtificialIntelligence",
-          "#InformationSecurity",
-          "#DataAnalytics",
+          "#DecisionSupport",
+          "#AppliedResearch"
         ],
       },
       about: {
         eyebrow: "About",
         title: "A cross-functional operator with a technical research foundation.",
         paragraphs: [
-          "Sammy Fang is an MBA candidate at UC Riverside's A. Gary Anderson Graduate School of Management, with an MS in Computer Science from National Dong Hwa University.",
-          "His work connects procurement operations, supplier coordination, automation workflows, applied AI, product validation, and technical community building.",
+          "I am an MBA candidate at UC Riverside, concentrating in Operations and Supply Chain Management and Accounting, with an MS in Computer Science and Information Engineering from National Dong Hwa University.",
+          "Across procurement and engineering roles at HPE and supply chain analytics at d-Matrix, I have built tools for version tracking, logistics visibility, and inventory workflows. My work connects technical implementation with the information people need to make operational decisions.",
+          "At UCR, I contribute to GPU-enabled simulation and tail-risk inventory optimization in INSPIRE Lab. As a research assistant in the Behavioral Economics & Decision-making Lab, my interests include AI-assisted managerial decisions and behavioral biases in operational settings."
         ],
         focus: [
           {
@@ -107,7 +105,7 @@ window.PORTFOLIO_CONTENT = {
             title: "Amigo Friends",
             type: "Venture · Customer discovery",
             description:
-              "Participating in the 2026 U.S. National Science Foundation (NSF) I-Corps Hub West ZAP program to test customer needs and product positioning through interviews.",
+              "Explores user needs and adoption assumptions for an AI-enabled social companion platform through the 2026 NSF I-Corps Hub West ZAP program. Customer interviews inform product positioning.",
             tags: ["NSF I-Corps", "Customer Discovery", "2026"],
             image: "./assets/amigo-friends-mascot.png",
             imageFit: "contain",
@@ -116,7 +114,7 @@ window.PORTFOLIO_CONTENT = {
             title: "DuckCard",
             type: "Product · Field testing",
             description:
-              "Built on UCLA NSF I-Corps customer discovery, tested the product at SBIR/STTR Con 2026, and is preparing for the next stage through UCR INNOVAR.",
+              "Translates customer discovery into requirements and workflow design for business-card intelligence. Developed through UCLA NSF I-Corps, field testing at SBIR/STTR Con 2026, and UCR INNOVAR in fall 2026.",
             tags: ["Customer Discovery", "UCR INNOVAR", "2026"],
             href: "https://duckcard.app/",
             actionLabel: "Explore DuckCard",
@@ -138,7 +136,7 @@ window.PORTFOLIO_CONTENT = {
             title: "AI-Assisted Supply Chain Optimization System",
             type: "Supply chain · AI decision support",
             description:
-              "MBA supply chain system expanded into a FUTURES 2026 paper, consolidating simulation data into KPI tracking, risk rules, scheduled reporting, and AI-generated action notes.",
+              "Turns supply chain simulation data into KPI tracking, rule-based risk alerts, and AI-generated action notes for human review. Developed from an MBA course project into a FUTURES 2026 research contribution.",
             tags: ["Supply Chain", "AI Operations", "FUTURES 2026", "83.3% Faster Review"],
             href: "https://github.com/SammyFang/MGT267watchdog",
             actionLabel: "View GitHub",
@@ -183,53 +181,96 @@ window.PORTFOLIO_CONTENT = {
         title: "Professional experience, briefly.",
         items: [
           {
-            title: "Supply Chain Analyst, Intern",
-            organization: "d-Matrix",
-            period: "2026",
-            department: "Operations and supply chain",
-            summary: "Improved logistics and inventory visibility through cross-functional workflow standardization and API/SQL-enabled Power BI analytics.",
-            tools: ["SQL & APIs", "Power BI", "Process Improvement"],
+            "title": "Supply Chain Analyst, Intern",
+            "organization": "d-Matrix",
+            "period": "2026",
+            "department": "Operations and supply chain",
+            "summary": "Integrated SQL and carrier APIs for logistics exception monitoring and used Power BI to analyze transportation spending. Developed and piloted a computer-vision serial-capture workflow to improve inventory-count efficiency and traceability.",
+            "tools": [
+              "SQL & APIs",
+              "Power BI",
+              "Process Improvement"
+            ]
           },
           {
-            title: "Procurement Operations Analyst",
-            organization: "Hewlett Packard Enterprise",
-            period: "2024 - 2025",
-            department: "Procurement operations",
-            summary: "Coordinated sourcing and planning with cross-functional teams to support supply continuity.",
-            tools: ["Procurement", "Supply Planning"],
+            "title": "Procurement Operations Analyst",
+            "organization": "Hewlett Packard Enterprise",
+            "period": "2024 - 2025",
+            "department": "Procurement operations",
+            "summary": "Coordinated suppliers and manufacturing partners across APAC to support material availability and production continuity. Maintained procurement data in SAP and helped resolve logistics and documentation barriers for new-product introduction.",
+            "tools": [
+              "Procurement",
+              "Supply Planning"
+            ]
           },
           {
-            title: "Software Engineer (Systems)",
-            organization: "Hewlett Packard Enterprise",
-            period: "2023 - 2024",
-            department: "Systems engineering",
-            summary: "Built automation and data workflows for engineering operations and reporting.",
-            tools: ["Automation", "Data Workflows"],
+            "title": "Software Engineer, Intern",
+            "organization": "Hewlett Packard Enterprise",
+            "period": "2023 - 2024",
+            "department": "Systems engineering",
+            "summary": "Built Python tools for firmware and software version tracking, alongside Shell and Perl tools for test-data transfer. These tools reduced repetitive manual work and supported shared validation and reporting across engineering teams and manufacturing partners.",
+            "tools": [
+              "Automation",
+              "Data Workflows"
+            ]
           },
           {
-            title: "Research Assistant",
-            organization: "Phoenix Interactive / NTNU Industry Project",
-            period: "2023 - 2024",
-            department: "Applied AI research",
-            summary: "Supported research analysis and project coordination in an industry-academia setting.",
-            tools: ["Applied AI", "Research Coordination"],
+            "title": "Graduate Researcher",
+            "organization": "INSPIRE Lab, UC Riverside",
+            "period": "2025 – Present",
+            "department": "Operations research",
+            "summary": "Contribute to research on the value of high-fidelity simulation in tail-risk inventory optimization. Develop a GPU-enabled simulation and optimization framework to evaluate inventory policies under volatile demand, uncertain lead times, and extreme risk scenarios.",
+            "tools": [
+              "Simulation",
+              "Optimization",
+              "GPU Computing"
+            ]
           },
           {
-            title: "DevOps Engineer",
-            organization: "Pojen General Hospital",
-            period: "2023",
-            department: "IT operations",
-            summary: "Developed internal data tools and supported IT operations.",
-            tools: ["Data Tools", "IT Operations"],
+            "title": "Research Assistant",
+            "organization": "Behavioral Economics & Decision-making Lab, UC Riverside",
+            "period": "2025 – Present",
+            "department": "Management research",
+            "summary": "Research interests include AI-assisted managerial decision-making and behavioral biases in operational settings, using experimental and quantitative methods with Python, R, and SQL.",
+            "tools": [
+              "Python",
+              "R",
+              "SQL"
+            ]
           },
           {
-            title: "R&D Engineer (HSM)",
-            organization: "Provision Information Co., Ltd.",
-            period: "2021 - 2022",
-            department: "Security research",
-            summary: "Contributed to security tooling and technical documentation for product research.",
-            tools: ["Security Research", "Technical Documentation"],
+            "title": "Research Assistant",
+            "organization": "Human Resource & AI Application Lab, NTNU",
+            "period": "2023 - 2024",
+            "department": "Applied AI research",
+            "summary": "Developed facial and vocal emotion-analysis models for an NSTC-funded project on adaptive instructor feedback and learner engagement. Supported statistical analysis, experiments, and research reporting.",
+            "tools": [
+              "Applied AI",
+              "Research Coordination"
+            ]
           },
+          {
+            "title": "DevOps Engineer",
+            "organization": "Pojen General Hospital",
+            "period": "2023",
+            "department": "IT operations",
+            "summary": "Developed internal data tools and supported IT operations.",
+            "tools": [
+              "Data Tools",
+              "IT Operations"
+            ]
+          },
+          {
+            "title": "R&D Engineer (HSM)",
+            "organization": "Provision Information Co., Ltd.",
+            "period": "2021 - 2022",
+            "department": "Security research",
+            "summary": "Contributed to security tooling and technical documentation for product research.",
+            "tools": [
+              "Security Research",
+              "Technical Documentation"
+            ]
+          }
         ],
       },
       projects: {
@@ -242,14 +283,14 @@ window.PORTFOLIO_CONTENT = {
             title: "Manufacturing Supply Chain Optimization",
             type: "Operations · HPE",
             description:
-              "Improved planning and coordination across procurement and supply chain operations.",
+              "Connected procurement records, supply planning, and supplier coordination to support material availability and resolve execution barriers.",
             tags: ["Procurement", "Operations", "ERP"],
           },
           {
             title: "Intelligent Version Tracking and Data Automation",
             type: "Automation · HPE",
             description:
-              "Built reusable automation and reporting tools for engineering workflows.",
+              "Automated firmware and software version checks with Python and test-data transfers with Shell and Perl, making recurring engineering review and reporting more consistent.",
             tags: ["Python", "Shell Script", "Perl"],
           },
           {
@@ -323,96 +364,93 @@ window.PORTFOLIO_CONTENT = {
         title: "Research, publications, and working papers.",
         publications: [
           {
-            title:
-              "Dynamic Pricing and Markdown Optimization under Demand Uncertainty via Deep Learning and Quantum Search",
-            venue: "2026 INFORMS Revenue Management and Pricing Section Conference · University of Michigan",
-            year: "2026",
-            note: "Conference presentation · Jul 22, 2026",
-            href: "https://sammyfang.tw/dynamic-pricing-impact/",
-            actionLabel: "Show publication",
-            image: "./assets/research-pipeline.svg",
-            description:
-              "Presented a framework integrating recurrent quantile forecasting, risk-aware mean-CVaR optimization, and QUBO-assisted search. Using the M5 dataset and 120 matched item-store-origin decisions, it identified a 9.48% model-based profit lift over historical pricing. QUBO-assisted search matched classical and exhaustive benchmarks at displayed precision; quantum-hardware and scaling advantages remain to be established.",
+            "title": "AI-Assisted Operations Intelligence in Supply Chain Decision Work: A Simulation-Based Study of Visibility, Risk Detection, and Human-AI Collaboration",
+            "venue": "FUTURES 2026: Conference on AI in Education, Business and Society · ISEC Lisboa",
+            "year": "2026",
+            "note": "Conference publication · p. 133",
+            "description": "A simulation-based study of supply chain visibility, risk detection, and human–AI collaboration in operational decision work. Findings are framed within the simulation setting."
           },
           {
-            title:
-              "AI-Assisted Supply Chain Monitoring for Operations Decision Support: A Simulation-Based Study on Visibility, Risk Detection, and Benchmark Performance",
-            venue: "2026 STEM-Humanities Early Career Scientist Symposium · UC Riverside Postdoctoral Association",
-            year: "2026",
-            note: "Poster presentation · Jun 17, 2026",
-            href: "https://rpa.ucr.edu/page/Symposium-2026/",
-            actionLabel: "View symposium",
-            image: "./assets/stem-humanities-supply-chain-symposium-2026-960.webp",
-            imageLoading: "eager",
-            imagePosition: "center 38%",
-            description:
-              "Simulation-based AI monitoring that turns fragmented procurement, inventory, production, logistics, and financial signals into structured visibility, transparent risk alerts, and reviewable decision notes.",
+            "title": "Dynamic Pricing and Markdown Optimization under Demand Uncertainty via Deep Learning and Quantum Search",
+            "venue": "2026 INFORMS Revenue Management and Pricing Section Conference · University of Michigan",
+            "year": "2026",
+            "note": "Conference presentation · Jul 22, 2026",
+            "href": "https://sammyfang.tw/dynamic-pricing-impact/",
+            "actionLabel": "Show publication",
+            "image": "./assets/research-pipeline.svg",
+            "description": "Presented a framework integrating recurrent quantile forecasting, risk-aware mean-CVaR optimization, and QUBO-assisted search. Using the M5 dataset and 120 matched item-store-origin decisions, it identified a 9.48% model-based profit lift over historical pricing. QUBO-assisted search matched classical and exhaustive benchmarks at displayed precision; quantum-hardware and scaling advantages remain to be established."
           },
           {
-            title:
-              "NuclearGuard AI: Agent-Assisted Radiation Anomaly Detection and Operator Decision Support Using Gamma-Ray Spectral Data",
-            venue: "UCR AI Graduate Research Brown Bag Series",
-            year: "2026",
-            note: "eScholarship · May 29, 2026",
-            href: "https://escholarship.org/uc/item/0c67f27h",
-            actionLabel: "Show publication",
-            image: "./assets/research-intelligence.svg",
-            description:
-              "Agent-assisted dashboard using public gamma-ray spectra for anomaly scoring, spatial risk visualization, and operator decision support.",
+            "title": "AI-Assisted Supply Chain Monitoring for Operations Decision Support: A Simulation-Based Study on Visibility, Risk Detection, and Benchmark Performance",
+            "venue": "2026 STEM-Humanities Early Career Scientist Symposium · UC Riverside Postdoctoral Association",
+            "year": "2026",
+            "note": "Poster presentation · Jun 17, 2026",
+            "href": "https://rpa.ucr.edu/page/Symposium-2026/",
+            "actionLabel": "View symposium",
+            "image": "./assets/stem-humanities-supply-chain-symposium-2026-960.webp",
+            "imageLoading": "eager",
+            "imagePosition": "center 38%",
+            "description": "Simulation-based AI monitoring that turns fragmented procurement, inventory, production, logistics, and financial signals into structured visibility, transparent risk alerts, and reviewable decision notes."
           },
           {
-            title:
-              "Quantum-Assisted Candidate Selection for High-Energy Lithium Battery Materials Using the Materials Project Database",
-            venue: "University of California, Riverside Graduate Research Symposium",
-            year: "2026",
-            note: "1st Place Poster Presentation",
-            href: "https://graduate.ucr.edu/gradsymposium#best-presentation-awards-2026",
-            actionLabel: "View award page",
-            image: "./assets/research-battery.svg",
+            "title": "NuclearGuard AI: Agent-Assisted Radiation Anomaly Detection and Operator Decision Support Using Gamma-Ray Spectral Data",
+            "venue": "UCR AI Graduate Research Brown Bag Series",
+            "year": "2026",
+            "note": "Research presentation · eScholarship · May 2026",
+            "href": "https://escholarship.org/uc/item/0c67f27h",
+            "actionLabel": "Show publication",
+            "image": "./assets/research-intelligence.svg",
+            "description": "Agent-assisted dashboard using public gamma-ray spectra for anomaly scoring, spatial risk visualization, and operator decision support."
           },
           {
-            title: "Web-Based Pipeline for Standardized Event Window Stock Return Analysis and Research-Ready Visualization",
-            venue: "Open Research and Creative Activities Forum",
-            year: "2026",
-            note: "DOI: 10.5070/J9.63078",
-            href: "https://doi.org/10.5070/J9.63078",
-            image: "./assets/research-pipeline.svg",
+            "title": "Quantum-Assisted Candidate Selection for High-Energy Lithium Battery Materials Using the Materials Project Database",
+            "venue": "University of California, Riverside Graduate Research Symposium",
+            "year": "2026",
+            "note": "Poster presentation · 1st Place",
+            "href": "https://graduate.ucr.edu/gradsymposium#best-presentation-awards-2026",
+            "actionLabel": "View award page",
+            "image": "./assets/research-battery.svg"
           },
           {
-            title: "A Market-Oriented Business Model and AI System Design for Multilingual Business Card Intelligence",
-            venue: "Open Research and Creative Activities Forum",
-            year: "2026",
-            note: "DOI: 10.5070/J9.63090",
-            href: "https://doi.org/10.5070/J9.63090",
-            image: "./assets/research-intelligence.svg",
+            "title": "Web-Based Pipeline for Standardized Event Window Stock Return Analysis and Research-Ready Visualization",
+            "venue": "Open Research and Creative Activities Forum",
+            "year": "2026",
+            "note": "Publication · DOI: 10.5070/J9.63078",
+            "href": "https://doi.org/10.5070/J9.63078",
+            "image": "./assets/research-pipeline.svg"
           },
           {
-            title: "Progressive Behavior Patterns of Online Discussion at Different Circles of Self-Regulated Learning",
-            venue: "International Conference on Computers in Education",
-            year: "2024",
-            note: "DOI: 10.58459/icce.2024.4863",
-            href: "https://doi.org/10.58459/icce.2024.4863",
-            image: "./assets/research-pipeline.svg",
+            "title": "A Market-Oriented Business Model and AI System Design for Multilingual Business Card Intelligence",
+            "venue": "Open Research and Creative Activities Forum",
+            "year": "2026",
+            "note": "Publication · DOI: 10.5070/J9.63090",
+            "href": "https://doi.org/10.5070/J9.63090",
+            "image": "./assets/research-intelligence.svg"
           },
           {
-            title: "Security Encryption Methods and Key Generation: Based on Biometric Authentication Passkey and Quantum Logic",
-            venue: "TANET 2023 Conference: Next-Generation AI and Digital Resilience",
-            year: "2023",
-            note: "Conference paper · Nov 2023",
-            image: "./assets/research-intelligence.svg",
-            description:
-              "Biometric authentication passkey, quantum logic, secure encryption, and key generation.",
+            "title": "Progressive Behavior Patterns of Online Discussion at Different Circles of Self-Regulated Learning",
+            "venue": "International Conference on Computers in Education",
+            "year": "2024",
+            "note": "Publication · DOI: 10.58459/icce.2024.4863",
+            "href": "https://doi.org/10.58459/icce.2024.4863",
+            "image": "./assets/research-pipeline.svg"
           },
           {
-            title:
-              "An Intelligent Emotion Feedback Assistant: Using Teachers' Dynamic Expressions and Voices Enabled with Deep Learning for Emotion Analysis and Score Evaluation",
-            venue: "TANET 2023 Conference: Next-Generation AI and Digital Resilience",
-            year: "2023",
-            note: "Conference paper · Nov 2023",
-            image: "./assets/media-coverage.svg",
-            description:
-              "Digital education, deep learning, computer vision, voiceprint analysis, and affective computing.",
+            "title": "Security Encryption Methods and Key Generation: Based on Biometric Authentication Passkey and Quantum Logic",
+            "venue": "TANET 2023 Conference: Next-Generation AI and Digital Resilience",
+            "year": "2023",
+            "note": "Conference paper · Nov 2023",
+            "image": "./assets/research-intelligence.svg",
+            "description": "Biometric authentication passkey, quantum logic, secure encryption, and key generation."
           },
+          {
+            "title": "An Intelligent Emotion Feedback Assistant: Using Teachers' Dynamic Expressions and Voices Enabled with Deep Learning for Emotion Analysis and Score Evaluation",
+            "venue": "TANET 2023 Conference: Next-Generation AI and Digital Resilience",
+            "year": "2023",
+            "note": "Conference paper · Nov 2023",
+            "image": "./assets/media-coverage.svg",
+            "description": "Digital education, deep learning, computer vision, voiceprint analysis, and affective computing."
+          }
         ],
         workingPapers: [
           "Computational Primitives for High-Fidelity Supply Chain Simulation: A GPU Kernel Reformulation Using Triton",
@@ -497,68 +535,82 @@ window.PORTFOLIO_CONTENT = {
         title: "Technical community, entrepreneurship, and student leadership.",
         items: [
           {
-            title: "Founder / President",
-            organization: "Google Developer Groups on Campus, UC Riverside",
-            period: "2026",
-            category: "Developer community",
-            href: "https://gdg.community.dev/gdg-on-campus-university-of-california-riverside-riverside-united-states/",
-            actionLabel: "View chapter",
-            previewTitle: "GDG at UCR",
-            previewCaption: "gdg.community.dev",
-            logo: "./assets/gdg-logo.svg",
-            logoAlt: "Google Developer Groups",
-            description:
-              "Founded and launched a campus developer chapter, combining community strategy, AI-focused programming, event operations, and growth analytics to turn student interest into active technical participation.",
-            metrics: ["Community building", "Technical workshops"],
+            "title": "Founder / President",
+            "organization": "Google Developer Groups on Campus, UC Riverside",
+            "period": "2026",
+            "category": "Developer community",
+            "href": "https://gdg.community.dev/gdg-on-campus-university-of-california-riverside-riverside-united-states/",
+            "actionLabel": "View chapter",
+            "previewTitle": "GDG at UCR",
+            "previewCaption": "gdg.community.dev",
+            "logo": "./assets/gdg-logo.svg",
+            "logoAlt": "Google Developer Groups",
+            "description": "Built a developer community of 100+ members and organized an AI kickoff with 50+ participants, creating opportunities for technical learning and peer collaboration.",
+            "metrics": [
+              "Community building",
+              "Technical workshops"
+            ]
           },
           {
-            title: "Student Leadership",
-            organization: "UC Riverside / AGSM Communities",
-            period: "2025 - 2026",
-            category: "Student leadership",
-            variant: "ucr",
-            description:
-              "Contributed to product, supply chain, and graduate student communities at UC Riverside.",
-            affiliations: [
+            "title": "Student Leadership",
+            "organization": "UC Riverside / AGSM Communities",
+            "period": "2025 - 2026",
+            "category": "Student leadership",
+            "variant": "ucr",
+            "description": "Contributed to product, supply chain, and graduate student communities at UC Riverside.",
+            "affiliations": [
               {
-                name: "Product Club at UCR",
-                area: "Product and operations",
-                href: "https://highlanderlink.ucr.edu/organization/productatucr",
+                "name": "Product Club at UCR",
+                "area": "Product and operations",
+                "href": "https://highlanderlink.ucr.edu/organization/productatucr"
               },
               {
-                name: "Supply Chain Society",
-                area: "Student community",
-                href: "https://linktr.ee/scs.ucr",
+                "name": "Supply Chain Society",
+                "area": "Student community",
+                "href": "https://linktr.ee/scs.ucr"
               },
               {
-                name: "AGSM Student Association",
-                area: "Graduate leadership",
-                href: "https://business.ucr.edu/graduate/student-association",
-              },
-            ],
+                "name": "AGSM Student Association",
+                "area": "Graduate leadership",
+                "href": "https://business.ucr.edu/graduate/student-association"
+              }
+            ]
           },
           {
-            title: "Team Lead",
-            organization: "UCLA NSF I-Corps Regional Program",
-            period: "2025",
-            description:
-              "Led customer discovery for DuckCard, translating user interviews into product assumptions, market framing, and commercialization next steps.",
-            metrics: ["DuckCard", "Customer discovery", "Market framing"],
+            "title": "Team Lead",
+            "organization": "DuckCard · UCLA NSF I-Corps / UCR INNOVAR",
+            "period": "2025 - 2026",
+            "description": "Led 50+ customer discovery interviews through UCLA NSF I-Corps, translating findings into product requirements, workflow design, and commercialization assumptions. Continued the venture through UCR INNOVAR in fall 2026.",
+            "metrics": [
+              "DuckCard",
+              "Customer discovery",
+              "Market framing"
+            ]
           },
           {
-            title: "Core Team Member",
-            organization: "HPE Early Career Network",
-            period: "2024 - 2025",
-            description:
-              "Helped structure early-career programming, booth engagement, and cross-functional professional development.",
+            "title": "Core Team Member",
+            "organization": "HPE Early Career Network",
+            "period": "2024 - 2025",
+            "description": "Helped structure early-career programming, booth engagement, and cross-functional professional development."
           },
           {
-            title: "Organizer",
-            organization: "Google Developer Group Cloud Taipei",
-            period: "2023 - 2024",
-            description:
-              "Organized and supported technical events, seminars, and workshops for cloud and developer communities.",
+            "title": "Organizer",
+            "organization": "Google Developer Group Cloud Taipei",
+            "period": "2023 - 2024",
+            "description": "Organized and supported technical events, seminars, and workshops for cloud and developer communities."
           },
+          {
+            "title": "Teaching Assistant",
+            "organization": "National Taiwan Normal University",
+            "period": "2023 - 2024",
+            "description": "Supported Human Resource Management and E-HR Practice Research courses across undergraduate and graduate programs. Coordinated six industry guest sessions on HR technology, digital learning, and AI-enabled talent development."
+          },
+          {
+            "title": "Reviewer",
+            "organization": "FUTURES 2026",
+            "period": "2026",
+            "description": "Completed one manuscript review for Track 4: AI Ethical Frameworks."
+          }
         ],
       },
       media: {
@@ -633,11 +685,11 @@ window.PORTFOLIO_CONTENT = {
         title: "Education, awards, certifications, and affiliations.",
         schools: [
           {
-            degree: "MBA, Logistics, Materials, and Supply Chain Management",
+            degree: "MBA, Operations and Supply Chain Management; Accounting",
             school: "University of California, Riverside - A. Gary Anderson Graduate School of Management",
             period: "Sep 2025 - Jun 2027",
             description:
-              "Focus on supply chain strategy, operations management, analytics, AI automation, product development, and market validation.",
+              "Connects operations strategy, analytical decision-making, and accounting perspectives on business performance.",
           },
           {
             degree: "MS, Computer Science and Information Engineering",
@@ -728,7 +780,7 @@ window.PORTFOLIO_CONTENT = {
             title: "CITI Program Certification",
             issuer: "CITI Program",
             detail:
-              "Research ethics, responsible conduct, compliance, and human-subjects fundamentals.",
+              "Social and Behavioral Research and IRB Members Training, supporting responsible research and awareness of human-subjects protections.",
           },
           {
             title: "Gemini Certified Educator",
@@ -805,7 +857,7 @@ window.PORTFOLIO_CONTENT = {
         viewWork: "精選成果",
         requestResume: "查看履歷檔案",
         details: "展開細節",
-        earlierExperience: "較早經歷",
+        earlierExperience: "研究與其他經歷",
         selected: "精選",
         tools: "技術與工具",
         highlights: "重點",
@@ -814,26 +866,24 @@ window.PORTFOLIO_CONTENT = {
         location: "地點",
       },
       hero: {
-        eyebrow: "策略規劃 · 供應鏈分析 · 人工智慧系統",
-        title: "把營運問題、資料分析與人工智慧系統接在一起。",
+        eyebrow: "營運管理 · 資料分析 · AI 輔助決策",
+        title: "結合工程實作與管理研究，改善營運決策。",
         lede:
-          "聚焦策略採購、採購營運、自動化工程、人工智慧研究與產品導向分析。",
+          "我的工作涵蓋供應鏈分析、流程自動化與 AI 輔助決策，從產業中的實際問題出發，延伸至模擬、最佳化與產品驗證。",
         tags: [
-          "#產品分析",
-          "#專案管理",
-          "#供應鏈運營",
-          "#自動化",
-          "#人工智慧",
-          "#資訊安全",
-          "#數據分析",
+          "#供應鏈分析",
+          "#流程自動化",
+          "#決策支援",
+          "#應用研究"
         ],
       },
       about: {
         eyebrow: "關於",
         title: "商業營運與技術系統整合背景。",
         paragraphs: [
-          "目前就讀加州大學河濱分校商學院企業管理碩士，並具國立東華大學資訊工程碩士背景。",
-          "工作聚焦採購營運、供應商協調、自動化流程、人工智慧研究、產品驗證與技術社群經營。",
+          "目前就讀加州大學河濱分校 MBA，主修方向為營運與供應鏈管理及會計，並具國立東華大學資訊工程碩士背景。",
+          "從 HPE 的採購與工程工作，到 d-Matrix 的供應鏈分析，我曾建立版本追蹤、物流資訊整合與庫存作業工具，將工程實作連結到日常營運所需的判斷與資訊。",
+          "在 UCR INSPIRE Lab，我參與 GPU 模擬與尾端風險庫存最佳化研究；同時擔任 Behavioral Economics & Decision-making Lab 研究助理，研究興趣包括 AI 輔助管理決策與營運情境中的行為偏誤。"
         ],
         focus: [
           {
@@ -866,7 +916,7 @@ window.PORTFOLIO_CONTENT = {
             title: "Amigo Friends",
             type: "創業專案 · 客戶探索",
             description:
-              "參與 2026 年美國國家科學基金會（National Science Foundation, NSF）I-Corps Hub West ZAP 計畫，透過訪談檢驗需求與產品定位。",
+              "透過 2026 年 NSF I-Corps Hub West ZAP 計畫，探索 AI 社交陪伴平台的使用需求與採用假設，以客戶訪談回饋調整產品定位。",
             tags: ["NSF I-Corps", "客戶探索", "2026"],
             image: "./assets/amigo-friends-mascot.png",
             imageFit: "contain",
@@ -875,7 +925,7 @@ window.PORTFOLIO_CONTENT = {
             title: "DuckCard",
             type: "產品專案 · 現場測試",
             description:
-              "延續 UCLA NSF I-Corps 客戶探索，在 SBIR/STTR Con 2026 測試現場互動，並準備透過 UCR INNOVAR 推進下一階段。",
+              "將客戶探索轉化為名片資訊應用的產品需求與流程設計，歷經 UCLA NSF I-Corps、SBIR/STTR Con 2026 現場測試，以及 2026 年秋季 UCR INNOVAR 計畫。",
             tags: ["客戶探索", "UCR INNOVAR", "2026"],
             href: "https://duckcard.app/",
             actionLabel: "了解 DuckCard",
@@ -897,7 +947,7 @@ window.PORTFOLIO_CONTENT = {
             title: "AI-Assisted Supply Chain Optimization System",
             type: "供應鏈 · AI 決策支援",
             description:
-              "MBA 供應鏈課程延伸專案，後續擴展為 FUTURES 2026 論文；整合模擬資料、KPI 追蹤、風險規則、定期報告與 AI 行動建議。",
+              "將供應鏈模擬資料整理為 KPI 追蹤、規則式風險提醒與供人工審閱的 AI 行動建議，由 MBA 課程專案延伸為 FUTURES 2026 研究成果。",
             tags: ["供應鏈", "AI 營運", "FUTURES 2026", "83.3% 審查加速"],
             href: "https://github.com/SammyFang/MGT267watchdog",
             actionLabel: "查看 GitHub",
@@ -942,53 +992,96 @@ window.PORTFOLIO_CONTENT = {
         title: "專業經歷摘要。",
         items: [
           {
-            title: "供應鏈分析師實習生",
-            organization: "d-Matrix",
-            period: "2026",
-            department: "營運與供應鏈",
-            summary: "以跨部門流程標準化、API 與 SQL 資料分析及 Power BI 報表，提升物流與庫存資訊可視性。",
-            tools: ["SQL 與 API", "Power BI", "流程改善"],
+            "title": "供應鏈分析師實習生",
+            "organization": "d-Matrix",
+            "period": "2026",
+            "department": "營運與供應鏈",
+            "summary": "整合 SQL 與承運商 API，建立物流異常監控，並以 Power BI 分析運輸支出。另開發並試行電腦視覺序號擷取流程，改善盤點效率與可追溯性。",
+            "tools": [
+              "SQL 與 API",
+              "Power BI",
+              "流程改善"
+            ]
           },
           {
-            title: "採購營運分析師",
-            organization: "慧與科技",
-            period: "2024 - 2025",
-            department: "採購營運",
-            summary: "協調跨部門採購與規劃工作，支援供應連續性。",
-            tools: ["採購", "供應規劃"],
+            "title": "採購營運分析師",
+            "organization": "慧與科技",
+            "period": "2024 - 2025",
+            "department": "採購營運",
+            "summary": "協調亞太區供應商與製造夥伴，支援物料供應與生產連續性。透過 SAP 維護採購資料，並協助排除物流與文件障礙，支援新產品導入的物料流動。",
+            "tools": [
+              "採購",
+              "供應規劃"
+            ]
           },
           {
-            title: "系統軟體工程師",
-            organization: "慧與科技",
-            period: "2023 - 2024",
-            department: "系統工程",
-            summary: "建立工程營運與報表所需的自動化及資料流程。",
-            tools: ["自動化", "資料流程"],
+            "title": "軟體工程實習生",
+            "organization": "慧與科技",
+            "period": "2023 - 2024",
+            "department": "系統工程",
+            "summary": "以 Python 建立韌體與軟體版本追蹤工具，並以 Shell、Perl 開發測試資料傳輸工具，減少重複人工操作，支援工程團隊與製造夥伴的驗證及報告協作。",
+            "tools": [
+              "自動化",
+              "資料流程"
+            ]
           },
           {
-            title: "研究助理",
-            organization: "Phoenix Interactive / 臺師大產學計畫",
-            period: "2023 - 2024",
-            department: "應用人工智慧研究",
-            summary: "支援產學研究的分析與專案協調。",
-            tools: ["應用人工智慧", "研究協調"],
+            "title": "研究生研究員",
+            "organization": "加州大學河濱分校 INSPIRE Lab",
+            "period": "2025 – 至今",
+            "department": "作業研究",
+            "summary": "參與高擬真模擬於尾端風險庫存最佳化的研究，開發 GPU 模擬與最佳化框架，評估需求波動、交期不確定與極端風險情境下的庫存策略。",
+            "tools": [
+              "模擬",
+              "最佳化",
+              "GPU 運算"
+            ]
           },
           {
-            title: "系統維運工程師",
-            organization: "博仁綜合醫院",
-            period: "2023",
-            department: "資訊營運",
-            summary: "開發內部資料工具並支援資訊營運。",
-            tools: ["資料工具", "資訊營運"],
+            "title": "研究助理",
+            "organization": "加州大學河濱分校 Behavioral Economics & Decision-making Lab",
+            "period": "2025 – 至今",
+            "department": "管理研究",
+            "summary": "研究興趣包括 AI 輔助管理決策與營運情境中的行為偏誤，關注以 Python、R、SQL 支援的實驗與量化研究方法。",
+            "tools": [
+              "Python",
+              "R",
+              "SQL"
+            ]
           },
           {
-            title: "硬體安全模組研發工程師",
-            organization: "Provision Information Co., Ltd.",
-            period: "2021 - 2022",
-            department: "資訊安全研究",
-            summary: "參與安全工具與產品研究文件的開發。",
-            tools: ["資訊安全研究", "技術文件"],
+            "title": "研究助理",
+            "organization": "國立臺灣師範大學 Human Resource & AI Application Lab",
+            "period": "2023 - 2024",
+            "department": "應用人工智慧研究",
+            "summary": "參與國科會支持的教師情緒回饋與學習者情感投入研究，開發臉部及聲音情緒分析模型，並支援統計分析、實驗執行與研究報告。",
+            "tools": [
+              "應用人工智慧",
+              "研究協調"
+            ]
           },
+          {
+            "title": "系統維運工程師",
+            "organization": "博仁綜合醫院",
+            "period": "2023",
+            "department": "資訊營運",
+            "summary": "開發內部資料工具並支援資訊營運。",
+            "tools": [
+              "資料工具",
+              "資訊營運"
+            ]
+          },
+          {
+            "title": "硬體安全模組研發工程師",
+            "organization": "Provision Information Co., Ltd.",
+            "period": "2021 - 2022",
+            "department": "資訊安全研究",
+            "summary": "參與安全工具與產品研究文件的開發。",
+            "tools": [
+              "資訊安全研究",
+              "技術文件"
+            ]
+          }
         ],
       },
       projects: {
@@ -1001,14 +1094,14 @@ window.PORTFOLIO_CONTENT = {
             title: "製造供應鏈優化",
             type: "營運 · 慧與科技",
             description:
-              "改善採購與供應鏈營運的規劃及跨部門協調。",
+              "串接採購資料維護、供應規劃與供應商協調，支援物料可用性並處理執行障礙。",
             tags: ["採購", "營運", "企業資源規劃"],
           },
           {
             title: "智慧版本追蹤與資料自動化",
             type: "自動化 · 慧與科技",
             description:
-              "建立工程流程所需的可重複使用自動化與報表工具。",
+              "以 Python 自動化韌體與軟體版本檢查，以 Shell、Perl 處理測試資料傳輸，提升例行工程審查與報告的一致性。",
             tags: ["Python", "Shell Script", "Perl"],
           },
           {
@@ -1082,95 +1175,93 @@ window.PORTFOLIO_CONTENT = {
         title: "研究、發表與進行中論文。",
         publications: [
           {
-            title:
-              "需求不確定下的動態定價與降價最佳化：結合深度學習與量子搜尋",
-            venue: "2026 INFORMS 收益管理與定價分會研討會 · 密西根大學",
-            year: "2026",
-            note: "會議發表 · 2026 年 7 月 22 日",
-            href: "https://sammyfang.tw/dynamic-pricing-impact/",
-            actionLabel: "查看發表",
-            image: "./assets/research-pipeline.svg",
-            description:
-              "提出整合循環分位數預測、風險感知 mean-CVaR 最佳化與 QUBO 輔助搜尋的架構。使用 M5 資料集與 120 組品項、門市、產地配對決策，相較歷史定價辨識出 9.48% 的模型估計利潤提升。QUBO 輔助搜尋在顯示精度下與傳統及窮舉基準一致；量子硬體與規模化優勢仍待驗證。",
+            "title": "AI-Assisted Operations Intelligence in Supply Chain Decision Work: A Simulation-Based Study of Visibility, Risk Detection, and Human-AI Collaboration",
+            "venue": "FUTURES 2026: Conference on AI in Education, Business and Society · ISEC Lisboa",
+            "year": "2026",
+            "note": "會議出版品 · 第 133 頁",
+            "description": "以模擬情境研究供應鏈資訊可視性、風險偵測與營運決策中的人機協作；研究結果的適用範圍限於模擬設定。"
           },
           {
-            title:
-              "AI 輔助供應鏈監控與營運決策支援：以模擬研究檢視可視性、風險偵測與基準績效",
-            venue: "2026 STEM-Humanities 早期職涯科學家研討會 · UCR 博士後研究人員協會",
-            year: "2026",
-            note: "海報發表 · 2026 年 6 月 17 日",
-            href: "https://rpa.ucr.edu/page/Symposium-2026/",
-            actionLabel: "查看研討會",
-            image: "./assets/stem-humanities-supply-chain-symposium-2026-960.webp",
-            imageLoading: "eager",
-            imagePosition: "center 38%",
-            description:
-              "以模擬研究將採購、庫存、生產、物流與財務訊號轉化為可視性、透明風險警示與可覆核的決策紀錄。",
+            "title": "需求不確定下的動態定價與降價最佳化：結合深度學習與量子搜尋",
+            "venue": "2026 INFORMS 收益管理與定價分會研討會 · 密西根大學",
+            "year": "2026",
+            "note": "會議發表 · 2026 年 7 月 22 日",
+            "href": "https://sammyfang.tw/dynamic-pricing-impact/",
+            "actionLabel": "查看發表",
+            "image": "./assets/research-pipeline.svg",
+            "description": "提出整合循環分位數預測、風險感知 mean-CVaR 最佳化與 QUBO 輔助搜尋的架構。使用 M5 資料集與 120 組品項、門市、產地配對決策，相較歷史定價辨識出 9.48% 的模型估計利潤提升。QUBO 輔助搜尋在顯示精度下與傳統及窮舉基準一致；量子硬體與規模化優勢仍待驗證。"
           },
           {
-            title:
-              "NuclearGuard AI：以伽瑪射線光譜資料進行輻射異常偵測與操作員決策支援",
-            venue: "UCR AI 研究生研究 Brown Bag 系列",
-            year: "2026",
-            note: "eScholarship · 2026 年 5 月 29 日",
-            href: "https://escholarship.org/uc/item/0c67f27h",
-            actionLabel: "查看出版頁",
-            image: "./assets/research-intelligence.svg",
-            description:
-              "以公開伽瑪射線光譜建立異常評分、空間風險視覺化與操作員決策支援儀表板。",
+            "title": "AI 輔助供應鏈監控與營運決策支援：以模擬研究檢視可視性、風險偵測與基準績效",
+            "venue": "2026 STEM-Humanities 早期職涯科學家研討會 · UCR 博士後研究人員協會",
+            "year": "2026",
+            "note": "海報發表 · 2026 年 6 月 17 日",
+            "href": "https://rpa.ucr.edu/page/Symposium-2026/",
+            "actionLabel": "查看研討會",
+            "image": "./assets/stem-humanities-supply-chain-symposium-2026-960.webp",
+            "imageLoading": "eager",
+            "imagePosition": "center 38%",
+            "description": "以模擬研究將採購、庫存、生產、物流與財務訊號轉化為可視性、透明風險警示與可覆核的決策紀錄。"
           },
           {
-            title:
-              "量子輔助高能量鋰電池材料候選篩選",
-            venue: "加州大學河濱分校研究生研究論壇",
-            year: "2026",
-            note: "海報發表第一名",
-            href: "https://graduate.ucr.edu/gradsymposium#best-presentation-awards-2026",
-            actionLabel: "查看獲獎頁面",
-            image: "./assets/research-battery.svg",
+            "title": "NuclearGuard AI：以伽瑪射線光譜資料進行輻射異常偵測與操作員決策支援",
+            "venue": "UCR AI 研究生研究 Brown Bag 系列",
+            "year": "2026",
+            "note": "研究發表 · eScholarship · 2026 年 5 月",
+            "href": "https://escholarship.org/uc/item/0c67f27h",
+            "actionLabel": "查看出版頁",
+            "image": "./assets/research-intelligence.svg",
+            "description": "以公開伽瑪射線光譜建立異常評分、空間風險視覺化與操作員決策支援儀表板。"
           },
           {
-            title: "標準化事件窗口股價報酬分析與研究視覺化網頁流程",
-            venue: "開放研究與創作活動論壇",
-            year: "2026",
-            note: "數位物件識別碼：10.5070/J9.63078",
-            href: "https://doi.org/10.5070/J9.63078",
-            image: "./assets/research-pipeline.svg",
+            "title": "量子輔助高能量鋰電池材料候選篩選",
+            "venue": "加州大學河濱分校研究生研究論壇",
+            "year": "2026",
+            "note": "海報發表 · 第一名",
+            "href": "https://graduate.ucr.edu/gradsymposium#best-presentation-awards-2026",
+            "actionLabel": "查看獲獎頁面",
+            "image": "./assets/research-battery.svg"
           },
           {
-            title: "多語名片智慧化系統的市場導向商業模式與人工智慧系統設計",
-            venue: "開放研究與創作活動論壇",
-            year: "2026",
-            note: "數位物件識別碼：10.5070/J9.63090",
-            href: "https://doi.org/10.5070/J9.63090",
-            image: "./assets/research-intelligence.svg",
+            "title": "標準化事件窗口股價報酬分析與研究視覺化網頁流程",
+            "venue": "開放研究與創作活動論壇",
+            "year": "2026",
+            "note": "數位物件識別碼：10.5070/J9.63078",
+            "href": "https://doi.org/10.5070/J9.63078",
+            "image": "./assets/research-pipeline.svg"
           },
           {
-            title: "不同自我調整學習階段之線上討論漸進行為模式",
-            venue: "國際電腦教育研討會",
-            year: "2024",
-            note: "數位物件識別碼：10.58459/icce.2024.4863",
-            href: "https://doi.org/10.58459/icce.2024.4863",
-            image: "./assets/research-pipeline.svg",
+            "title": "多語名片智慧化系統的市場導向商業模式與人工智慧系統設計",
+            "venue": "開放研究與創作活動論壇",
+            "year": "2026",
+            "note": "數位物件識別碼：10.5070/J9.63090",
+            "href": "https://doi.org/10.5070/J9.63090",
+            "image": "./assets/research-intelligence.svg"
           },
           {
-            title: "安全加密方式與金鑰生成 - 以生物特徵通行密鑰結合量子邏輯為例",
-            venue: "2023 TANET 臺灣網際網路研討會：次世代 AI 與數位韌性",
-            year: "2023",
-            note: "會議論文 · 2023.11",
-            image: "./assets/research-intelligence.svg",
-            description:
-              "生物特徵通行密鑰、量子邏輯、安全加密與金鑰生成。",
+            "title": "不同自我調整學習階段之線上討論漸進行為模式",
+            "venue": "國際電腦教育研討會",
+            "year": "2024",
+            "note": "數位物件識別碼：10.58459/icce.2024.4863",
+            "href": "https://doi.org/10.58459/icce.2024.4863",
+            "image": "./assets/research-pipeline.svg"
           },
           {
-            title: "運用教師動態表情與聲音結合深度學習進行情緒分析與分數評估之智慧回饋工具",
-            venue: "2023 TANET 臺灣網際網路研討會：次世代 AI 與數位韌性",
-            year: "2023",
-            note: "會議論文 · 2023.11",
-            image: "./assets/media-coverage.svg",
-            description:
-              "數位教育、深度學習、電腦視覺、聲紋分析與情感運算。",
+            "title": "安全加密方式與金鑰生成 - 以生物特徵通行密鑰結合量子邏輯為例",
+            "venue": "2023 TANET 臺灣網際網路研討會：次世代 AI 與數位韌性",
+            "year": "2023",
+            "note": "會議論文 · 2023.11",
+            "image": "./assets/research-intelligence.svg",
+            "description": "生物特徵通行密鑰、量子邏輯、安全加密與金鑰生成。"
           },
+          {
+            "title": "運用教師動態表情與聲音結合深度學習進行情緒分析與分數評估之智慧回饋工具",
+            "venue": "2023 TANET 臺灣網際網路研討會：次世代 AI 與數位韌性",
+            "year": "2023",
+            "note": "會議論文 · 2023.11",
+            "image": "./assets/media-coverage.svg",
+            "description": "數位教育、深度學習、電腦視覺、聲紋分析與情感運算。"
+          }
         ],
         workingPapers: [
           "高擬真供應鏈模擬的計算基礎：以平行運算框架重新設計圖形處理器核心",
@@ -1255,68 +1346,82 @@ window.PORTFOLIO_CONTENT = {
         title: "技術社群、創業探索與學生領導。",
         items: [
           {
-            title: "創辦人 / 會長",
-            organization: "加州大學河濱分校 Google 校園開發者社群",
-            period: "2026",
-            category: "開發者社群",
-            href: "https://gdg.community.dev/gdg-on-campus-university-of-california-riverside-riverside-united-states/",
-            actionLabel: "查看社群",
-            previewTitle: "GDG at UCR",
-            previewCaption: "gdg.community.dev",
-            logo: "./assets/gdg-logo.svg",
-            logoAlt: "Google Developer Groups",
-            description:
-              "創辦並啟動校園開發者社群，結合社群策略、人工智慧主題活動、活動營運與成長數據，把學生興趣轉化為實際技術參與。",
-            metrics: ["社群建立", "技術工作坊"],
+            "title": "創辦人 / 會長",
+            "organization": "加州大學河濱分校 Google 校園開發者社群",
+            "period": "2026",
+            "category": "開發者社群",
+            "href": "https://gdg.community.dev/gdg-on-campus-university-of-california-riverside-riverside-united-states/",
+            "actionLabel": "查看社群",
+            "previewTitle": "GDG at UCR",
+            "previewCaption": "gdg.community.dev",
+            "logo": "./assets/gdg-logo.svg",
+            "logoAlt": "Google Developer Groups",
+            "description": "建立超過 100 名成員的開發者社群，並舉辦超過 50 人參與的 AI 啟動活動，促進技術學習與同儕協作。",
+            "metrics": [
+              "社群建立",
+              "技術工作坊"
+            ]
           },
           {
-            title: "學生領導",
-            organization: "UC Riverside / AGSM 校園社群",
-            period: "2025 - 2026",
-            category: "學生領導",
-            variant: "ucr",
-            description:
-              "參與 UCR 的產品、供應鏈與研究生社群活動。",
-            affiliations: [
+            "title": "學生領導",
+            "organization": "UC Riverside / AGSM 校園社群",
+            "period": "2025 - 2026",
+            "category": "學生領導",
+            "variant": "ucr",
+            "description": "參與 UCR 的產品、供應鏈與研究生社群活動。",
+            "affiliations": [
               {
-                name: "Product Club at UCR",
-                area: "產品與營運",
-                href: "https://highlanderlink.ucr.edu/organization/productatucr",
+                "name": "Product Club at UCR",
+                "area": "產品與營運",
+                "href": "https://highlanderlink.ucr.edu/organization/productatucr"
               },
               {
-                name: "Supply Chain Society",
-                area: "學生社群",
-                href: "https://linktr.ee/scs.ucr",
+                "name": "Supply Chain Society",
+                "area": "學生社群",
+                "href": "https://linktr.ee/scs.ucr"
               },
               {
-                name: "AGSM Student Association",
-                area: "研究生領導",
-                href: "https://business.ucr.edu/graduate/student-association",
-              },
-            ],
+                "name": "AGSM Student Association",
+                "area": "研究生領導",
+                "href": "https://business.ucr.edu/graduate/student-association"
+              }
+            ]
           },
           {
-            title: "團隊負責人",
-            organization: "加州大學洛杉磯分校 NSF I-Corps 區域計畫",
-            period: "2025",
-            description:
-              "以 DuckCard 為核心進行客戶探索，將訪談回饋轉化為產品假設、市場定位與商業化下一步。",
-            metrics: ["DuckCard", "客戶探索", "市場定位"],
+            "title": "團隊負責人",
+            "organization": "DuckCard · UCLA NSF I-Corps / UCR INNOVAR",
+            "period": "2025 - 2026",
+            "description": "透過 UCLA NSF I-Corps 帶領超過 50 次客戶探索訪談，將發現轉化為產品需求、流程設計與商業化假設，並於 2026 年秋季透過 UCR INNOVAR 延續專案。",
+            "metrics": [
+              "DuckCard",
+              "客戶探索",
+              "市場定位"
+            ]
           },
           {
-            title: "核心團隊成員",
-            organization: "慧與科技早期職涯社群",
-            period: "2024 - 2025",
-            description:
-              "協助建立早期職涯活動、展攤互動與跨職能職涯發展活動。",
+            "title": "核心團隊成員",
+            "organization": "慧與科技早期職涯社群",
+            "period": "2024 - 2025",
+            "description": "協助建立早期職涯活動、展攤互動與跨職能職涯發展活動。"
           },
           {
-            title: "組織者",
-            organization: "Google 臺北雲端開發者社群",
-            period: "2023 - 2024",
-            description:
-              "支援雲端與開發者社群的技術活動、講座與工作坊。",
+            "title": "組織者",
+            "organization": "Google 臺北雲端開發者社群",
+            "period": "2023 - 2024",
+            "description": "支援雲端與開發者社群的技術活動、講座與工作坊。"
           },
+          {
+            "title": "教學助理",
+            "organization": "國立臺灣師範大學",
+            "period": "2023 - 2024",
+            "description": "協助大學部與研究所的人力資源管理及 E-HR 實務研究課程，協調六場業界講座，主題涵蓋人資科技、數位學習與 AI 人才發展。"
+          },
+          {
+            "title": "審稿人",
+            "organization": "FUTURES 2026",
+            "period": "2026",
+            "description": "於 Track 4：AI Ethical Frameworks 完成一篇稿件審查。"
+          }
         ],
       },
       media: {
@@ -1391,11 +1496,11 @@ window.PORTFOLIO_CONTENT = {
         title: "學歷、獎項、證照與專業會員。",
         schools: [
           {
-            degree: "企業管理碩士，物流、物料與供應鏈管理",
+            degree: "企業管理碩士，營運與供應鏈管理、會計雙主修方向",
             school: "加州大學河濱分校商學院",
             period: "2025.09 - 2027.06",
             description:
-              "聚焦供應鏈策略、營運管理、資料分析、人工智慧自動化、產品開發與市場驗證。",
+              "結合營運策略、資料分析與會計觀點，理解企業績效及管理決策。",
           },
           {
             degree: "資訊工程碩士",
@@ -1486,7 +1591,7 @@ window.PORTFOLIO_CONTENT = {
             title: "CITI Program 研究倫理與合規訓練",
             issuer: "CITI Program",
             detail:
-              "研究倫理、合規意識與負責任研究行為。",
+              "完成社會與行為研究及 IRB 成員訓練，涵蓋研究倫理與人體研究參與者保護。",
           },
           {
             title: "Gemini 認證教育者",
