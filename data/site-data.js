@@ -364,13 +364,6 @@ window.PORTFOLIO_CONTENT = {
         title: "Research, publications, and working papers.",
         publications: [
           {
-            "title": "AI-Assisted Operations Intelligence in Supply Chain Decision Work: A Simulation-Based Study of Visibility, Risk Detection, and Human-AI Collaboration",
-            "venue": "FUTURES 2026: Conference on AI in Education, Business and Society · ISEC Lisboa",
-            "year": "2026",
-            "note": "Conference publication · p. 133",
-            "description": "A simulation-based study of supply chain visibility, risk detection, and human–AI collaboration in operational decision work. Findings are framed within the simulation setting."
-          },
-          {
             "title": "Dynamic Pricing and Markdown Optimization under Demand Uncertainty via Deep Learning and Quantum Search",
             "venue": "2026 INFORMS Revenue Management and Pricing Section Conference · University of Michigan",
             "year": "2026",
@@ -379,6 +372,13 @@ window.PORTFOLIO_CONTENT = {
             "actionLabel": "Show publication",
             "image": "./assets/research-pipeline.svg",
             "description": "Presented a framework integrating recurrent quantile forecasting, risk-aware mean-CVaR optimization, and QUBO-assisted search. Using the M5 dataset and 120 matched item-store-origin decisions, it identified a 9.48% model-based profit lift over historical pricing. QUBO-assisted search matched classical and exhaustive benchmarks at displayed precision; quantum-hardware and scaling advantages remain to be established."
+          },
+          {
+            "title": "AI-Assisted Operations Intelligence in Supply Chain Decision Work: A Simulation-Based Study of Visibility, Risk Detection, and Human-AI Collaboration",
+            "venue": "FUTURES 2026: Conference on AI in Education, Business and Society · ISEC Lisboa",
+            "year": "2026",
+            "note": "Conference publication · p. 133",
+            "description": "A simulation-based study of supply chain visibility, risk detection, and human–AI collaboration in operational decision work. Findings are framed within the simulation setting."
           },
           {
             "title": "AI-Assisted Supply Chain Monitoring for Operations Decision Support: A Simulation-Based Study on Visibility, Risk Detection, and Benchmark Performance",
@@ -1175,13 +1175,6 @@ window.PORTFOLIO_CONTENT = {
         title: "研究、發表與進行中論文。",
         publications: [
           {
-            "title": "AI-Assisted Operations Intelligence in Supply Chain Decision Work: A Simulation-Based Study of Visibility, Risk Detection, and Human-AI Collaboration",
-            "venue": "FUTURES 2026: Conference on AI in Education, Business and Society · ISEC Lisboa",
-            "year": "2026",
-            "note": "會議出版品 · 第 133 頁",
-            "description": "以模擬情境研究供應鏈資訊可視性、風險偵測與營運決策中的人機協作；研究結果的適用範圍限於模擬設定。"
-          },
-          {
             "title": "需求不確定下的動態定價與降價最佳化：結合深度學習與量子搜尋",
             "venue": "2026 INFORMS 收益管理與定價分會研討會 · 密西根大學",
             "year": "2026",
@@ -1190,6 +1183,13 @@ window.PORTFOLIO_CONTENT = {
             "actionLabel": "查看發表",
             "image": "./assets/research-pipeline.svg",
             "description": "提出整合循環分位數預測、風險感知 mean-CVaR 最佳化與 QUBO 輔助搜尋的架構。使用 M5 資料集與 120 組品項、門市、產地配對決策，相較歷史定價辨識出 9.48% 的模型估計利潤提升。QUBO 輔助搜尋在顯示精度下與傳統及窮舉基準一致；量子硬體與規模化優勢仍待驗證。"
+          },
+          {
+            "title": "AI-Assisted Operations Intelligence in Supply Chain Decision Work: A Simulation-Based Study of Visibility, Risk Detection, and Human-AI Collaboration",
+            "venue": "FUTURES 2026: Conference on AI in Education, Business and Society · ISEC Lisboa",
+            "year": "2026",
+            "note": "會議出版品 · 第 133 頁",
+            "description": "以模擬情境研究供應鏈資訊可視性、風險偵測與營運決策中的人機協作；研究結果的適用範圍限於模擬設定。"
           },
           {
             "title": "AI 輔助供應鏈監控與營運決策支援：以模擬研究檢視可視性、風險偵測與基準績效",
