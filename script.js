@@ -29,11 +29,36 @@ const requiredNavigationIds = [
 
 let revealObserver;
 let scrollFrame;
-let resizeFrame;
+let resizeTimer;
 let navigationTargets = [];
 let hasRendered = false;
 let anchorSettleTimer;
 let renderSettleTimers = [];
+const parallaxMedia = window.matchMedia("(min-width: 901px) and (hover: hover) and (pointer: fine)");
+let heroElement;
+let heroInView = false;
+let heroObserver;
+
+function setupParallax() {
+  heroObserver?.disconnect();
+  heroElement = app.querySelector(".hero");
+  heroInView = false;
+  heroElement?.style.removeProperty("--parallax-y");
+  const enabled = !reducedMotion.matches && parallaxMedia.matches &&
+    !navigator.connection?.saveData && "IntersectionObserver" in window;
+  root.classList.toggle("parallax-ready", enabled);
+  if (!enabled || !heroElement) return;
+  heroObserver = new IntersectionObserver(([entry]) => {
+    heroInView = entry.isIntersecting;
+    syncHeaderState();
+  });
+  heroObserver.observe(heroElement);
+}
+
+function cancelPendingAlignment() {
+  window.clearTimeout(anchorSettleTimer);
+  renderSettleTimers.forEach((timer) => window.clearTimeout(timer));
+}
 
 const savedTheme = window.localStorage.getItem("portfolio-theme");
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -868,6 +893,8 @@ function syncThemeControl() {
 function setActiveNavigation(targetId) {
   nav.querySelectorAll('a[href^="#"]').forEach((link) => {
     const isCurrent = link.getAttribute("href") === `#${targetId}`;
+    if (link.classList.contains("is-active") === isCurrent &&
+        link.hasAttribute("aria-current") === isCurrent) return;
     link.classList.toggle("is-active", isCurrent);
 
     if (isCurrent) {
@@ -945,7 +972,8 @@ function setupMobileMenu() {
     setMenuOpen(siteHeader.dataset.menuOpen !== "true");
   });
 
-  nav.addEventListener("click", (event) => {
+  document.addEventListener("click", (event) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     const link = event.target.closest('a[href^="#"]');
     if (!link) return;
 
@@ -1066,7 +1094,7 @@ function setupRevealMotion() {
   revealObserver?.disconnect();
 
   const targets = app.querySelectorAll(
-    ".hero-copy, .section-title, .about-summary, .simple-list, .resume-columns, .contact-panel, .portfolio-grid, .visual-grid, .compact-disclosure",
+    ".section-title, .about-summary, .simple-list > *, .resume-columns > *, .contact-panel, .portfolio-grid > *, .visual-grid > *, .compact-disclosure",
   );
 
   targets.forEach((target, index) => {
@@ -1089,7 +1117,7 @@ function setupRevealMotion() {
         observer.unobserve(entry.target);
       });
     },
-    { rootMargin: "0px 0px -7%", threshold: 0.06 },
+    { rootMargin: "0px 0px -7%", threshold: 0 },
   );
 
   targets.forEach((target) => revealObserver.observe(target));
@@ -1099,15 +1127,24 @@ function syncHeaderState() {
   if (scrollFrame) return;
 
   scrollFrame = window.requestAnimationFrame(() => {
-    siteHeader?.classList.toggle("is-scrolled", window.scrollY > 18);
-    if (backToTop) {
-      const contactTop = document.querySelector("#contact")?.getBoundingClientRect().top ?? Infinity;
-      const visible = window.scrollY > 560 && contactTop > window.innerHeight - 76;
-      backToTop.classList.toggle("is-visible", visible);
-      backToTop.tabIndex = visible ? 0 : -1;
-      backToTop.setAttribute("aria-hidden", String(!visible));
-    }
+    // Finish layout reads before changing classes or transforms.
+    const scrollY = window.scrollY;
+    const offset = heroInView && heroElement
+      ? Math.min(48, Math.max(0, -heroElement.getBoundingClientRect().top * 0.1))
+      : null;
+    const contactTop = document.getElementById("contact")?.getBoundingClientRect().top ?? Infinity;
+    const visible = (scrollY > 560 && contactTop > window.innerHeight - 76) ||
+      document.activeElement === backToTop;
     syncActiveNavigation();
+    if (offset !== null) heroElement.style.setProperty("--parallax-y", `${offset.toFixed(1)}px`);
+    siteHeader?.classList.toggle("is-scrolled", scrollY > 18);
+    if (backToTop) {
+      if (backToTop.classList.contains("is-visible") !== visible) {
+        backToTop.classList.toggle("is-visible", visible);
+        backToTop.tabIndex = visible ? 0 : -1;
+        backToTop.setAttribute("aria-hidden", String(!visible));
+      }
+    }
     scrollFrame = undefined;
   });
 }
@@ -1120,6 +1157,7 @@ function scrollToCurrentHash() {
 }
 
 function render() {
+  cancelPendingAlignment();
   renderSettleTimers.forEach((timer) => window.clearTimeout(timer));
   renderSettleTimers = [];
   const preservedScrollY = window.scrollY;
@@ -1150,6 +1188,7 @@ function render() {
   syncThemeControl();
   setupSectionTracking();
   setupRevealMotion();
+  setupParallax();
 
   if (hasRendered) {
     const nextTarget = navigationTargets.find(
@@ -1208,16 +1247,43 @@ window.addEventListener("hashchange", () => {
 window.addEventListener(
   "resize",
   () => {
-    if (resizeFrame) return;
-    resizeFrame = window.requestAnimationFrame(() => {
-      setMenuOpen(false);
-      setupSectionTracking();
-      resizeFrame = undefined;
-    });
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(() => {
+      collectNavigationTargets();
+      syncHeaderState();
+    }, 120);
   },
   { passive: true },
 );
-reducedMotion.addEventListener?.("change", setupRevealMotion);
+reducedMotion.addEventListener?.("change", () => {
+  cancelPendingAlignment();
+  setupRevealMotion();
+  setupParallax();
+});
+parallaxMedia.addEventListener?.("change", setupParallax);
+mobileNavigation.addEventListener?.("change", () => setMenuOpen(false));
+backToTop?.addEventListener("blur", syncHeaderState);
+if (siteHeader && "ResizeObserver" in window) {
+  new ResizeObserver(() => {
+    if (siteHeader.dataset.menuOpen === "true") return;
+    root.style.setProperty("--anchor-offset", `${Math.ceil(siteHeader.getBoundingClientRect().height) + 16}px`);
+  }).observe(siteHeader);
+}
+navigator.connection?.addEventListener?.("change", setupParallax);
+window.addEventListener("wheel", cancelPendingAlignment, { passive: true });
+window.addEventListener("touchstart", cancelPendingAlignment, { passive: true });
+document.addEventListener("keydown", (event) => {
+  if (["ArrowDown", "ArrowUp", "PageDown", "PageUp", "Home", "End", " ", "Tab"].includes(event.key)) {
+    cancelPendingAlignment();
+  }
+});
+app.addEventListener("focusin", (event) => {
+  const target = event.target.closest("[data-reveal]");
+  if (target) {
+    target.classList.add("is-visible");
+    revealObserver?.unobserve(target);
+  }
+});
 
 setupMobileMenu();
 if (contentIsValid) {

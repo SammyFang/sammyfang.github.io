@@ -53,11 +53,11 @@ html {
 }
 
 section {
-  scroll-margin-top: 136px;
+  scroll-margin-top: var(--anchor-offset, 136px);
 }
 
 .anchor-block {
-  scroll-margin-top: 136px;
+  scroll-margin-top: var(--anchor-offset, 136px);
 }
 
 body {
@@ -334,6 +334,7 @@ img {
 .hero {
   position: relative;
   min-height: 100vh;
+  min-height: 100svh;
   overflow: hidden;
   background: var(--navy);
   color: #fff;
@@ -353,6 +354,11 @@ img {
   background-repeat: no-repeat;
   background-size: min(70vw, 880px) auto;
   opacity: 0.18;
+}
+
+.parallax-ready .hero::before {
+  inset-block: -64px;
+  transform: translate3d(0, var(--parallax-y, 0px), 0);
 }
 
 .hero::after {
@@ -380,6 +386,7 @@ img {
   gap: clamp(48px, 7vw, 92px);
   width: min(1100px, calc(100% - 80px));
   min-height: 100vh;
+  min-height: 100svh;
   margin: 0 auto;
   padding: clamp(136px, 16vh, 164px) 0 clamp(80px, 10vh, 124px);
 }
@@ -1988,6 +1995,12 @@ img {
   transform: translate3d(0, 0, 0);
 }
 
+.motion-ready [data-reveal]:focus-within {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .card-link:hover :is(.visual-thumb:not(.link-preview-thumb), .portfolio-thumb) img,
   .podcast-note:hover .podcast-cover img {
@@ -2123,7 +2136,7 @@ img {
   section,
   .anchor-block,
   .contact-panel {
-    scroll-margin-top: 104px;
+    scroll-margin-top: var(--anchor-offset, 104px);
   }
 
   .site-header {
@@ -2619,7 +2632,7 @@ img {
 
 @media (prefers-reduced-motion: no-preference) and (min-width: 901px) {
   .hero-glow {
-    animation: hero-glow-drift 13s ease-in-out infinite alternate;
+    animation: hero-glow-drift 4s ease-out 1 both;
   }
 }
 
@@ -2651,7 +2664,9 @@ img {
     scroll-behavior: auto !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
   }
 
   .motion-ready [data-reveal] {
