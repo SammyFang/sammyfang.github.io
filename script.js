@@ -158,7 +158,7 @@ function label(key) {
       resumeByRequest: "查看履歷檔案",
       experience: "經歷",
       education: "學歷",
-      certification: "證照",
+      certification: "證照與會員資格",
       award: "獎項",
       portfolio: "作品集",
       portfolioNote: "精選成果與專案整理",
@@ -178,7 +178,7 @@ function label(key) {
       resumeByRequest: "View resume PDF",
       experience: "Experience",
       education: "Education",
-      certification: "Credentials",
+      certification: "Credentials & Memberships",
       award: "Awards",
       portfolio: "Portfolio",
       portfolioNote: "Selected work and project archive",
@@ -583,7 +583,7 @@ function renderCredentialCard(item, type = "cert") {
   const detail = isString ? "" : item.detail;
   const year = isString ? "" : item.year;
   const href = isString ? "" : item.href;
-  const marker = type === "award" ? (language === "zh" ? "獎項" : "Award") : (language === "zh" ? "證照" : "Credential");
+  const marker = type === "award" ? (language === "zh" ? "獎項" : "Award") : (language === "zh" ? "資格" : "Credential");
 
   return `
     <article class="credential-card credential-${type}">
