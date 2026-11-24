@@ -338,11 +338,14 @@ function mediaThumb(item = {}, index = 0, className = "visual-thumb", fallback =
   const fitClass = item.imageFit === "contain" ? " media-contain" : "";
   const imageLoading = item.imageLoading === "eager" ? "eager" : "lazy";
   const fetchPriority = imageLoading === "eager" ? ' fetchpriority="low"' : "";
+  const dimensions = Number.isInteger(item.imageWidth) && Number.isInteger(item.imageHeight)
+    ? ` width="${item.imageWidth}" height="${item.imageHeight}"`
+    : "";
 
   if (item.image && !isGenericImage(item.image)) {
     return `
       <figure class="${className}${fitClass}">
-        <img src="${escapeHtml(item.image)}" alt=""${imageStyle} loading="${imageLoading}"${fetchPriority} decoding="async" />
+        <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.imageAlt || "")}"${dimensions}${imageStyle} loading="${imageLoading}"${fetchPriority} decoding="async" />
       </figure>
     `;
   }
@@ -685,34 +688,32 @@ function renderResume(data) {
   `;
 }
 
+function renderPortfolioCard(item, index) {
+  const hasMedia = hasAuthenticMedia(item);
+  const tags = chips(item.tags);
+  return cardShell(item, `portfolio-card ${hasMedia ? "portfolio-card-media" : "portfolio-card-text-first"}`, `
+    ${hasMedia ? mediaThumb(item, index, "portfolio-thumb") : ""}
+    <div class="portfolio-body">
+      <p class="portfolio-type">${escapeHtml(item.type)}</p>
+      <h3>${escapeHtml(item.title)}</h3>
+      <span class="portfolio-description">${escapeHtml(item.description)}</span>
+      ${tags || item.href ? `<div class="portfolio-actions">
+        ${tags ? `<div class="inline-tags">${tags}</div>` : ""}
+        ${cardOpenCue(item)}
+      </div>` : ""}
+    </div>
+  `);
+}
+
 function renderPortfolio(data) {
-  const items = [...data.featured.items, ...data.projects.items];
+  const projects = [...data.featured.items, ...data.projects.items];
+  const illustrated = projects.filter(hasAuthenticMedia);
+  const textOnly = projects.filter((item) => !hasAuthenticMedia(item));
   return `
     <section class="portfolio-section" id="portfolio">
       ${sectionTitle("", label("portfolio"), label("portfolioNote"))}
-      <div class="portfolio-grid">
-        ${items
-          .map((item, index) => {
-            const hasMedia = hasAuthenticMedia(item);
-            const inner = `
-                ${hasMedia ? mediaThumb(item, index, "portfolio-thumb", item.previewTitle || item.mediaTitle || item.title || label("portfolio")) : ""}
-                <div>
-                  ${hasMedia ? "" : sourceLockup(item)}
-                  <p>${escapeHtml(item.type)}</p>
-                  <h3>${escapeHtml(item.title)}</h3>
-                  <span class="portfolio-description">${escapeHtml(item.description)}</span>
-                  <div class="inline-tags">${chips(item.tags)}</div>
-                  ${cardOpenCue(item)}
-                </div>
-              `;
-            return cardShell(
-              item,
-              `portfolio-card ${hasMedia ? "portfolio-card-media" : "portfolio-card-text-first"}`,
-              inner,
-            );
-          })
-          .join("")}
-      </div>
+      ${illustrated.length ? `<div class="portfolio-grid portfolio-grid-media">${illustrated.map(renderPortfolioCard).join("")}</div>` : ""}
+      ${textOnly.length ? `<div class="portfolio-grid">${textOnly.map(renderPortfolioCard).join("")}</div>` : ""}
     </section>
   `;
 }
@@ -739,7 +740,6 @@ function visualCard(item, metaParts = [], options = {}) {
     "visual-card",
     options.compact ? "visual-card-compact" : "",
     textFirst ? "visual-card-text-first" : "",
-    options.featured ? "visual-card-featured" : "",
   ]
     .filter(Boolean)
     .join(" ");
@@ -810,29 +810,35 @@ function renderEngagementGallery(gallery) {
   return `
     <section class="anchor-block engagement-gallery" id="engagement-photos"
         aria-labelledby="engagement-gallery-title"${multiple ? ` aria-roledescription="${carouselName}"` : ""}>
-      <div class="engagement-gallery-header">
-        <h3 class="block-heading" id="engagement-gallery-title">${escapeHtml(gallery.title)}</h3>
+      <h3 class="block-heading engagement-gallery-heading" id="engagement-gallery-title">${escapeHtml(gallery.title)}</h3>
+      <div class="engagement-gallery-stage">
+        <div class="engagement-gallery-slides" id="engagement-gallery-slides">
+          ${slides.map((slide, index) => {
+            const ambient = /^\.\/assets\/[\w/-]+\.(?:webp|png|jpe?g)$/i.test(slide.src)
+              ? ` style="${escapeHtml(`--engagement-gallery-image: url("${slide.src}")`)}"`
+              : "";
+
+            return `
+            <figure class="engagement-gallery-slide"${ambient}${index !== activeIndex ? " hidden" : ""}>
+              <div class="engagement-gallery-frame">
+                <div class="engagement-gallery-photo">
+                  <img src="${escapeHtml(slide.src)}" alt="${escapeHtml(slide.alt)}" loading="lazy" decoding="async"${slide.width && slide.height ? ` width="${escapeHtml(slide.width)}" height="${escapeHtml(slide.height)}"` : ""}>
+                </div>
+              </div>
+              <figcaption class="engagement-gallery-caption">
+                <h4>${escapeHtml(slide.title)}</h4>
+                ${slide.description ? `<p>${escapeHtml(slide.description)}</p>` : ""}
+                ${slide.href ? `<a href="${escapeHtml(slide.href)}"${linkAttrs(slide.href)}>${source} <span aria-hidden="true">↗</span></a>` : ""}
+              </figcaption>
+            </figure>`;
+          }).join("")}
+        </div>
         ${multiple ? `<div class="engagement-gallery-controls">
           <button type="button" data-gallery-step="-1" aria-label="${previous}" aria-controls="engagement-gallery-slides"><span aria-hidden="true">←</span></button>
           <span class="engagement-gallery-count" aria-hidden="true">${activeIndex + 1} / ${slides.length}</span>
           <button type="button" data-gallery-step="1" aria-label="${next}" aria-controls="engagement-gallery-slides"><span aria-hidden="true">→</span></button>
-        </div>` : ""}
-      </div>
-      ${multiple ? '<p class="engagement-gallery-status" role="status" aria-atomic="true"></p>' : ""}
-      <div class="engagement-gallery-slides" id="engagement-gallery-slides">
-        ${slides.map((slide, index) => `
-          <figure class="engagement-gallery-slide"${index !== activeIndex ? " hidden" : ""}>
-            <div class="engagement-gallery-frame">
-              <img src="${escapeHtml(slide.src)}" alt="${escapeHtml(slide.alt)}" loading="lazy" decoding="async"${slide.width && slide.height ? ` width="${escapeHtml(slide.width)}" height="${escapeHtml(slide.height)}"` : ""}>
-            </div>
-            <figcaption class="engagement-gallery-caption">
-              <div>
-                <h4>${escapeHtml(slide.title)}</h4>
-                ${slide.description ? `<p>${escapeHtml(slide.description)}</p>` : ""}
-              </div>
-              ${slide.href ? `<a href="${escapeHtml(slide.href)}"${linkAttrs(slide.href)}>${source} <span aria-hidden="true">↗</span></a>` : ""}
-            </figcaption>
-          </figure>`).join("")}
+        </div>
+        <p class="engagement-gallery-status" role="status" aria-atomic="true"></p>` : ""}
       </div>
     </section>
   `;
@@ -874,23 +880,18 @@ function setupEngagementGallery() {
 }
 
 function renderResearch(data) {
+  const illustrated = data.research.publications.filter(hasAuthenticMedia);
+  const textOnly = data.research.publications.filter((item) => !hasAuthenticMedia(item));
+  const publicationCard = (item, index) =>
+    visualCard(item, [item.venue, item.year], { showNote: true, index, textFirst: true });
+
   return `
     <section class="plain-section" id="research">
       <div class="single-column visual-section">
         ${sectionTitle("", label("research"))}
         <h3 class="block-heading">${escapeHtml(label("publication"))}</h3>
-        <div class="visual-grid">
-          ${data.research.publications
-            .map((item, index) =>
-              visualCard(item, [item.venue, item.year], {
-                showNote: true,
-                index,
-                textFirst: true,
-                featured: index === 0,
-              }),
-            )
-            .join("")}
-        </div>
+        ${illustrated.length ? `<div class="visual-grid research-visuals">${illustrated.map(publicationCard).join("")}</div>` : ""}
+        ${textOnly.length ? `<div class="visual-grid">${textOnly.map(publicationCard).join("")}</div>` : ""}
         <details class="compact-disclosure">
           <summary>${escapeHtml(label("workingPaper"))} (${data.research.workingPapers.length})</summary>
           <div class="compact-index nested">
@@ -911,11 +912,42 @@ function renderResearch(data) {
   `;
 }
 
+function renderMediaCoverage(data) {
+  const items = byMostRecent(data.media.items);
+  const lead = items.find((item) => item.featured) || items[0];
+  const remaining = items.filter((item) => item !== lead);
+  const ordered = [lead, ...remaining.filter(hasAuthenticMedia), ...remaining.filter((item) => !hasAuthenticMedia(item))].filter(Boolean);
+  const readLabel = language === "zh" ? "查看原始報導" : "View source";
+
+  return `
+    <div class="anchor-block" id="media">
+      <h3 class="block-heading">${escapeHtml(label("mediaFeatures"))}</h3>
+      <div class="coverage-grid">
+        ${ordered.map((item, index) => {
+          const hasMedia = hasAuthenticMedia(item);
+          const classes = ["coverage-card", item === lead ? "coverage-card-lead" : "", hasMedia ? "coverage-card-media" : ""].filter(Boolean).join(" ");
+          const sourceItem = { ...item, actionLabel: item.actionLabel || readLabel };
+          return cardShell(sourceItem, classes, `
+            ${hasMedia ? mediaThumb(item, index, "coverage-thumb", item.title) : ""}
+            <div class="coverage-body">
+              <p class="coverage-meta"><span>${escapeHtml(item.source)}</span><time datetime="${escapeHtml(item.year)}">${escapeHtml(item.year)}</time></p>
+              <h4>${escapeHtml(item.title)}</h4>
+              ${item.description ? `<p class="coverage-description">${escapeHtml(item.description)}</p>` : ""}
+              ${cardOpenCue(sourceItem)}
+            </div>
+          `);
+        }).join("")}
+      </div>
+    </div>
+  `;
+}
+
 function renderPress(data) {
   return `
     <section class="plain-section" id="press">
       <div class="single-column visual-section">
         ${sectionTitle("", label("pressSpeaking"))}
+        ${renderEngagementGallery(data.engagementGallery)}
         <h3 class="block-heading">${escapeHtml(label("invitedTalks"))}</h3>
         <div class="visual-grid">
           ${byMostRecent(data.speaking.items)
@@ -925,21 +957,7 @@ function renderPress(data) {
             .join("")}
         </div>
         ${renderLeadership(data)}
-        ${renderEngagementGallery(data.engagementGallery)}
-        <div class="anchor-block" id="media">
-          <h3 class="block-heading">${escapeHtml(label("mediaFeatures"))}</h3>
-          <div class="visual-grid media-grid">
-            ${byMostRecent(data.media.items)
-              .map((item, index) =>
-                visualCard(item, [item.source, item.year], {
-                  compact: true,
-                  index,
-                  textFirst: true,
-                }),
-              )
-              .join("")}
-          </div>
-        </div>
+        ${renderMediaCoverage(data)}
       </div>
     </section>
   `;
