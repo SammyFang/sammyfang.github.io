@@ -723,6 +723,21 @@ window.PORTFOLIO_CONTENT = {
             "height": 1536
           },
           {
+            "title": "NVIDIA Keynote, COMPUTEX Taipei 2024",
+            "description": "Attended the keynote presented by NVIDIA CEO Jensen Huang.",
+            "alt": "Sammy Fang wearing a keynote badge with the blue-lit NVIDIA stage behind him.",
+            "src": "./assets/engagement/nvidia-keynote-taipei-2024.webp",
+            "width": 1280,
+            "height": 960
+          },
+          {
+            "title": "NVIDIA Keynote backdrop, COMPUTEX Taipei 2024",
+            "alt": "Sammy Fang standing in front of the green NVIDIA backdrop at the keynote venue.",
+            "src": "./assets/engagement/nvidia-keynote-backdrop-2024.webp",
+            "width": 1280,
+            "height": 960
+          },
+          {
             "title": "Amazon fulfillment operations visit, 2025",
             "alt": "Sammy Fang wearing an orange safety vest beside warehouse racks during the Amazon visit.",
             "src": "./assets/engagement/amazon-fulfillment-visit-2025.webp",
@@ -1684,6 +1699,21 @@ window.PORTFOLIO_CONTENT = {
             "href": "https://www.linkedin.com/feed/update/urn:li:activity:7205240294345170944/",
             "width": 2048,
             "height": 1536
+          },
+          {
+            "title": "NVIDIA 主題演講，COMPUTEX Taipei 2024",
+            "description": "現場參加 NVIDIA 執行長黃仁勳的主題演講。",
+            "alt": "方方戴著主題演講的入場證，身後是藍色燈光下的 NVIDIA 舞台。",
+            "src": "./assets/engagement/nvidia-keynote-taipei-2024.webp",
+            "width": 1280,
+            "height": 960
+          },
+          {
+            "title": "NVIDIA 主題演講會場背板，COMPUTEX Taipei 2024",
+            "alt": "方方站在主題演講會場的綠色 NVIDIA 背板前。",
+            "src": "./assets/engagement/nvidia-keynote-backdrop-2024.webp",
+            "width": 1280,
+            "height": 960
           },
           {
             "title": "Amazon 物流營運參訪，2025",
