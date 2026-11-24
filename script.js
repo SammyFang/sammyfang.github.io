@@ -605,7 +605,10 @@ function renderResume(data) {
     <article class="experience-entry">
       <span class="experience-date">${escapeHtml(item.period)}</span>
       <div class="experience-body">
-        <p class="experience-organization">${escapeHtml(item.organization)}</p>
+        <div class="experience-heading">
+          <p class="experience-organization">${escapeHtml(item.organization)}</p>
+          ${item.employment ? `<span class="experience-employment">${escapeHtml(item.employment)}</span>` : ""}
+        </div>
         <h3>${escapeHtml(item.title)}</h3>
         <p class="experience-summary">${escapeHtml(item.summary)}</p>
       </div>
@@ -790,6 +793,86 @@ function renderLeadership(data) {
   `;
 }
 
+let engagementPhotoIndex = 0;
+
+function renderEngagementGallery(gallery) {
+  const slides = gallery?.slides || [];
+  if (!slides.length) return "";
+
+  const multiple = slides.length > 1;
+  const activeIndex = Math.min(engagementPhotoIndex, slides.length - 1);
+  const isChinese = language === "zh";
+  const carouselName = isChinese ? "照片輪播" : "carousel";
+  const previous = isChinese ? "上一張照片" : "Previous photo";
+  const next = isChinese ? "下一張照片" : "Next photo";
+  const source = isChinese ? "查看原始貼文" : "View original post";
+
+  return `
+    <section class="anchor-block engagement-gallery" id="engagement-photos"
+        aria-labelledby="engagement-gallery-title"${multiple ? ` aria-roledescription="${carouselName}"` : ""}>
+      <div class="engagement-gallery-header">
+        <h3 class="block-heading" id="engagement-gallery-title">${escapeHtml(gallery.title)}</h3>
+        ${multiple ? `<div class="engagement-gallery-controls">
+          <button type="button" data-gallery-step="-1" aria-label="${previous}" aria-controls="engagement-gallery-slides"><span aria-hidden="true">←</span></button>
+          <span class="engagement-gallery-count" aria-hidden="true">${activeIndex + 1} / ${slides.length}</span>
+          <button type="button" data-gallery-step="1" aria-label="${next}" aria-controls="engagement-gallery-slides"><span aria-hidden="true">→</span></button>
+        </div>` : ""}
+      </div>
+      ${multiple ? '<p class="engagement-gallery-status" role="status" aria-atomic="true"></p>' : ""}
+      <div class="engagement-gallery-slides" id="engagement-gallery-slides">
+        ${slides.map((slide, index) => `
+          <figure class="engagement-gallery-slide"${index !== activeIndex ? " hidden" : ""}>
+            <div class="engagement-gallery-frame">
+              <img src="${escapeHtml(slide.src)}" alt="${escapeHtml(slide.alt)}" loading="lazy" decoding="async"${slide.width && slide.height ? ` width="${escapeHtml(slide.width)}" height="${escapeHtml(slide.height)}"` : ""}>
+            </div>
+            <figcaption class="engagement-gallery-caption">
+              <div>
+                <h4>${escapeHtml(slide.title)}</h4>
+                ${slide.description ? `<p>${escapeHtml(slide.description)}</p>` : ""}
+              </div>
+              ${slide.href ? `<a href="${escapeHtml(slide.href)}"${linkAttrs(slide.href)}>${source} <span aria-hidden="true">↗</span></a>` : ""}
+            </figcaption>
+          </figure>`).join("")}
+      </div>
+    </section>
+  `;
+}
+
+function setupEngagementGallery() {
+  const gallery = app.querySelector("#engagement-photos");
+  const controls = gallery?.querySelector(".engagement-gallery-controls");
+  if (!controls) return;
+
+  const slides = Array.from(gallery.querySelectorAll(".engagement-gallery-slide"));
+  const count = controls.querySelector(".engagement-gallery-count");
+  const status = gallery.querySelector(".engagement-gallery-status");
+  engagementPhotoIndex = slides.findIndex((slide) => !slide.hidden);
+
+  function movePhoto(step) {
+    slides[engagementPhotoIndex].hidden = true;
+    engagementPhotoIndex = (engagementPhotoIndex + step + slides.length) % slides.length;
+
+    const slide = slides[engagementPhotoIndex];
+    slide.hidden = false;
+    count.textContent = `${engagementPhotoIndex + 1} / ${slides.length}`;
+    const position = language === "zh"
+      ? `第 ${engagementPhotoIndex + 1} 張，共 ${slides.length} 張`
+      : `Photo ${engagementPhotoIndex + 1} of ${slides.length}`;
+    status.textContent = `${position}. ${slide.querySelector("h4").textContent}`;
+  }
+
+  controls.querySelectorAll("[data-gallery-step]").forEach((button) => {
+    button.addEventListener("click", () => movePhoto(Number(button.dataset.galleryStep)));
+  });
+
+  controls.addEventListener("keydown", (event) => {
+    if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    event.preventDefault();
+    movePhoto(event.key === "ArrowLeft" ? -1 : 1);
+  });
+}
+
 function renderResearch(data) {
   return `
     <section class="plain-section" id="research">
@@ -842,6 +925,7 @@ function renderPress(data) {
             .join("")}
         </div>
         ${renderLeadership(data)}
+        ${renderEngagementGallery(data.engagementGallery)}
         <div class="anchor-block" id="media">
           <h3 class="block-heading">${escapeHtml(label("mediaFeatures"))}</h3>
           <div class="visual-grid media-grid">
@@ -1184,6 +1268,7 @@ function render() {
     renderPress(data),
     renderContact(data),
   ].join("");
+  setupEngagementGallery();
   renderFooter(data);
   syncThemeControl();
   setupSectionTracking();

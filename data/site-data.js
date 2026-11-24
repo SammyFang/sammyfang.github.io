@@ -17,7 +17,7 @@ window.PORTFOLIO_CONTENT = {
       { src: "./assets/ucr-profile-960.webp", width: 960 },
     ],
     imageBackdrop: "./assets/ucr-profile-backdrop.webp",
-    resumePdf: "./assets/yung-sian-fang-resume.pdf",
+    resumePdf: "./assets/yung-sian-fang-public-resume.pdf?v=527c14078045",
   },
   locales: {
     en: {
@@ -199,9 +199,10 @@ window.PORTFOLIO_CONTENT = {
         title: "Professional experience, briefly.",
         items: [
           {
-            "title": "Supply Chain Analyst, Intern",
+            "title": "Supply Chain Analyst",
             "organization": "d-Matrix",
             "period": "2026",
+            "employment": "Intern",
             "department": "Operations and supply chain",
             "summary": "Helped roll out a centralized shipment workflow from data standardization through user acceptance testing and training. Built SQL, API, and Power BI tools to track shipment exceptions and freight spend, and piloted computer-vision serial capture for inventory counts.",
             "tools": [
@@ -214,6 +215,7 @@ window.PORTFOLIO_CONTENT = {
             "title": "Procurement Operations Analyst",
             "organization": "Hewlett Packard Enterprise",
             "period": "2024 - 2025",
+            "employment": "Full-time",
             "department": "Procurement operations",
             "summary": "Planned procurement for high-value server components using market, demand, and cost data. Coordinated new-product introduction with APAC suppliers and manufacturing partners, maintained SAP master data, and automated recurring work.",
             "tools": [
@@ -222,9 +224,10 @@ window.PORTFOLIO_CONTENT = {
             ]
           },
           {
-            "title": "Software Engineer, Intern",
+            "title": "Software Engineer (Systems)",
             "organization": "Hewlett Packard Enterprise",
             "period": "2023 - 2024",
+            "employment": "Intern",
             "department": "Systems engineering",
             "summary": "Automated firmware version checks, visual validation, and QA data handoffs with Python, Shell, and Perl so engineering and manufacturing teams could follow a consistent validation process.",
             "tools": [
@@ -268,9 +271,16 @@ window.PORTFOLIO_CONTENT = {
             ]
           },
           {
+            "title": "Teaching Assistant",
+            "organization": "National Taiwan Normal University",
+            "period": "2023 - 2024",
+            "summary": "Supported human resources courses and coordinated six industry talks on HR technology, digital learning, and AI in talent development."
+          },
+          {
             "title": "DevOps Engineer",
             "organization": "Pojen General Hospital",
             "period": "2023",
+            "employment": "Part-time",
             "department": "IT operations",
             "summary": "Developed internal data tools and supported IT operations.",
             "tools": [
@@ -282,6 +292,7 @@ window.PORTFOLIO_CONTENT = {
             "title": "R&D Engineer (HSM)",
             "organization": "Provision Information Co., Ltd.",
             "period": "2021 - 2022",
+            "employment": "Intern",
             "department": "Security research",
             "summary": "Contributed to security tooling and technical documentation for product research.",
             "tools": [
@@ -627,7 +638,8 @@ window.PORTFOLIO_CONTENT = {
             "title": "President",
             "organization": "Taiwanese Graduate Student Association at UC Riverside",
             "period": "2025 - present",
-            "description": "Reactivated the chapter and organized welcome events, joint programming with UTSA, and regional student association exchanges."
+            "description": "Reactivated the association, organized welcome events and joint programs with UTSA, and took part in regional exchanges with student associations.",
+            "href": "https://www.ucrtgsa.org/"
           },
           {
             "title": "Core Team Member",
@@ -636,17 +648,69 @@ window.PORTFOLIO_CONTENT = {
             "description": "Helped structure early-career programming, booth engagement, and cross-functional professional development."
           },
           {
-            "title": "Organizer / Core Team Member",
-            "organization": "Google Developer Communities in Taiwan",
-            "description": "Organized events with GDG Cloud Taipei and supported workshops for Google developer student chapters at NTNU and NDHU."
+            "title": "Event Organizer",
+            "organization": "GDG Cloud Taipei",
+            "description": "Organized technical community events.",
+            "href": "https://gdg.community.dev/gdg-cloud-taipei/"
           },
           {
-            "title": "Teaching Assistant",
-            "organization": "National Taiwan Normal University",
-            "period": "2023 - 2024",
-            "description": "Supported human resources courses and coordinated six industry sessions on HR technology, digital learning, and applications of AI in talent development."
+            "title": "Core Team Member",
+            "organization": "GDSC NTNU",
+            "description": "Supported technical workshops at National Taiwan Normal University.",
+            "href": "https://gdg.community.dev/gdg-on-campus-national-taiwan-normal-university-taipei-taiwan/"
+          },
+          {
+            "title": "Core Team Member",
+            "organization": "GDSC NDHU",
+            "description": "Supported technical workshops at National Dong Hwa University.",
+            "href": "https://gdsc.ndhu.dev/p/about.html"
           }
         ],
+      },
+      engagementGallery: {
+        "title": "Event photos",
+        "slides": [
+          {
+            "title": "UC Riverside Happy Research Hour, 2026",
+            "alt": "Sammy Fang holding a microphone and presenting a slide to the audience at UC Riverside Happy Research Hour.",
+            "src": "./assets/engagement/happy-research-hour-2026.webp",
+            "href": "https://www.linkedin.com/feed/update/urn:li:activity:7529118261704216576/",
+            "width": 1706,
+            "height": 960
+          },
+          {
+            "title": "AWS Summit Taipei 2024",
+            "alt": "Sammy Fang standing in front of the AWS Summit Taipei welcome sign.",
+            "src": "./assets/engagement/aws-summit-taipei-2024.webp",
+            "href": "https://www.linkedin.com/posts/yung-sian-fang_aws-amazon-ai-ugcPost-7222186040818647040-hKas/",
+            "width": 1152,
+            "height": 1536
+          },
+          {
+            "title": "COMPUTEX Taipei exhibition, 2024",
+            "alt": "Sammy Fang and another attendee at the Cooler Master booth at COMPUTEX Taipei.",
+            "src": "./assets/engagement/computex-taipei-2024.webp",
+            "href": "https://www.linkedin.com/feed/update/urn:li:activity:7205240294345170944/",
+            "width": 2048,
+            "height": 1536
+          },
+          {
+            "title": "Amazon fulfillment operations visit, 2025",
+            "alt": "Sammy Fang wearing an orange safety vest beside warehouse racks during the Amazon visit.",
+            "src": "./assets/engagement/amazon-fulfillment-visit-2025.webp",
+            "href": "https://www.linkedin.com/feed/update/urn:li:activity:7392126631471108096/",
+            "width": 1152,
+            "height": 1536
+          },
+          {
+            "title": "Cutie Hack industry panel, 2026",
+            "alt": "Sammy Fang speaking at the Cutie Hack industry panel while seated alongside other panelists.",
+            "src": "./assets/engagement/cutie-hack-panel-2026.webp",
+            "href": "https://www.linkedin.com/feed/update/urn:li:activity:7530841301399949312/",
+            "width": 1108,
+            "height": 1477
+          }
+        ]
       },
       media: {
         eyebrow: "Media and features",
@@ -736,8 +800,8 @@ window.PORTFOLIO_CONTENT = {
           {
             title: "Innovation Catalyst",
             issuer: "AGSM Graduate Ambassadors, UC Riverside School of Business",
-            year: "Nov 2026",
-            detail: "Recognized for launching Ambassador Hub for event staffing and service-hour reporting.",
+            year: "2026",
+            detail: "Interviewed ambassadors and staff, then developed and launched Ambassador Hub to simplify event staffing and service-hour reporting.",
           },
           {
             title: "1st Place Poster Presentation",
@@ -1051,9 +1115,10 @@ window.PORTFOLIO_CONTENT = {
         title: "專業經歷摘要。",
         items: [
           {
-            "title": "供應鏈分析師實習生",
+            "title": "供應鏈分析師",
             "organization": "d-Matrix",
             "period": "2026",
+            "employment": "實習",
             "department": "營運與供應鏈",
             "summary": "協助集中式出貨流程上線，涵蓋資料標準化、使用者驗收測試與培訓。用 SQL、API 與 Power BI 追蹤物流異常及運費，並試行電腦視覺序號擷取，支援庫存盤點。",
             "tools": [
@@ -1066,6 +1131,7 @@ window.PORTFOLIO_CONTENT = {
             "title": "採購營運分析師",
             "organization": "慧與科技",
             "period": "2024 - 2025",
+            "employment": "全職",
             "department": "採購營運",
             "summary": "整合市場、需求與成本資訊，規劃高價值伺服器零組件採購。協調亞太供應商與製造夥伴支援新品導入，維護 SAP 主資料並自動化例行作業。",
             "tools": [
@@ -1074,9 +1140,10 @@ window.PORTFOLIO_CONTENT = {
             ]
           },
           {
-            "title": "軟體工程實習生",
+            "title": "軟體工程師（系統）",
             "organization": "慧與科技",
             "period": "2023 - 2024",
+            "employment": "實習",
             "department": "系統工程",
             "summary": "以 Python、Shell 與 Perl 自動化韌體版本比對、視覺驗證與 QA 資料交接，協助工程與製造團隊使用一致的驗證流程。",
             "tools": [
@@ -1120,9 +1187,16 @@ window.PORTFOLIO_CONTENT = {
             ]
           },
           {
+            "title": "教學助理",
+            "organization": "國立臺灣師範大學",
+            "period": "2023 - 2024",
+            "summary": "協助人力資源課程教學，協調六場業界講座，涵蓋人資科技、數位學習與 AI 在人才發展的應用。"
+          },
+          {
             "title": "系統維運工程師",
             "organization": "博仁綜合醫院",
             "period": "2023",
+            "employment": "兼職",
             "department": "資訊營運",
             "summary": "開發內部資料工具並支援資訊營運。",
             "tools": [
@@ -1134,6 +1208,7 @@ window.PORTFOLIO_CONTENT = {
             "title": "硬體安全模組研發工程師",
             "organization": "Provision Information Co., Ltd.",
             "period": "2021 - 2022",
+            "employment": "實習",
             "department": "資訊安全研究",
             "summary": "參與安全工具與產品研究文件的開發。",
             "tools": [
@@ -1477,9 +1552,10 @@ window.PORTFOLIO_CONTENT = {
           },
           {
             "title": "會長",
-            "organization": "加州大學河濱分校臺灣研究生同學會",
+            "organization": "加州大學河濱分校台灣研究生協會",
             "period": "2025 年至今",
-            "description": "重啟同學會，籌辦迎新活動、與 UTSA 合辦活動，並參與區域學生會交流。"
+            "description": "重啟協會、籌辦迎新、與 UTSA 合辦活動，並參與區域學生組織交流。",
+            "href": "https://www.ucrtgsa.org/"
           },
           {
             "title": "核心團隊成員",
@@ -1488,17 +1564,69 @@ window.PORTFOLIO_CONTENT = {
             "description": "協助建立早期職涯活動、展攤互動與跨職能職涯發展活動。"
           },
           {
-            "title": "活動組織者 / 核心團隊成員",
-            "organization": "Google 在臺開發者社群",
-            "description": "籌辦 GDG Cloud Taipei 技術活動，並支援臺師大與東華的 Google 學生開發者工作坊。"
+            "title": "活動籌辦",
+            "organization": "GDG Cloud Taipei",
+            "description": "籌辦開發者社群的技術活動。",
+            "href": "https://gdg.community.dev/gdg-cloud-taipei/"
           },
           {
-            "title": "教學助理",
-            "organization": "國立臺灣師範大學",
-            "period": "2023 - 2024",
-            "description": "協助人力資源課程，協調六場業界講座，涵蓋人資科技、數位學習及 AI 在人才發展的應用。"
+            "title": "核心團隊成員",
+            "organization": "GDSC NTNU",
+            "description": "協助國立臺灣師範大學的開發者工作坊。",
+            "href": "https://gdg.community.dev/gdg-on-campus-national-taiwan-normal-university-taipei-taiwan/"
+          },
+          {
+            "title": "核心團隊成員",
+            "organization": "GDSC NDHU",
+            "description": "協助國立東華大學的開發者工作坊。",
+            "href": "https://gdsc.ndhu.dev/p/about.html"
           }
         ],
+      },
+      engagementGallery: {
+        "title": "活動照片",
+        "slides": [
+          {
+            "title": "加州大學河濱分校 Happy Research Hour，2026",
+            "alt": "方方在 UCR Happy Research Hour 手持麥克風，面向聽眾說明投影片。",
+            "src": "./assets/engagement/happy-research-hour-2026.webp",
+            "href": "https://www.linkedin.com/feed/update/urn:li:activity:7529118261704216576/",
+            "width": 1706,
+            "height": 960
+          },
+          {
+            "title": "AWS Summit Taipei 2024",
+            "alt": "方方站在 AWS Summit Taipei 的迎賓背板前。",
+            "src": "./assets/engagement/aws-summit-taipei-2024.webp",
+            "href": "https://www.linkedin.com/posts/yung-sian-fang_aws-amazon-ai-ugcPost-7222186040818647040-hKas/",
+            "width": 1152,
+            "height": 1536
+          },
+          {
+            "title": "COMPUTEX Taipei 展場交流，2024",
+            "alt": "方方和另一位參展者在 COMPUTEX Taipei 的 Cooler Master 展位合照。",
+            "src": "./assets/engagement/computex-taipei-2024.webp",
+            "href": "https://www.linkedin.com/feed/update/urn:li:activity:7205240294345170944/",
+            "width": 2048,
+            "height": 1536
+          },
+          {
+            "title": "Amazon 物流營運參訪，2025",
+            "alt": "方方在 Amazon 參訪期間身穿橘色反光背心，站在物流中心貨架旁。",
+            "src": "./assets/engagement/amazon-fulfillment-visit-2025.webp",
+            "href": "https://www.linkedin.com/feed/update/urn:li:activity:7392126631471108096/",
+            "width": 1152,
+            "height": 1536
+          },
+          {
+            "title": "Cutie Hack 業界座談，2026",
+            "alt": "方方在 Cutie Hack 業界座談中發言，身旁坐著其他與談人。",
+            "src": "./assets/engagement/cutie-hack-panel-2026.webp",
+            "href": "https://www.linkedin.com/feed/update/urn:li:activity:7530841301399949312/",
+            "width": 1108,
+            "height": 1477
+          }
+        ]
       },
       media: {
         eyebrow: "媒體與公開介紹",
@@ -1588,8 +1716,8 @@ window.PORTFOLIO_CONTENT = {
           {
             title: "Innovation Catalyst",
             issuer: "加州大學河濱分校商學院研究生大使",
-            year: "2026 年 11 月",
-            detail: "因上線 Ambassador Hub，改善活動排班與服務時數申報，獲得表揚。",
+            year: "2026",
+            detail: "訪談研究生大使與行政團隊，據此開發並導入 Ambassador Hub，簡化活動排班及服務時數申報。",
           },
           {
             title: "海報發表第一名",
